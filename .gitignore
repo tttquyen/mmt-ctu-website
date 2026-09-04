@@ -1,0 +1,28 @@
+# ---------------------------------------------------------------
+# Website Khoa Mạng máy tính & Truyền thông — ĐH Cần Thơ
+# ---------------------------------------------------------------
+
+# Ảnh của bản tiếng Anh cũ (83 MB) — không còn tệp nào tham chiếu tới,
+# vì bản tiếng Anh mới dùng chung ảnh trong mmt/imgs/.
+# Có thể xoá hẳn thư mục này trên máy khi đã chắc chắn.
+enmmt/imgs/
+
+# Rác của hệ điều hành
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+._*
+
+# Trình soạn thảo
+.vscode/
+.idea/
+*.swp
+*~
+
+# Tệp tạm khi chỉnh sửa Office
+~$*
+
+# Cau hinh cong cu, khong can dua len kho
+.claude/
+mmt/.git-cu-2025/

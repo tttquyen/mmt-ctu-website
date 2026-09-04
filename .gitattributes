@@ -1,0 +1,11 @@
+﻿# Chuan hoa xuong dong: kho luu LF, tranh dif nhieu giua Windows va may chu
+* text=auto eol=lf
+
+# Tep nhi phan - khong dung cham
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.pdf binary
+*.xlsx binary
+*.docx binary

@@ -1,0 +1,424 @@
+/* @import url(https://fonts.googleapis.com/css?family=PT+Sans:regular|PT+Sans:300); */
+/*@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');*/
+
+html * {
+ /*font-family: PT Sans, sans-serif;   */
+}
+
+body {
+ font-size: 18px !important;   
+}
+
+.site-slogan {
+ display: none;   
+}
+
+/* Tagline Region Margin */
+.region-tagline {
+    margin-top: 0 !important;
+}
+
+.homepage-description {
+    padding: 5px;
+}
+
+/* Image Explore */
+.exp-image {
+    float: left !important;
+    margin: 10px 20px 10px 0 !important;
+}
+
+/* Magazine Teaser */
+.views-view-grid .cols-4 {
+    width: 100% !important;
+}
+
+/* Magazine Cover */
+.magazine-cover img {
+    width: 100%;
+    max-width: 192px !important;   
+}
+
+/* Menu sidebar */
+.region-left-sidebar ul li {
+    border-bottom: 1px solid #f5f5f5;
+    line-height: 35px;
+}
+
+.region-left-sidebar ul li a {
+  padding-left: 0 !important;
+}
+
+.region-left-sidebar ul li a.active {
+    font-weight: bold;
+    color:#00b3f0;
+}
+
+.region-left-sidebar ul.menu {
+    margin: 0 !important;
+}
+
+.region-left-sidebar ul.menu li {
+    list-style-type: none;
+    margin: 0 !important;
+}
+
+.region-left-sidebar ul li.leaf {
+    list-style-image: none !important;
+}
+
+.region-left-sidebar ul li ul li.leaf {
+    list-style-image: none !important;
+    list-style-type: square;
+    margin-left: 25px !important;
+}
+
+.region-left-sidebar ul li ul li ul li.leaf {
+    list-style-image: none !important;
+    list-style-type: circle;
+    margin-left: 25px !important;
+}
+
+.region-left-sidebar h3.headline {
+    margin: 0 0 25px 0 !important;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 24px;
+    font-weight: 300;
+    font-family: inherit;
+}
+
+.region-left-sidebar span.menu-toggle.fa.fa-angle-right {
+    margin-left: 5px;
+}
+
+.region-left-sidebar ul.menu li.expanded {
+    list-style-image: none;
+    padding: 0;
+}
+
+.region-left-sidebar .block-menu {
+    margin-bottom: 40px;
+}
+
+
+/* Image in Template Page */
+
+.node-explore .field-item.even img {
+    margin: 30px 0 30px 0;   
+}
+
+.node-planetary-health .field-item.even img {
+    margin: 30px 0 30px 0;  
+    width: 100%; 
+}
+
+.node-teaser .field-item.even img {
+    margin: 0;
+}
+
+.node-event .field-item.even img {
+    margin: 30px 0 30px 0;   
+}
+
+.node-sustainability .field-item.even img {
+    margin: 30px 0 30px 0;   
+}
+
+/* Field in Event */
+.node-event .field.field-name-field-event-date.field-type-text.field-label-above {
+    margin: 0 0 20px 0;
+}
+
+.node-event .field.field-name-field-event-time.field-type-text.field-label-above {
+    margin: 0 0 20px 0;
+}
+
+.node-event .field.field-name-field-event-venue.field-type-text.field-label-above {
+    margin: 0 0 20px 0;
+}
+
+.node-event .field.field-name-field-event-speaker.field-type-text-long.field-label-above {
+    margin: 0 0 20px 0;
+}
+
+.node-event .field.field-name-field-event-registration-link.field-type-link-field.field-label-above{
+    margin: 0 0 20px 0;
+}
+
+/* Author in Explore */
+.field.field-name-field-explore-author.field-type-text.field-label-hidden {
+    margin: 15px 0 0 0;
+    font-size: 13px;
+    font-style: italic;
+}
+
+
+/* Post Content H2 */
+.post-content h2 {
+    margin: 0 0 0 0 !important;   
+}
+
+/* Meta ul */
+.meta ul {
+    margin: 0 0 25px 0 !important;
+
+}
+
+.meta ul li {
+    margin: 0 5px 0 0 !important;
+    padding: 0 0 0 0 !important;
+}
+
+/* SOA Showcase */
+.titleShowCase {
+    font-size: 28px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.buttonLaunch {
+    float: left;
+    margin: 10px 0 0 0;
+}
+
+.buttonBack {
+    float: right;
+    margin: 10px 0 0 0;
+}
+
+.dividerHR {
+    border-top: 1px solid #ccc;
+    margin: 10px 0 35px 0;
+}
+
+
+/*** Home2 ***/
+
+#section-top-bar .dexp-section .topBar2 {
+    border-bottom: 1px solid #ECEEF0 !important;
+    width: 100%;
+    padding: 0 !important;
+}
+
+#block-dexp-menu-dexp-menu-block-6 .dexp-dropdown > ul > li > a {
+    color: white !important;
+    text-transform: uppercase !important;
+}
+
+#block-dexp-menu-dexp-menu-block-6 .dexp-dropdown > ul > li > a:hover {
+    color: #00b3f0;
+    border-top: 3px solid orange !important;
+}
+
+.search-toggle .fa-search {
+    color: white !important;
+}
+
+.dexp-body-inner.main-home {
+    overflow: hidden;
+}
+
+#section-header .dexp-dropdown ul ul li a.active{color:#fff !important;}
+#section-header .dexp-dropdown ul ul.menu li a{background:#eee; color:#003473 !important;}
+#section-header .dexp-dropdown ul ul.menu li a:hover{background:#003473; color:#fff !important;}
+
+.region-user1 .bx-controls-direction, .region-user2 .bx-controls-direction {
+    margin-top: -40px;
+}
+
+.region-user1 hr, .region-user2 hr {
+    margin: 20px 0 40px 0;
+}
+
+.region-user1 .views-field-title, .region-user2 .views-field-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px 0 20px 0;
+}
+
+.region-user1 { background: #F2F4F6; }
+
+.region-user10 .content {
+    margin: 0 0 10px 0;
+    padding: 10px;
+    background: #F2F4F6;
+}
+
+#clients-block-1 img {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 180px;
+}
+
+.region-tagline {
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+
+.region-user9 {
+    margin: 0 0 20px 0;
+}
+
+.top-notice-bar, .notice-bar-tengah {
+    background: #003473;   
+}
+
+.noticeBar { 
+    background: #003473; 
+    color: #fff;
+    padding: 10px 20px 10px 20px;
+    height: 130px;
+}
+
+.noticeBar1 {
+    font-weight: bold;
+    color: #fff;
+}
+
+.noticeBarCovid { 
+    background: #003473; 
+    color: #fff;
+    padding: 10px 20px 10px 20px;
+}
+
+.noticeBarCovid img {
+    width: 100%;
+}
+
+.titleNoticeBar {
+    font-weight: bold;
+    color: #fff;
+}
+
+.titleNoticeBar2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.contentNoticeBar {
+    font-size: 14px;
+    line-height: 15px;
+}
+
+.btn-depan1 {
+    font-size: 16px;
+    float: right;
+    font-weight: normal;
+    margin: 35px 0 0 0;   
+}
+
+.btn-depan2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 5px 0 0 0; 
+}
+
+.btn-depan3 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 10px 0;
+}
+
+.btn-oren { background: orange !important; color: #fff !important; }
+.btn-border-putih { border: 1px solid white !important; }
+.btn-border-grey { border: 1px solid #F2F4F6 !important; }
+
+.putih {color: white !important;}
+.clearBoth {clear: both; height:0px;}
+
+.region-user2 .views-field-title {
+    margin: 10px 0 0 0;
+}
+
+.region-user2 .views-field-created {
+    margin: 0 0 20px 0;
+    font-size:14px;
+    font-style: italic;
+    color:grey;
+}
+
+.region-user2 .views-field-field-media img {
+    max-height:150px;
+}
+
+.region-user2 .bx-viewport {
+    max-height: 500px;
+}
+
+
+
+
+/* Staff Profiles */
+@media only screen and (min-width: 992px) {
+input#edit-title.form-text {
+    width: 500px;
+    }
+}
+
+.node-staff section.post-content {
+    float: none;
+}
+
+.node-staff-admin section.post-content {
+    float: none;
+}
+
+.node-staff #dexp-accordions-wrapper .panel-body ol {
+    padding: 0 0 0 18px;
+}
+
+.ikon {
+    float: left;
+    margin: 0 35px 2px 0;
+    padding: 2px 0 0 10px;
+    width: 10px;
+}
+
+.staff tbody {
+    border: none !important;
+}
+
+.field-name-field-staff-designation .field-item-even { margin-top: -15px; }
+
+.fa-map-marker { padding: 0 0 0 4px; }
+.fa-phone { padding: 0 0 0 3px; }
+
+.node-staff .social-icons li a:hover i {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.node-staff .meta ul {
+    margin: 0 0 5px 0 !important;
+}
+
+.node-staff .social-icons .facebook i, .social-icons .facebook::before, .social-icons .twitter i, .social-icons .twitter::before, .social-icons .instagram i, .social-icons .instagram::before, .social-icons .linkedin i, .social-icons .linkedin::before {
+    font-style: normal;
+}
+
+.view-id-staff .views-exposed-form {
+    border-bottom: 1px solid lightgrey;
+    padding: 0 0 20px 0;
+}
+
+
+/* Testimonial */
+.student-testimony {
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* Programme */
+.table-header-oren {
+    background: orange;
+    color: #fff;
+    font-weight: normal;
+}
+
+.table-header-oren .table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+    background: #003572;
+}
