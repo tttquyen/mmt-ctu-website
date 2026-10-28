@@ -192,7 +192,9 @@ hr { border: 0; border-top: 1px solid var(--line); margin: var(--sp-6) 0; }
 .stack > * + * { margin-top: var(--sp-4); }
 
 /* Bố cục 2 cột: nội dung chính + cột phụ */
-.layout-aside { display: grid; gap: var(--sp-7); align-items: start; }
+/* minmax(0, 1fr): cot khong gian ra theo noi dung rong nhat (bang nhieu cot),
+   nho vay .table-wrap moi cuon ngang duoc tren man hinh hep. */
+.layout-aside { display: grid; gap: var(--sp-7); align-items: start; grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 992px) {
   .layout-aside { grid-template-columns: minmax(0, 1fr) 320px; }
   .layout-aside__side { position: sticky; top: 20px; }
@@ -750,6 +752,98 @@ tbody tr:hover { background: var(--bg-soft); }
 /* Bảng số liệu: cột số căn phải, chữ số thẳng hàng */
 .table-num td:not(:first-child), .table-num th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .table-num tfoot td { font-weight: 700; color: var(--ink); background: var(--brand-50); border-top: 2px solid var(--brand-200); }
+
+/* --------------------------------------------------------------------------
+   12c. Thành phần học vụ (nguồn: Sổ tay sinh viên của Khoa)
+        Ma trận PEO - PLO, quy trình nhiều bước, danh sách việc cần làm,
+        thang điểm chữ và lưới liên kết tới các hệ thống chính thức.
+   -------------------------------------------------------------------------- */
+
+/* Ma trận PEO - PLO: ô vuông nhỏ, đánh dấu bằng chấm tròn */
+.matrix th, .matrix td { text-align: center; padding: 9px 6px; }
+.matrix thead th { font-size: var(--fs-xs); }
+.matrix tbody td:first-child {
+  text-align: left; white-space: nowrap; font-weight: 700; color: var(--brand-800);
+}
+.matrix .on { background: var(--brand-50); }
+/* Chấm tròn thay cho chữ: ô được đánh dấu phải có aria-label để đọc màn hình */
+.matrix .on::after {
+  content: ""; display: inline-block; width: 10px; height: 10px;
+  border-radius: 50%; background: var(--brand-600);
+}
+
+/* Quy trình nhiều bước, số thứ tự do CSS tự sinh */
+.steps {
+  list-style: none; counter-reset: step; padding: 0; margin: 0 0 var(--sp-5);
+  display: grid; gap: var(--sp-4); grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+.steps li {
+  counter-increment: step; margin: 0; position: relative;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-md);
+  padding: var(--sp-4) var(--sp-5) var(--sp-4) 56px;
+  box-shadow: var(--shadow-xs); font-size: var(--fs-sm); color: var(--ink-muted);
+}
+.steps li::before {
+  content: counter(step); position: absolute; left: var(--sp-4); top: var(--sp-4);
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--brand-600); color: #fff;
+  font-family: var(--font-head); font-weight: 700; font-size: var(--fs-xs);
+  display: grid; place-items: center;
+}
+.steps b { display: block; color: var(--ink); font-size: var(--fs-base); margin-bottom: 3px; }
+/* Ghi de .prose ul/.prose ol de bo thut dau dong mac dinh */
+.prose .steps, .prose .checklist { padding-left: 0; }
+
+/* Danh sách việc cần làm */
+.checklist {
+  list-style: none; padding: 0; margin: 0 0 var(--sp-5);
+  display: grid; gap: var(--sp-3); grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+.checklist li {
+  margin: 0; padding-left: 32px; position: relative;
+  font-size: var(--fs-sm); color: var(--ink-soft);
+}
+.checklist li::before {
+  content: "\2713"; position: absolute; left: 0; top: 1px;
+  width: 20px; height: 20px; border-radius: var(--r-sm);
+  background: var(--success); color: #fff; font-size: 12px;
+  display: grid; place-items: center;
+}
+
+/* Thang điểm chữ */
+.grades {
+  display: grid; gap: var(--sp-2); margin-bottom: var(--sp-4);
+  grid-template-columns: repeat(auto-fit, minmax(86px, 1fr));
+}
+.grades div {
+  border: 1px solid var(--line); border-top: 4px solid var(--brand-500);
+  border-radius: var(--r-md); background: #fff; padding: var(--sp-3) var(--sp-2);
+  text-align: center; box-shadow: var(--shadow-xs);
+}
+.grades b {
+  display: block; font-family: var(--font-head); font-weight: 800;
+  font-size: var(--fs-lg); color: var(--brand-800); line-height: 1.1;
+}
+.grades span {
+  display: block; font-size: var(--fs-xs); color: var(--ink-muted);
+  margin-top: 2px; font-variant-numeric: tabular-nums;
+}
+.grades .is-fail { border-top-color: var(--util-amber); }
+
+/* Lưới liên kết tới các hệ thống chính thức của Trường */
+.linkgrid {
+  display: grid; gap: var(--sp-3); margin-bottom: var(--sp-5);
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+}
+.linkgrid a {
+  display: block; padding: var(--sp-4); border-radius: var(--r-md);
+  border: 1px solid var(--line); background: #fff; box-shadow: var(--shadow-xs);
+  text-decoration: none;
+  transition: border-color .15s var(--ease), transform .15s var(--ease);
+}
+.linkgrid a:hover { border-color: var(--accent); transform: translateY(-2px); }
+.linkgrid b { display: block; color: var(--brand-700); font-family: var(--font-head); font-weight: 700; }
+.linkgrid span { display: block; font-size: var(--fs-xs); color: var(--ink-muted); margin-top: 2px; }
 
 /* --------------------------------------------------------------------------
    13. Dải kêu gọi hành động
