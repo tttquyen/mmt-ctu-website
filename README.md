@@ -15,7 +15,7 @@ công cụ build.
 
 ```
 .
-├─ index.html      Trang chọn ngôn ngữ — CHỈ dùng cho bản thử trên GitHub Pages
+├─ index.html      Chuyển thẳng sang mmt/mmt.html — CHỈ dùng cho bản thử trên GitHub Pages
 ├─ .nojekyll       Tắt Jekyll của GitHub Pages
 ├─ mmt/            Bản tiếng Việt + toàn bộ tài nguyên dùng chung
 │  ├─ assets/      main.css và site.js — dùng chung cho CẢ HAI ngôn ngữ
@@ -54,5 +54,4 @@ trong [`mmt/README.md`](mmt/README.md).
 ## Ghi chú về SEO khi chạy thử
 
 Mọi trang đều khai báo `canonical` trỏ về `cit.ctu.edu.vn`, nên bản thử trên
-GitHub Pages không bị Google lập chỉ mục trùng với bản chính thức. Trang
-`index.html` ở gốc còn đặt thêm `noindex`.
+GitHub Pages không bị Google lập chỉ mục trùng với bản chính thức.
