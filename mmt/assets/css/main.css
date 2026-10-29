@@ -227,7 +227,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: var(--sp-6) 0; }
 
 /* ----- Masthead ----- */
 .masthead {
-  position: relative;
+  position: relative; z-index: 40;   /* menu thả xuống nằm trên nội dung trang */
   background: linear-gradient(100deg, #0b203b 0%, #143c6e 36%, #1f5ca9 74%, #2a72c4 100%);
   color: #fff;
 }
@@ -332,6 +332,8 @@ hr { border: 0; border-top: 1px solid var(--line); margin: var(--sp-6) 0; }
   .masthead__inner { min-height: 96px; padding-block: var(--sp-4); }
   .masthead__brand { max-width: none; }
   .masthead__navwrap::before { display: none; }
+  /* Menu thả xuống phải định vị theo cả khung header, không theo khung nút Menu */
+  .masthead__navwrap, .masthead__navwrap > nav { position: static; }
   .nav__toggle { display: inline-flex; }
   .nav__menu {
     position: absolute; top: 100%; left: 0; right: 0; z-index: 60;
