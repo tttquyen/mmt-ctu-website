@@ -1,0 +1,10 @@
+﻿"# Nguồn: SAR 2026, mục 2.8.3. Không đăng mã số sinh viên (bảo vệ dữ liệu cá nhân)."
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+Năm | Year,Tên đề tài | Project,Sinh viên thực hiện | Students,Số SV | No.
+2024,Xây dựng ứng dụng nhận dạng các loại gạo qua hình ảnh trên thiết bị di động | A mobile application for rice variety recognition from images,Trần Thanh Thiên,1
+2024,Hệ thống thu thập dữ liệu nhật ký hỗ trợ phát hiện xâm nhập của ransomware dựa trên phần mềm nguồn mở | An open-source log collection system supporting ransomware intrusion detection,Bạch Toàn Mỹ,1
+2026,Đề xuất giải pháp học sâu mờ để phát hiện tấn công mạng (TSV2026-130) | A fuzzy deep-learning approach to network attack detection (TSV2026-130),"Nguyễn Phú Bình, Nguyễn Thị Huỳnh Như, Hà Đức Anh",3
+2026,Triển khai mô hình máy học và xây dựng ứng dụng di động khuyến nghị tối ưu hoá lượng phân bón NPK cho canh tác lúa Sóc Trăng (TSV2026-126) | A machine-learning mobile application recommending optimal NPK fertiliser for rice cultivation in Soc Trang (TSV2026-126),"Nguyễn Đăng Khoa, Nguyễn Thành Tấn",2
+2026,Công cụ phát hiện mã độc trong file hình ảnh (TSV2026-133) | A tool for detecting malware hidden in image files (TSV2026-133),"Thái Ngân Anh, Nguyễn Thị Lan Anh, Trương Đăng Huy, Nguyễn Thị Tuyết Sương, Nguyễn Bảo Trân",5
+=Tổng cộng | Total,05 đề tài | 5 projects,,12

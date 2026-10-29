@@ -1,0 +1,9 @@
+﻿"# Nguồn: khảo sát việc làm sinh viên tốt nghiệp của ĐHCT (SAR 2026, mục 2.8.2)."
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+Năm | Year,Tốt nghiệp | Graduates,Phản hồi | Responses,Tỉ lệ phản hồi | Response rate,Có việc làm | Employed,Học tiếp | Further study,Chưa có việc | Not yet employed,Có việc hoặc học tiếp | Employed or studying
+2020,77,57,74.0%,54,1,2,96.5%
+2021,67,51,76.1%,48,3,0,100%
+2022,69,69,100%,58,8,3,95.7%
+2023,71,68,95.8%,57,0,11,83.8%
+2024,66,60,90.9%,56,4,0,100%

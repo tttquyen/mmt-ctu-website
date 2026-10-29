@@ -35,7 +35,7 @@ site_cnc/
 │  │  └─ js/site.js         → Menu, tìm kiếm, chân trang — CẢ HAI ngôn ngữ
 │  ├─ imgs/                 → Hình ảnh dùng chung cho cả hai bản
 │  ├─ cv/                   → Lý lịch khoa học (PDF)
-│  └─ legacy/               → Bản cũ (HTML + 23 tệp CSS cũ), có thể xoá
+│  └─ data/                 → Dữ liệu động (CSV) của các bảng, thẻ nhân sự
 │
 └─ enmmt/                   BẢN TIẾNG ANH
    ├─ index.html            → chuyển hướng sang enmmt.html
@@ -54,8 +54,7 @@ site_cnc/
    │  └─ enptnattt.html     → Information Security Lab
    ├─ ensv.html             → For Students
    ├─ engv.html             → People
-   ├─ imgs/                 → (không còn dùng, có thể xoá)
-   └─ legacy/               → Bản cũ, có thể xoá
+   └─ imgs/                 → (không còn dùng, không đưa lên kho, có thể xoá)
 ```
 
 > **Quan trọng:** bản tiếng Anh dùng chung `mmt/assets/` và `mmt/imgs/`. Hai thư
@@ -75,6 +74,8 @@ site_cnc/
 | Ban lãnh đạo ở chân trang | `site.js` → `CONFIG.<lang>.leaders` |
 | Màu sắc, phông chữ, khoảng cách | `mmt/assets/css/main.css` → mục **1. Design tokens** |
 | Banner / logo / dải menu vát chéo | `main.css` → mục **4. Masthead** |
+| Ẩn / hiện các ô "Đang cập nhật" | `site.js` → `COMMON.hidePending` (true = ẩn) |
+| Số liệu trong bảng, danh sách nhân sự, đối tác | tệp `mmt/data/<tên>.csv` hoặc Google Sheet (xem mục dưới) |
 | Nội dung từng trang | tệp `.html` tương ứng |
 
 Header và footer được sinh bằng JavaScript từ **một nguồn duy nhất** là
@@ -141,22 +142,55 @@ Cả hai tải từ Google Fonts và đều có bộ ký tự tiếng Việt.
 Khẩu hiệu "Cộng đồng · Toàn diện · Ưu việt" (EN: Community · Totality ·
 Uniqueness) đặt ở chân trang, sửa tại `site.js` → `CONFIG.<lang>.slogan`.
 
+## Dữ liệu động — cập nhật bảng không cần sửa HTML
+
+Các bảng hay thay đổi được vẽ từ tệp CSV trong `mmt/data/` (dùng chung cho cả hai ngôn ngữ).
+Trong HTML, chỗ đặt bảng chỉ là `<div data-table="ten-tep"></div>`; danh sách nhân sự là
+`<div data-people="nhan-su" data-group="co-huu"></div>`.
+
+| Tệp | Hiển thị ở |
+|---|---|
+| `tot-nghiep`, `viec-lam`, `viec-lam-chi-tiet`, `dat-cdr`, `hai-long`, `cong-bo` | `ketqua.html` |
+| `matran-mmt`, `matran-attt` (ma trận học phần – PLO, I/R/M) | `cdr.html` |
+| `ke-hoach-mmt`, `ke-hoach-attt` (kế hoạch 13 học kỳ) | `ctdtmmt.html`, `ctdtattt.html` |
+| `cac-khoa` (CTĐT các khóa trên trang ĐHCT) | `ctdt.html` |
+| `nhan-su`, `nhan-su-thong-ke` | `gv.html` |
+| `de-tai-gv`, `de-tai-sv` | `nckh.html` |
+| `tuyen-sinh` | `ts.html` |
+| `khuyen-nghi-aun` | `dbcl.html` |
+| `doi-tac` | `gt.html` |
+
+**Quy ước CSV:** ô song ngữ viết `Tiếng Việt | English`; dòng bắt đầu bằng `#` là ghi chú,
+`##` là dòng nhóm (vd. `## Học kỳ 1 | Semester 1`), `=` là dòng tổng; số thập phân dùng dấu chấm
+(`70.71%`), bản tiếng Việt tự đổi thành dấu phẩy. Mã học phần trong ma trận và kế hoạch tự gắn link
+đề cương `http://www.cit.ctu.edu.vn/decuong/<mã>.pdf`. Ô dạng `[chữ](https://...)` thành liên kết.
+
+**Dùng Google Sheets thay cho tệp CSV:**
+1. Tạo một bảng tính, mỗi tab ứng với một tệp (dán nội dung CSV vào, giữ nguyên dòng tiêu đề).
+2. *Tệp → Chia sẻ → Công bố lên web* → chọn tab → định dạng *CSV* → *Công bố*.
+3. Dán URL nhận được vào `site.js` → `COMMON.dataSources['ten-tep']`.
+
+Website đọc Google Sheet trước; nếu không đọc được thì dùng lại tệp CSV trong `mmt/data/`.
+Thay đổi trên Google Sheets hiện lên website sau vài phút, không cần đẩy mã.
+
 ## Các trang phục vụ kiểm định AUN-QA
 
-Bốn trang dưới đây được dựng theo 8 tiêu chí của **AUN-QA Programme Level v4.0**.
-Khung trang đã xong; phần số liệu để trống, đánh dấu “Đang cập nhật”. Trong mỗi
-tệp có một khối ghi chú HTML nói rõ cần điền gì và lấy dữ liệu từ đâu.
+Các trang dưới đây bám theo 8 tiêu chuẩn của **AUN-QA Programme Level v4.0**; số liệu lấy từ
+Báo cáo tự đánh giá AUN-QA chu kỳ II (2026) của ngành Mạng máy tính và Truyền thông dữ liệu.
 
-| Trang | Tiêu chí AUN-QA | Cần điền |
+| Trang | Tiêu chuẩn AUN-QA | Trạng thái |
 |---|---|---|
-| `cdr.html` / `encdr.html` | 1 — Expected Learning Outcomes | ✅ Đã có PEO + PLO của 3 ngành. Còn thiếu ma trận PLO ↔ học phần |
-| `dayhoc.html` / `endayhoc.html` | 3 — Teaching and Learning · 4 — Student Assessment | Triết lý giáo dục, trọng số đánh giá, thang điểm, rubric, phúc khảo |
-| `ketqua.html` / `enketqua.html` | 8 — Output and Outcomes | ✅ Đã có số liệu NCKH. Còn thiếu tỉ lệ tốt nghiệp, việc làm, khảo sát nhà tuyển dụng |
-| `sv.html` / `ensv.html` | 6 — Student Support Services | Cố vấn học tập, học bổng, câu lạc bộ, biểu mẫu |
+| `gt.html`, `dbcl.html` | Sứ mạng, tầm nhìn; kiểm định, PDCA, khuyến nghị 2021 | ✅ |
+| `cdr.html` | 1 — Expected Learning Outcomes | ✅ PEO, PLO, ma trận PEO–PLO và học phần–PLO (MMT, ATTT) |
+| `ctdtmmt.html`, `ctdtattt.html`, `ctdt.html` | 2 — Programme Structure and Content | ✅ Kế hoạch 13 học kỳ, đề cương, CTĐT các khóa |
+| `dayhoc.html` | 3 — Teaching and Learning · 4 — Student Assessment | ✅ |
+| `gv.html` | 5 — Academic Staff | ✅ Còn thiếu thông tin ThS. Đoàn Minh Quý, KS. Vũ Xuân Lộc |
+| `sv.html` | 6 — Student Support Services | Còn thiếu danh sách cố vấn học tập, biểu mẫu |
+| `ptn.html`, `ptnmmt.html` | 7 — Facilities and Infrastructure | ✅ Còn thiếu thiết bị PTN An toàn thông tin |
+| `ketqua.html` | 8 — Output and Outcomes | ✅ |
 
-Cách điền: mở tệp, tìm chữ `Đang cập nhật` (hoặc `Being updated` ở bản tiếng Anh),
-thay bằng nội dung thật, rồi **xoá khối `<div class="callout callout--warm">`**
-tương ứng. Với các bảng, thêm/bớt dòng `<tr>` theo số liệu thực tế.
+Các khối còn thiếu được gắn thuộc tính `data-pending` và đang **ẩn** (`COMMON.hidePending = true`).
+Khi bổ sung nội dung: thay chữ trong khối rồi xoá thuộc tính `data-pending`.
 
 ### Nguồn số liệu nghiên cứu khoa học
 

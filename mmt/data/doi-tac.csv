@@ -1,0 +1,25 @@
+﻿"# Nguồn: trang Hợp tác của Trường CNTT&TT, Báo cáo tự đánh giá AUN-QA 2026, trang Nghiên cứu của Khoa."
+"# Thêm, bớt đối tác bằng cách sửa các dòng dưới đây."
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+Đối tác | Partner,Quốc gia | Country,Lĩnh vực hợp tác | Cooperation
+## Doanh nghiệp | Industry
+"TMA Solutions, IBM Việt Nam, Axon Active, Global CyberSoft, FPT Software, Mekong Soft, Harvey Nash, Renesas",Việt Nam | Vietnam,"Thực tập, tuyển dụng, học bổng, đào tạo kỹ năng | Internships, recruitment, scholarships, skills training"
+"AnyConnect, Expara, BE Solutions",Singapore,"Thực tập, tuyển dụng | Internships, recruitment"
+Hơn 50 doanh nghiệp đã ký thỏa thuận hợp tác với Trường CNTT&TT; 185 lượt doanh nghiệp dự Ngày hội việc làm 2021–2026 | More than 50 companies with cooperation agreements with the College; 185 company participations in job fairs 2021–2026,Việt Nam | Vietnam,Ngày hội việc làm hai đợt mỗi năm | Job fair twice a year
+"## Cơ quan quản lý, địa phương | Government and local authorities"
+"Sở Thông tin và Truyền thông, Sở Khoa học và Công nghệ TP. Cần Thơ; các tỉnh An Giang, Tiền Giang | Can Tho City Departments of ICT and of Science & Technology; An Giang and Tien Giang provinces",Việt Nam | Vietnam,"Đề tài, chuyển đổi số, chuyển giao công nghệ | Research projects, digital transformation, technology transfer"
+## Trường đại học trong nước | Universities in Vietnam
+"ĐH An Giang, ĐH Bách khoa và ĐH Khoa học Tự nhiên (ĐHQG TP.HCM), Viện IFI Hà Nội | An Giang University, HCMUT and HCMUS (VNU-HCM), IFI Hanoi",Việt Nam | Vietnam,"Đào tạo, nghiên cứu | Teaching and research"
+"Trường ĐH Sư phạm Kỹ thuật Vĩnh Long, Trường ĐH Trà Vinh, Trường ĐH Đồng Tháp, Học viện Công nghệ Bưu chính Viễn thông | Vinh Long University of Technology Education, Tra Vinh University, Dong Thap University, Posts and Telecommunications Institute of Technology",Việt Nam | Vietnam,"Đồng tác giả công bố, thẩm định chương trình | Joint publications, programme appraisal"
+"## Trường đại học, viện nghiên cứu nước ngoài | International universities and institutes"
+"Université de Nantes, Université de Lyon, Télécom Bretagne, IRD, La Rochelle Université, AUF",Pháp | France,"Dự án, học bổng sau đại học, nghiên cứu | Projects, postgraduate scholarships, research"
+"Université d’Artois, Université de Montpellier, Université de Lorraine, Université Blaise Pascal, Université de Rennes 1",Pháp | France,"Đồng tác giả công bố, hợp tác phòng thí nghiệm | Joint publications, laboratory cooperation"
+Đại học Québec | Université du Québec,Canada,Hợp tác phòng thí nghiệm | Laboratory cooperation
+Asia Pacific University (APU),Malaysia,"Giao lưu sinh viên, Hackathon, bồi dưỡng giảng viên (2024) | Student exchange, hackathon, staff training (2024)"
+"KAIST, DGIST, KENTECH, Chung-Ang University",Hàn Quốc | Korea,Giao lưu học thuật sinh viên (2023–2025) | Student academic exchanges (2023–2025)
+"Kyoto Institute of Technology, University of Tokyo",Nhật Bản | Japan,"Trao đổi, học bổng | Exchanges, scholarships"
+"National Chiao Tung University, National Central University",Đài Loan | Taiwan,"Trao đổi, học bổng | Exchanges, scholarships"
+"Prince of Songkla University, Chulalongkorn University",Thái Lan | Thailand,"Trao đổi, hội thảo | Exchanges, conferences"
+Bournemouth University,Vương quốc Anh | United Kingdom,Hợp tác đào tạo | Academic cooperation
+"HAN University of Applied Sciences, TU Delft",Hà Lan | Netherlands,"Hợp tác đào tạo, trao đổi | Academic cooperation, exchanges"

@@ -16,12 +16,13 @@ công cụ build.
 ```
 .
 ├─ index.html      Chuyển thẳng sang mmt/mmt.html — CHỈ dùng cho bản thử trên GitHub Pages
+├─ 404.html        Trang báo lỗi "không tìm thấy" (GitHub Pages tự dùng)
 ├─ .nojekyll       Tắt Jekyll của GitHub Pages
 ├─ mmt/            Bản tiếng Việt + toàn bộ tài nguyên dùng chung
 │  ├─ assets/      main.css và site.js — dùng chung cho CẢ HAI ngôn ngữ
+│  ├─ data/        Dữ liệu động (CSV) của các bảng — xem mmt/README.md
 │  ├─ imgs/        Ảnh dùng chung cho cả hai ngôn ngữ
-│  ├─ docs/        CTĐT chính thức (PDF) và bảng thống kê NCKH (Excel)
-│  └─ legacy/      Bản website cũ, giữ để đối chiếu
+│  └─ docs/        CTĐT chính thức (PDF)
 └─ enmmt/          Bản tiếng Anh (dùng chung assets và ảnh của mmt/)
 ```
 
@@ -43,7 +44,8 @@ Chép **nội dung bên trong** `mmt/` lên thư mục `mmt` của máy chủ, v
 thư mục `enmmt`. Không cần chép `index.html`, `.nojekyll`, `.gitignore` và
 `README.md` ở thư mục gốc — đó là tệp phục vụ kho mã và bản thử nghiệm.
 
-Có thể bỏ qua `mmt/legacy/` và `enmmt/legacy/` (bản website cũ).
+Có thể chép thêm `404.html` và khai báo `ErrorDocument 404` trên máy chủ để dùng trang báo lỗi.
+Tệp Excel (`*.xlsx`) không được đưa lên kho: dữ liệu nội bộ có mã số sinh viên.
 
 ## Sau khi sửa CSS hoặc JavaScript
 

@@ -1,0 +1,99 @@
+﻿"# Ma trận đóng góp của học phần vào chuẩn đầu ra (I: giới thiệu, R: tăng cường, M: thông thạo)."
+"# Nguồn: Bản mô tả CTĐT áp dụng từ Khóa 51 (QĐ 3922/QĐ-ĐHCT ngày 15/8/2025). 91 học phần, 275 liên kết."
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+TT | No.,Mã HP | Code,Tên học phần | Course,PLO1,PLO2,PLO3,PLO4,PLO5,PLO6,PLO7,PLO8,PLO9,PLO10
+## Khối kiến thức giáo dục đại cương | General education
+1,QP010E,Giáo dục quốc phòng và An ninh 1 (*) | National Defence and Security Education 1 (*),I,,,,,,,,,I
+2,QP011E,Giáo dục quốc phòng và An ninh 2 (*) | National Defence and Security Education 2 (*),R,,,,,,,,,I
+3,QP012,Giáo dục quốc phòng và An ninh 3 (*) | National Defence and Security Education 3 (*),R,,,,,,,,,R
+4,QP013,Giáo dục quốc phòng và An ninh 4 (*) | National Defence and Security Education 4 (*),R,,,,,,,,,R
+5,TC100,Giáo dục thể chất 1+2+3 (*) | Physical Education 1+2+3 (*),R,,,,,,,,R,I
+6,XH023,Anh văn căn bản 1 (*) | Basic English 1 (*),,,,,,,,I,I,I
+7,XH024,Anh văn căn bản 2 (*) | Basic English 2 (*),,,,,,,,R,I,I
+8,XH025,Anh văn căn bản 3 (*) | Basic English 3 (*),,,,,,,,M,R,I
+9,XH031,Anh văn tăng cường 1 (*) | Intensive English 1 (*),,,,,,,,M,R,I
+10,XH032,Anh văn tăng cường 2 (*) | Intensive English 2 (*),,,,,,,,M,R,I
+11,XH033,Anh văn tăng cường 3 (*) | Intensive English 3 (*),,,,,,,,M,R,I
+12,FL001,Pháp văn căn bản 1 (*) | Basic French 1 (*),,,,,,,,I,I,I
+13,FL002,Pháp văn căn bản 2 (*) | Basic French 2 (*),,,,,,,,R,I,I
+14,FL003,Pháp văn căn bản 3 (*) | Basic French 3 (*),,,,,,,,M,R,I
+15,FL007,Pháp văn tăng cường 1 (*) | Intensive French 1 (*),,,,,,,,M,R,I
+16,FL008,Pháp văn tăng cường 2 (*) | Intensive French 2 (*),,,,,,,,M,R,I
+17,FL009,Pháp văn tăng cường 3 (*) | Intensive French 3 (*),,,,,,,,M,R,I
+18,ML014,Triết học Mác – Lênin | Marxist–Leninist Philosophy,I,,,,,,,,,I
+19,ML016,Kinh tế chính trị Mác – Lênin | Marxist–Leninist Political Economy,I,,,,,,,,,I
+20,ML018,Chủ nghĩa xã hội khoa học | Scientific Socialism,I,,,,,,,,,I
+21,ML019,Lịch sử Đảng Cộng sản Việt Nam | History of the Communist Party of Vietnam,I,,,,,,,,,I
+22,ML021,Tư tưởng Hồ Chí Minh | Ho Chi Minh Ideology,I,,,,,,,,,I
+23,KL001E,Pháp luật đại cương | Introduction to Law,I,,,,,,,,,I
+24,ML007,Logic học đại cương | Introduction to Logic,,R,,,,,,,,I
+25,XH028,Xã hội học đại cương | Introduction to Sociology,I,,,,,,,,,I
+26,XH011,Cơ sở văn hóa Việt Nam | Fundamentals of Vietnamese Culture,I,,,,,,,,,I
+27,XH012,Tiếng Việt thực hành | Practical Vietnamese,I,,,,,,,,R,I
+28,XH014,Văn bản và lưu trữ học đại cương | Introduction to Records and Archives,I,,,,,,,,,I
+29,KN001E,Kỹ năng mềm | Soft Skills,,,,,,,,,M,I
+30,KN002E,Đổi mới sáng tạo và khởi nghiệp | Innovation and Entrepreneurship,,,,,,,,,R,I
+31,TN001,Vi – Tích phân A1 | Calculus A1,,I,,,,,,,,I
+32,TN002,Vi – Tích phân A2 | Calculus A2,,R,,,,,,,,I
+33,TN010,Xác suất thống kê | Probability and Statistics,,M,,,,,,,,I
+34,TN012,Đại số tuyến tính và hình học | Linear Algebra and Geometry,,R,,,,,,,,I
+35,CT100,Kỹ năng học đại học | University Study Skills,,,,,,,,,R,R
+36,CT005,Nền tảng công nghệ số | Digital Technology Foundations,,R,,,,,,,,I
+## Khối kiến thức cơ sở ngành | Foundation knowledge
+37,CT172E,Toán rời rạc | Discrete Mathematics,,,M,,,,,,,I
+38,CT101,Lập trình căn bản A | Fundamentals of Programming A,,,R,,,,I,,,I
+39,CT177,Cấu trúc dữ liệu | Data Structures,,,R,,,,I,,,I
+40,CT175,Lý thuyết đồ thị | Graph Theory,,,R,,,,I,,,I
+41,CT174,Phân tích và thiết kế thuật toán | Algorithm Analysis and Design,,,M,,,,R,,,I
+42,CT180,Cơ sở dữ liệu | Databases,,,R,,,,R,,,I
+43,CT173,Kiến trúc máy tính | Computer Architecture,,,R,,,,,,,I
+44,CT178,Nguyên lý hệ điều hành | Principles of Operating Systems,,,R,,,,I,,,I
+45,CT112,Mạng máy tính | Computer Networks,,,R,,,R,,,,I
+46,CT176,Lập trình hướng đối tượng | Object-Oriented Programming,,,R,,,,R,,,I
+47,CT296,Phân tích và thiết kế hệ thống thông tin | Information Systems Analysis and Design,,,R,,,,R,,,I
+48,CT182,Ngôn ngữ mô hình hóa | Modelling Languages,,,R,,,,R,,,I
+49,CT179,Quản trị hệ thống | System Administration,,,R,,,R,,,,I
+50,CT188,Nhập môn lập trình Web | Introduction to Web Programming,,,R,,,,R,,,I
+51,CT190E,Nhập môn trí tuệ nhân tạo | Introduction to Artificial Intelligence,,,R,,,,R,,,I
+## Khối kiến thức chuyên ngành | Specialised knowledge
+52,CT335,Thiết kế và cài đặt mạng | Network Design and Implementation,,,,M,,M,,,,R
+53,CT212,Quản trị mạng | Network Administration,,,,R,,R,,,,R
+54,CT428,Lập trình Web | Web Programming,,,,,R,,M,,R,R
+55,CT221,Lập trình mạng | Network Programming,,,,,R,,R,,,R
+56,CT211,An ninh mạng | Network Security,,,,R,,R,,,,R
+57,CT126,Lý thuyết xếp hàng | Queueing Theory,,,,R,,,,,,I
+58,CT127,Lý thuyết thông tin | Information Theory,,,,R,,,,,,I
+59,CT479,Phương pháp tính | Numerical Methods,,,,R,,I,,,,I
+60,CT121,Tin học lý thuyết | Theory of Computation,,,,R,,I,,,,I
+61,CT224E,Công nghệ J2EE | J2EE Technology,,,,,R,,R,,,I
+62,CT225,Lập trình Python | Python Programming,,,,,R,,R,,,I
+63,CT274,Lập trình cho thiết bị di động | Mobile Device Programming,,,,,R,,R,,,I
+64,CT226E,Niên luận cơ sở mạng máy tính và truyền thông | Basic Project in Computer Networks and Communications,,,R,I,I,R,R,R,R,R
+65,CT439E,Niên luận mạng máy tính và truyền thông | Project in Computer Networks and Communications,,,,R,R,R,R,R,R,M
+66,CT233,Điện toán đám mây | Cloud Computing,,,,R,I,M,I,,,R
+67,CT517E,Thực tập doanh nghiệp – MMT&TTDL | Company Internship – Computer Networks and Data Communication,,,,M,M,M,M,,M,M
+68,CT227,Kỹ thuật phát hiện tấn công mạng | Network Intrusion Detection Techniques,,,,R,R,R,R,,,R
+69,CT228,Tường lửa | Firewalls,,,,R,,R,,,,R
+70,CT490,An ninh Web | Web Security,,,,R,,R,,,M,R
+71,CT222,An toàn hệ thống | System Security,,,,R,,R,,,,R
+72,CT344,Giải quyết sự cố mạng | Network Troubleshooting,,,,M,,M,,,,R
+73,CT232E,Đánh giá hiệu năng mạng | Network Performance Evaluation,,,,R,,M,,,,R
+74,CT207E,Phát triển phần mềm mã nguồn mở | Open-Source Software Development,,,R,,I,,R,,R,R
+75,CT230,Phát triển ứng dụng hướng dịch vụ | Service-Oriented Application Development,,,,,R,,M,,R,M
+76,CT231,Lập trình song song | Parallel Programming,,,,,R,,R,,,R
+77,CT098,Phát triển ứng dụng IoT | IoT Application Development,,,,,R,,R,,,R
+78,CT482,Xử lý dữ liệu lớn | Big Data Processing,,,,,R,,R,,,R
+79,CT555E,Luận văn tốt nghiệp – TT&MMT | Graduation Thesis – Computer Networks and Communications,,,,M,M,M,M,R,M,M
+80,CT507E,Tiểu luận tốt nghiệp – TT&MMT | Graduation Essay – Computer Networks and Communications,,,,R,R,M,M,R,R,M
+81,CT338,Mạng không dây và di động | Wireless and Mobile Networks,,,,R,,,,,,R
+82,CT223,Quản lý dự án phần mềm | Software Project Management,,,,,R,,R,,,R
+83,CT235,Quản trị mạng trên MS Windows | Network Administration on MS Windows,,,,R,,R,,,,R
+84,CT205,Quản trị cơ sở dữ liệu | Database Administration,,,,,R,,R,,,R
+85,CT297,Pháp y máy tính | Computer Forensics,,,,M,,M,,,,R
+86,CT251,Phát triển ứng dụng trên Windows | Application Development on Windows,,,,,R,,R,,,R
+87,CT206,Phát triển ứng dụng trên Linux | Application Development on Linux,,,,,R,,R,,,R
+88,CT238E,Phân lớp dữ liệu lớn | Big Data Classification,,,,,R,,R,,,R
+89,CT332,Trí tuệ nhân tạo | Artificial Intelligence,,,,,M,,M,,,R
+90,CT294,Máy học ứng dụng | Applied Machine Learning,,,,,M,,M,,,R
+91,CT273,Giao diện người – máy | Human–Computer Interaction,,,,,R,,R,,,R

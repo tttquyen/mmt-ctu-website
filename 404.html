@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Không tìm thấy trang — Khoa MMT &amp; TT, ĐHCT</title>
+<!-- Trang 404 tự chứa: GitHub Pages tự dùng tệp này cho mọi đường dẫn không tồn tại.
+     Trên máy chủ cit.ctu.edu.vn cần khai báo ErrorDocument 404 trỏ tới tệp này. -->
+<style>
+  :root { --brand: #1f5ca9; --ink: #1d2733; --muted: #5b6878; --bg: #f0f5fa; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--ink);
+         font: 16px/1.6 "Readex Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding: 24px 16px; }
+  main { max-width: 560px; width: 100%; background: #fff; border-top: 6px solid var(--brand); border-radius: 12px;
+         padding: 32px 28px; box-shadow: 0 10px 30px rgba(20, 60, 110, .08); }
+  .code { font-size: 64px; font-weight: 800; color: var(--brand); line-height: 1; margin: 0 0 8px; }
+  h1 { font-size: 22px; margin: 0 0 6px; }
+  p { margin: 0 0 14px; color: var(--muted); }
+  ul { padding-left: 20px; margin: 0 0 18px; }
+  a { color: var(--brand); font-weight: 600; }
+  .en { border-top: 1px solid #dde7f3; padding-top: 14px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<main>
+  <p class="code">404</p>
+  <h1>Không tìm thấy trang</h1>
+  <p>Trang bạn tìm có thể đã được đổi tên hoặc chuyển sang địa chỉ mới trong đợt cập nhật website của
+     Khoa Mạng máy tính và Truyền thông.</p>
+  <ul>
+    <li><a data-to="mmt/mmt.html" href="mmt/mmt.html">Trang chủ của Khoa</a></li>
+    <li><a data-to="mmt/ctdt.html" href="mmt/ctdt.html">Chương trình đào tạo</a></li>
+    <li><a data-to="mmt/sv.html" href="mmt/sv.html">Dành cho sinh viên</a></li>
+    <li><a data-to="mmt/ts.html" href="mmt/ts.html">Tuyển sinh</a></li>
+  </ul>
+  <div class="en">
+    <h1>Page not found</h1>
+    <p>The page may have been renamed or moved. Go to the <a data-to="enmmt/enmmt.html" href="enmmt/enmmt.html">English home page</a>.</p>
+  </div>
+</main>
+<script>
+  /* Tìm thư mục gốc của website để liên kết đúng dù lỗi xảy ra ở cấp thư mục nào */
+  (function () {
+    var p = location.pathname, m = p.match(/^(.*?\/)(?:mmt|enmmt)\//), root = '/';
+    if (m) root = m[1];
+    else if (/\.github\.io$/.test(location.hostname)) root = '/' + p.split('/')[1] + '/';
+    document.querySelectorAll('a[data-to]').forEach(function (a) { a.href = root + a.getAttribute('data-to'); });
+  })();
+</script>
+</body>
+</html>

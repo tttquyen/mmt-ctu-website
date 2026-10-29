@@ -1,0 +1,98 @@
+﻿"# Ma trận đóng góp của học phần vào chuẩn đầu ra (I: giới thiệu, R: tăng cường, M: thông thạo)."
+"# Nguồn: Bản mô tả CTĐT áp dụng từ Khóa 51 (QĐ 3922/QĐ-ĐHCT ngày 15/8/2025). 90 học phần, 363 liên kết."
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+TT | No.,Mã HP | Code,Tên học phần | Course,PLO1,PLO2,PLO3,PLO4,PLO5,PLO6,PLO7,PLO8,PLO9,PLO10,PLO11,PLO12,PLO13,PLO14,PLO15
+## Khối kiến thức giáo dục đại cương | General education
+1,QP010E,Giáo dục quốc phòng và An ninh 1 (*) | National Defence and Security Education 1 (*),I,,,,,,,,,,,,,I,I
+2,QP011E,Giáo dục quốc phòng và An ninh 2 (*) | National Defence and Security Education 2 (*),R,,,,,,,,,,,,,R,I
+3,QP012,Giáo dục quốc phòng và An ninh 3 (*) | National Defence and Security Education 3 (*),R,,,,,,,,,,,,,R,R
+4,QP013,Giáo dục quốc phòng và An ninh 4 (*) | National Defence and Security Education 4 (*),M,,,,,,,,,,,,,R,R
+5,TC100,Giáo dục thể chất 1+2+3 (*) | Physical Education 1+2+3 (*),M,,,,,,,,,,,,,,
+6,XH023,Anh văn căn bản 1 (*) | Basic English 1 (*),,,I,,,,,,,,,I,,,I
+7,XH024,Anh văn căn bản 2 (*) | Basic English 2 (*),,,R,,,,,,,,,R,,,I
+8,XH025,Anh văn căn bản 3 (*) | Basic English 3 (*),,,M,,,,,,,,,M,,,I
+9,XH031,Anh văn tăng cường 1 (*) | Intensive English 1 (*),,,M,,,,,,,,,M,,,I
+10,XH032,Anh văn tăng cường 2 (*) | Intensive English 2 (*),,,M,,,,,,,,,M,,,I
+11,XH033,Anh văn tăng cường 3 (*) | Intensive English 3 (*),,,M,,,,,,,,,M,,,I
+12,FL001,Pháp văn căn bản 1 (*) | Basic French 1 (*),,,I,,,,,,,,,I,,,I
+13,FL002,Pháp văn căn bản 2 (*) | Basic French 2 (*),,,R,,,,,,,,,R,,,I
+14,FL003,Pháp văn căn bản 3 (*) | Basic French 3 (*),,,M,,,,,,,,,M,,,I
+15,FL007,Pháp văn tăng cường 1 (*) | Intensive French 1 (*),,,M,,,,,,,,,M,,,I
+16,FL008,Pháp văn tăng cường 2 (*) | Intensive French 2 (*),,,M,,,,,,,,,M,,,I
+17,FL009,Pháp văn tăng cường 3 (*) | Intensive French 3 (*),,,M,,,,,,,,,M,,,I
+18,ML014,Triết học Mác – Lênin | Marxist–Leninist Philosophy,I,,,,,,,,,,,,,I,
+19,ML016,Kinh tế chính trị Mác – Lênin | Marxist–Leninist Political Economy,I,,,,,,,,,,,,,I,
+20,ML018,Chủ nghĩa xã hội khoa học | Scientific Socialism,I,,,,,,,,,,,,,I,
+21,ML019,Lịch sử Đảng Cộng sản Việt Nam | History of the Communist Party of Vietnam,R,,,,,,,,,,,,,I,
+22,ML021,Tư tưởng Hồ Chí Minh | Ho Chi Minh Ideology,R,,,,,,,,,,,,,I,
+23,KL001E,Pháp luật đại cương | Introduction to Law,M,,,,,,,,,,,,,I,I
+24,ML007,Logic học đại cương | Introduction to Logic,R,,,,,,,,,,,,,I,I
+25,XH028,Xã hội học đại cương | Introduction to Sociology,R,,,,,,,,,,,,,I,I
+26,XH011,Cơ sở văn hóa Việt Nam | Fundamentals of Vietnamese Culture,R,,,,,,,,,,,,,I,I
+27,XH012,Tiếng Việt thực hành | Practical Vietnamese,R,,,,,,,,,,,,,I,I
+28,XH014,Văn bản và lưu trữ học đại cương | Introduction to Records and Archives,R,,,,,,,,,,,,,I,I
+29,KN001E,Kỹ năng mềm | Soft Skills,R,,,,,,,,,,,,I,I,R
+30,KN002E,Đổi mới sáng tạo và khởi nghiệp | Innovation and Entrepreneurship,R,,,,,,,,,,,,I,I,M
+31,TN001,Vi – Tích phân A1 | Calculus A1,,I,,,,,,,,,,,,,I
+32,TN002,Vi – Tích phân A2 | Calculus A2,,R,,,,,,,,,,,,,I
+33,TN010,Xác suất thống kê | Probability and Statistics,,M,,,,,,,,,,,,,I
+34,TN012,Đại số tuyến tính và hình học | Linear Algebra and Geometry,,M,,,,,,,,,,,,,I
+35,CT100,Kỹ năng học đại học | University Study Skills,,,,,,,,,,,,,I,R,M
+36,CT005,Nền tảng công nghệ số | Digital Technology Foundations,,M,,,,,,,,,,,,I,I
+## Khối kiến thức cơ sở ngành | Foundation knowledge
+37,CT172E,Toán rời rạc | Discrete Mathematics,,,,,,I,,,,I,,,,I,I
+38,CT101,Lập trình căn bản A | Fundamentals of Programming A,,,,I,,,,,,I,,,,I,I
+39,CT177,Cấu trúc dữ liệu | Data Structures,,,,,,I,,,,I,,,,I,I
+40,CT175,Lý thuyết đồ thị | Graph Theory,,,,,,I,,,,I,,,,I,I
+41,CT174,Phân tích và thiết kế thuật toán | Algorithm Analysis and Design,,,,,,R,,,,I,,,,I,I
+42,CT180,Cơ sở dữ liệu | Databases,,,,,,R,,,,I,,,,I,I
+43,CT173,Kiến trúc máy tính | Computer Architecture,,,,,I,,,,,I,,,,I,I
+44,CT178,Nguyên lý hệ điều hành | Principles of Operating Systems,,,,,R,,,,,I,,,,I,I
+45,CT112,Mạng máy tính | Computer Networks,,,,,M,,,,,I,,,,I,I
+46,CT176,Lập trình hướng đối tượng | Object-Oriented Programming,,,,M,,,,,,I,,,,I,I
+47,CT296,Phân tích và thiết kế hệ thống thông tin | Information Systems Analysis and Design,,,,,,M,,,,R,,,,I,R
+48,CT182,Ngôn ngữ mô hình hóa | Modelling Languages,,,,,,M,,,,R,,,,I,I
+49,CT179,Quản trị hệ thống | System Administration,,,,,,M,,,,M,,,,I,R
+50,CT188,Nhập môn lập trình Web | Introduction to Web Programming,,,,R,,,,,,R,,,,I,I
+51,CT190E,Nhập môn trí tuệ nhân tạo | Introduction to Artificial Intelligence,,,,,,M,,,,,R,,,I,I
+## Khối kiến thức chuyên ngành | Specialised knowledge
+52,CT335,Thiết kế và cài đặt mạng | Network Design and Implementation,,,,,,,,R,,M,,,,R,M
+53,CT428,Lập trình Web | Web Programming,,,,,,,,I,,,R,,,I,I
+54,CT294,Máy học ứng dụng | Applied Machine Learning,,,,,,,,I,,,M,,,M,M
+55,CT197,Cơ sở lý thuyết mật mã | Foundations of Cryptography,,,,,,,R,,,,R,,,R,R
+56,CT211,An ninh mạng | Network Security,,,,,,,M,M,M,M,,,,R,R
+57,CT485,Các kỹ thuật tấn công mạng | Network Attack Techniques,,,,,,,M,M,,M,,I,M,R,R
+58,CT297,Pháp y máy tính | Computer Forensics,,,,,,,M,M,,M,,,R,M,M
+59,CT486,Phát hiện và phân tích mã độc | Malware Detection and Analysis,,,,,,,M,,M,M,R,I,M,M,M
+60,CT228,Tường lửa | Firewalls,,,,,,,,M,M,M,,,,R,R
+61,CT212,Quản trị mạng | Network Administration,,,,,,,,R,,M,,,,R,M
+62,CT127,Lý thuyết thông tin | Information Theory,,,,,,,I,,,,I,,,I,I
+63,CT344,Giải quyết sự cố mạng | Network Troubleshooting,,,,,,,,M,,M,,,,R,R
+64,CT225,Lập trình Python | Python Programming,,,,,,,,,I,,R,,,I,I
+65,CT221,Lập trình mạng | Network Programming,,,,,,,,,I,,R,,,I,I
+66,CT274,Lập trình cho thiết bị di động | Mobile Device Programming,,,,,,,,,I,,R,,,I,R
+67,CT279,Blockchain,,,,,,,M,,,,R,,,R,R
+68,CT098,Phát triển ứng dụng IoT | IoT Application Development,,,,,,,,,I,,R,,,R,R
+69,CT488,Bảo mật hệ thống IoT | IoT System Security,,,,,,,M,M,,R,R,,,R,R
+70,CT489E,Luật an ninh mạng và đạo đức trong lĩnh vực CNTT | Cybersecurity Law and Ethics in IT,,,,,,,,,M,I,,,,R,R
+71,CT490,An ninh Web | Web Security,,,,,,,M,,,M,,,,R,R
+72,CT491E,Niên luận cơ sở an toàn thông tin | Basic Project in Information Security,,,,M,M,M,,,,I,I,I,I,I,R
+73,CT492E,Niên luận an toàn thông tin | Project in Information Security,,,,,,,M,M,R,R,R,R,R,R,M
+74,CT493E,Thực tập doanh nghiệp – An toàn thông tin | Company Internship – Information Security,,,,,,,M,M,M,M,M,M,M,M,M
+75,CT556E,Luận văn tốt nghiệp – ATTT | Graduation Thesis – Information Security,,,,,,,M,M,M,M,M,M,M,M,M
+76,CT520E,Tiểu luận tốt nghiệp – ATTT | Graduation Essay – Information Security,,,,,,,M,M,M,M,M,M,M,M,M
+77,CT338,Mạng không dây và di động | Wireless and Mobile Networks,,,,,,,,I,,I,,,,I,R
+78,CT232E,Đánh giá hiệu năng mạng | Network Performance Evaluation,,,,,,,M,M,,M,,,,M,M
+79,CT233,Điện toán đám mây | Cloud Computing,,,,,,,M,M,,M,M,,,M,M
+80,CT207E,Phát triển phần mềm mã nguồn mở | Open-Source Software Development,,,,,,,,R,,,M,,,M,M
+81,CT223,Quản lý dự án phần mềm | Software Project Management,,,,,,,R,,,R,,,M,M,M
+82,CT235,Quản trị mạng trên MS Windows | Network Administration on MS Windows,,,,,,,M,,,M,,,,M,M
+83,CT467,Quản trị dữ liệu | Data Management,,,,,,,M,,,M,,,,M,M
+84,CT251,Phát triển ứng dụng trên Windows | Application Development on Windows,,,,,,,,R,M,,M,,,M,M
+85,CT206,Phát triển ứng dụng trên Linux | Application Development on Linux,,,,,,,,R,M,,M,,,M,M
+86,CT230,Phát triển ứng dụng hướng dịch vụ | Service-Oriented Application Development,,,,,,,,R,M,,M,,,M,M
+87,CT238E,Phân lớp dữ liệu lớn | Big Data Classification,,,,,,,M,,,,M,,,M,M
+88,CT482,Xử lý dữ liệu lớn | Big Data Processing,,,,,,,M,,,R,M,,,M,M
+89,CT332,Trí tuệ nhân tạo | Artificial Intelligence,,,,,,,R,R,,,M,,,M,M
+90,CT273,Giao diện người – máy | Human–Computer Interaction,,,,,,,R,,,R,,,,M,M

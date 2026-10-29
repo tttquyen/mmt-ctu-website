@@ -1,0 +1,7 @@
+﻿"# Cập nhật mỗi mùa tuyển sinh: thêm cột năm mới, bỏ cột năm cũ."
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+Ngành | Programme,Mã ngành | Code,Tín chỉ | Credits,Chỉ tiêu 2026 | Quota 2026,Tổ hợp xét tuyển | Subject combinations,Điểm chuẩn 2025 | Entry score 2025,Điểm chuẩn 2026 | Entry score 2026
+Mạng máy tính và Truyền thông dữ liệu | Computer Networks and Data Communication,7480102,161,100,"A00, A01, X06, X26",21.01,20.70
+Mạng máy tính và Truyền thông dữ liệu — Chất lượng cao | Computer Networks and Data Communication — High-quality,7480102C,168,40,"A01, D01, D07, X26",17.75,18.85
+An toàn thông tin | Information Security,7480202,161,100,"A00, A01, X06, X26",22.50,22.85

@@ -26,3 +26,7 @@ desktop.ini
 # Cau hinh cong cu, khong can dua len kho
 .claude/
 mmt/.git-cu-2025/
+
+# Tep du lieu noi bo (co ma so sinh vien) - khong dua len web
+*.xlsx
+*.xls

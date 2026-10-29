@@ -1,0 +1,106 @@
+﻿"# Kế hoạch dạy học toàn khóa 13 học kỳ (4,5 năm). Nguồn: Bản mô tả CTĐT áp dụng từ Khóa 51."
+# Học phần tự chọn: chọn đủ số tín chỉ ghi ở dòng học kỳ. (*) Học phần điều kiện.
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+Mã HP | Code,Tên học phần | Course,Tín chỉ | Credits,Loại | Type,Tiết LT | Lecture hrs,Tiết TH | Lab hrs,Học phần tiên quyết | Prerequisites
+"## Học kỳ 1 — 14 tín chỉ (bắt buộc 14, tự chọn 0) | Semester 1 — 14 credits (14 compulsory, 0 elective)"
+QP010E,Giáo dục quốc phòng và An ninh 1 (*) | National Defence and Security Education 1 (*),2,Bắt buộc | Compulsory,37,8,
+QP011E,Giáo dục quốc phòng và An ninh 2 (*) | National Defence and Security Education 2 (*),2,Bắt buộc | Compulsory,22,8,
+QP012,Giáo dục quốc phòng và An ninh 3 (*) | National Defence and Security Education 3 (*),2,Bắt buộc | Compulsory,24,21,
+QP013,Giáo dục quốc phòng và An ninh 4 (*) | National Defence and Security Education 4 (*),2,Bắt buộc | Compulsory,4,56,
+CT005,Nền tảng công nghệ số | Digital Technology Foundations,4,Bắt buộc | Compulsory,30,60,
+CT100,Kỹ năng học đại học | University Study Skills,2,Bắt buộc | Compulsory,20,20,
+"## Học kỳ 2 — 12 tín chỉ (bắt buộc 7, tự chọn 5) | Semester 2 — 12 credits (7 compulsory, 5 elective)"
+TC100,Giáo dục thể chất 1 (*) | Physical Education 1 (*),1,Tự chọn | Elective,,30,
+ML014,Triết học Mác – Lênin | Marxist–Leninist Philosophy,3,Bắt buộc | Compulsory,45,,
+CT101,Lập trình căn bản A | Fundamentals of Programming A,4,Bắt buộc | Compulsory,30,60,
+XH023,Anh văn căn bản 1 (*) | Basic English 1 (*),4,Tự chọn | Elective,60,,
+FL001,Pháp văn căn bản 1 (*) | Basic French 1 (*),4,Tự chọn | Elective,45,,
+"## Học kỳ 3 — 14 tín chỉ (bắt buộc 10, tự chọn 4) | Semester 3 — 14 credits (10 compulsory, 4 elective)"
+CT172E,Toán rời rạc | Discrete Mathematics,4,Bắt buộc | Compulsory,60,,
+TC100,Giáo dục thể chất 2 (*) | Physical Education 2 (*),1,Tự chọn | Elective,,30,
+TN001,Vi – Tích phân A1 | Calculus A1,3,Bắt buộc | Compulsory,45,,
+CT177,Cấu trúc dữ liệu | Data Structures,3,Bắt buộc | Compulsory,30,30,CT101
+XH024,Anh văn căn bản 2 (*) | Basic English 2 (*),3,Tự chọn | Elective,45,,
+FL002,Pháp văn căn bản 2 (*) | Basic French 2 (*),3,Tự chọn | Elective,45,,
+"## Học kỳ 4 — 13 tín chỉ (bắt buộc 9, tự chọn 4) | Semester 4 — 13 credits (9 compulsory, 4 elective)"
+ML016,Kinh tế chính trị Mác – Lênin | Marxist–Leninist Political Economy,2,Bắt buộc | Compulsory,30,,ML014
+TC100,Giáo dục thể chất 3 (*) | Physical Education 3 (*),1,Tự chọn | Elective,,30,
+CT176,Lập trình hướng đối tượng | Object-Oriented Programming,3,Bắt buộc | Compulsory,30,30,CT101
+TN002,Vi – Tích phân A2 | Calculus A2,4,Bắt buộc | Compulsory,60,,TN001
+XH025,Anh văn căn bản 3 (*) | Basic English 3 (*),3,Tự chọn | Elective,45,,
+FL003,Pháp văn căn bản 3 (*) | Basic French 3 (*),3,Tự chọn | Elective,45,,
+"## Học kỳ 5 — 12 tín chỉ (bắt buộc 12, tự chọn 0) | Semester 5 — 12 credits (12 compulsory, 0 elective)"
+ML018,Chủ nghĩa xã hội khoa học | Scientific Socialism,2,Bắt buộc | Compulsory,30,,ML016
+CT173,Kiến trúc máy tính | Computer Architecture,3,Bắt buộc | Compulsory,45,,
+CT175,Lý thuyết đồ thị | Graph Theory,3,Bắt buộc | Compulsory,30,30,CT177
+TN012,Đại số tuyến tính và hình học | Linear Algebra and Geometry,4,Bắt buộc | Compulsory,60,,
+"## Học kỳ 6 — 13 tín chỉ (bắt buộc 13, tự chọn 0) | Semester 6 — 13 credits (13 compulsory, 0 elective)"
+ML019,Lịch sử Đảng Cộng sản Việt Nam | History of the Communist Party of Vietnam,2,Bắt buộc | Compulsory,30,,ML018
+CT190E,Nhập môn trí tuệ nhân tạo | Introduction to Artificial Intelligence,2,Bắt buộc | Compulsory,30,,
+CT188,Nhập môn lập trình Web | Introduction to Web Programming,3,Bắt buộc | Compulsory,30,30,
+CT178,Nguyên lý hệ điều hành | Principles of Operating Systems,3,Bắt buộc | Compulsory,30,30,CT173
+CT180,Cơ sở dữ liệu | Databases,3,Bắt buộc | Compulsory,30,30,CT177
+"## Học kỳ 7 — 13 tín chỉ (bắt buộc 13, tự chọn 0) | Semester 7 — 13 credits (13 compulsory, 0 elective)"
+ML021,Tư tưởng Hồ Chí Minh | Ho Chi Minh Ideology,2,Bắt buộc | Compulsory,30,,ML019
+KL001E,Pháp luật đại cương | Introduction to Law,2,Bắt buộc | Compulsory,30,,
+CT428,Lập trình Web | Web Programming,3,Bắt buộc | Compulsory,30,30,CT180 CT188
+CT174,Phân tích và thiết kế thuật toán | Algorithm Analysis and Design,3,Bắt buộc | Compulsory,30,30,CT177
+CT112,Mạng máy tính | Computer Networks,3,Bắt buộc | Compulsory,30,30,CT178
+"## Học kỳ 8 — 14 tín chỉ (bắt buộc 12, tự chọn 2) | Semester 8 — 14 credits (12 compulsory, 2 elective)"
+CT226E,Niên luận cơ sở mạng máy tính và truyền thông | Basic Project in Computer Networks and Communications,3,Bắt buộc | Compulsory,,90,≥ 90 TC | ≥ 90 credits
+CT296,Phân tích và thiết kế hệ thống thông tin | Information Systems Analysis and Design,3,Bắt buộc | Compulsory,30,30,CT180
+CT335,Thiết kế và cài đặt mạng | Network Design and Implementation,3,Bắt buộc | Compulsory,30,30,CT112
+CT182,Ngôn ngữ mô hình hóa | Modelling Languages,3,Bắt buộc | Compulsory,30,30,CT176
+ML007,Logic học đại cương | Introduction to Logic,2,Tự chọn | Elective,30,,
+XH028,Xã hội học đại cương | Introduction to Sociology,2,Tự chọn | Elective,30,,
+XH011,Cơ sở văn hóa Việt Nam | Fundamentals of Vietnamese Culture,2,Tự chọn | Elective,30,,
+XH012,Tiếng Việt thực hành | Practical Vietnamese,2,Tự chọn | Elective,30,,
+XH014,Văn bản và lưu trữ học đại cương | Introduction to Records and Archives,2,Tự chọn | Elective,30,,
+KN001E,Kỹ năng mềm | Soft Skills,2,Tự chọn | Elective,20,20,
+KN002E,Đổi mới sáng tạo và khởi nghiệp | Innovation and Entrepreneurship,2,Tự chọn | Elective,20,20,
+"## Học kỳ 9 — 12 tín chỉ (bắt buộc 6, tự chọn 6) | Semester 9 — 12 credits (6 compulsory, 6 elective)"
+CT221,Lập trình mạng | Network Programming,3,Bắt buộc | Compulsory,30,30,CT112 CT176
+CT211,An ninh mạng | Network Security,3,Bắt buộc | Compulsory,30,30,CT112
+CT126,Lý thuyết xếp hàng | Queueing Theory,2,Tự chọn | Elective,30,,
+CT127,Lý thuyết thông tin | Information Theory,2,Tự chọn | Elective,30,,
+CT479,Phương pháp tính | Numerical Methods,3,Tự chọn | Elective,30,,
+CT121,Tin học lý thuyết | Theory of Computation,3,Tự chọn | Elective,30,30,CT101
+CT224E,Công nghệ J2EE | J2EE Technology,2,Tự chọn | Elective,15,30,CT176
+CT225,Lập trình Python | Python Programming,2,Tự chọn | Elective,20,20,
+CT274,Lập trình cho thiết bị di động | Mobile Device Programming,3,Tự chọn | Elective,30,30,CT176
+"## Học kỳ 10 — 12 tín chỉ (bắt buộc 3, tự chọn 9) | Semester 10 — 12 credits (3 compulsory, 9 elective)"
+TN010,Xác suất thống kê | Probability and Statistics,3,Bắt buộc | Compulsory,45,,
+CT227,Kỹ thuật phát hiện tấn công mạng | Network Intrusion Detection Techniques,3,Tự chọn — hướng N1 | Elective — track N1,30,30,
+CT228,Tường lửa | Firewalls,3,Tự chọn — hướng N1 | Elective — track N1,30,30,CT335
+CT490,An ninh Web | Web Security,3,Tự chọn — hướng N1 | Elective — track N1,30,30,CT428
+CT222,An toàn hệ thống | System Security,3,Tự chọn — hướng N1 | Elective — track N1,30,30,
+CT344,Giải quyết sự cố mạng | Network Troubleshooting,2,Tự chọn — hướng N1 | Elective — track N1,30,,CT335
+CT232E,Đánh giá hiệu năng mạng | Network Performance Evaluation,3,Tự chọn — hướng N1 | Elective — track N1,30,30,CT112
+CT207E,Phát triển phần mềm mã nguồn mở | Open-Source Software Development,3,Tự chọn — hướng N2 | Elective — track N2,30,30,
+CT230,Phát triển ứng dụng hướng dịch vụ | Service-Oriented Application Development,3,Tự chọn — hướng N2 | Elective — track N2,30,30,CT428
+CT231,Lập trình song song | Parallel Programming,3,Tự chọn — hướng N2 | Elective — track N2,30,30,
+CT098,Phát triển ứng dụng IoT | IoT Application Development,3,Tự chọn — hướng N2 | Elective — track N2,30,30,
+CT482,Xử lý dữ liệu lớn | Big Data Processing,3,Tự chọn — hướng N2 | Elective — track N2,30,30,CT176
+"## Học kỳ 11 — 12 tín chỉ (bắt buộc 12, tự chọn 0) | Semester 11 — 12 credits (12 compulsory, 0 elective)"
+CT439E,Niên luận mạng máy tính và truyền thông | Project in Computer Networks and Communications,3,Bắt buộc | Compulsory,,90,≥ 110 TC | ≥ 110 credits
+CT179,Quản trị hệ thống | System Administration,3,Bắt buộc | Compulsory,30,30,
+CT212,Quản trị mạng | Network Administration,3,Bắt buộc | Compulsory,30,30,CT112
+CT233,Điện toán đám mây | Cloud Computing,3,Bắt buộc | Compulsory,30,30,
+"## Học kỳ 12 — 15 tín chỉ (bắt buộc 0, tự chọn 15) | Semester 12 — 15 credits (0 compulsory, 15 elective)"
+CT555E,Luận văn tốt nghiệp – TT&MMT | Graduation Thesis – Computer Networks and Communications,15,Tự chọn | Elective,,450,≥ 125 TC | ≥ 125 credits
+CT507E,Tiểu luận tốt nghiệp – TT&MMT | Graduation Essay – Computer Networks and Communications,6,Tự chọn | Elective,,180,≥ 125 TC | ≥ 125 credits
+CT338,Mạng không dây và di động | Wireless and Mobile Networks,2,Tự chọn | Elective,30,,CT112
+CT223,Quản lý dự án phần mềm | Software Project Management,3,Tự chọn | Elective,30,30,
+CT235,Quản trị mạng trên MS Windows | Network Administration on MS Windows,3,Tự chọn | Elective,30,30,CT112
+CT205,Quản trị cơ sở dữ liệu | Database Administration,3,Tự chọn | Elective,30,30,CT180
+CT297,Pháp y máy tính | Computer Forensics,3,Tự chọn | Elective,30,30,
+CT251,Phát triển ứng dụng trên Windows | Application Development on Windows,3,Tự chọn | Elective,30,30,CT180 CT176
+CT206,Phát triển ứng dụng trên Linux | Application Development on Linux,3,Tự chọn | Elective,30,30,CT180 CT176
+CT238E,Phân lớp dữ liệu lớn | Big Data Classification,3,Tự chọn | Elective,30,30,
+CT332,Trí tuệ nhân tạo | Artificial Intelligence,3,Tự chọn | Elective,30,30,
+CT294,Máy học ứng dụng | Applied Machine Learning,3,Tự chọn | Elective,30,30,
+CT273,Giao diện người – máy | Human–Computer Interaction,3,Tự chọn | Elective,30,30,
+"## Học kỳ 13 — 5 tín chỉ (bắt buộc 5, tự chọn 0) | Semester 13 — 5 credits (5 compulsory, 0 elective)"
+CT517E,Thực tập doanh nghiệp – MMT&TTDL | Company Internship – Computer Networks and Data Communication,5,Bắt buộc | Compulsory,,150,"≥ 125 TC, CT428 CT296 CT112 | ≥ 125 credits, CT428 CT296 CT112"
+=Tổng cộng | Total,,161,"Bắt buộc 116, tự chọn 45 | Compulsory 116, elective 45",,,

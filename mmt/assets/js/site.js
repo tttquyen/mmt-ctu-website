@@ -35,7 +35,43 @@
 
     facebook: [
       { label: 'Fanpage Khoa MMT & TT', url: 'https://www.facebook.com/profile.php?id=61593548133901' }
-    ]
+    ],
+
+    /* An tat ca cac khoi danh dau data-pending ("Dang cap nhat").
+       true  = an (khi hoi dong danh gia xem trang)
+       false = hien lai de biet con thieu noi dung gi. */
+    hidePending: true,
+
+    /* Thu muc de cuong chi tiet hoc phan: <syllabusUrl><MA_HP>.pdf */
+    syllabusUrl: 'http://www.cit.ctu.edu.vn/decuong/',
+
+    /* ------------------------------------------------------------------
+       DU LIEU DONG — cac bang co thuoc tinh data-table="ten" / data-people="ten"
+       doc du lieu tu tep mmt/data/<ten>.csv.
+       Muon cap nhat bang Google Sheets: mo trang tinh > Tep > Chia se >
+       Cong bo len web > chon tab > dinh dang CSV > Cong bo, roi dan URL vao
+       dong tuong ung ben duoi. De trong = dung tep CSV trong thu muc data/.
+       ------------------------------------------------------------------ */
+    dataSources: {
+      'tot-nghiep': '',
+      'viec-lam': '',
+      'viec-lam-chi-tiet': '',
+      'dat-cdr': '',
+      'hai-long': '',
+      'cong-bo': '',
+      'de-tai-gv': '',
+      'de-tai-sv': '',
+      'nhan-su': '',
+      'nhan-su-thong-ke': '',
+      'tuyen-sinh': '',
+      'cac-khoa': '',
+      'matran-mmt': '',
+      'matran-attt': '',
+      'ke-hoach-mmt': '',
+      'ke-hoach-attt': '',
+      'khuyen-nghi-aun': '',
+      'doi-tac': ''
+    }
   };
 
   var CONFIG = {
@@ -63,7 +99,14 @@
       ],
 
       menu: [
-        { id: 'gioi-thieu', label: 'Giới thiệu', url: 'mmt.html' },
+        {
+          id: 'gioi-thieu', label: 'Giới thiệu', url: 'mmt.html',
+          children: [
+            { id: 'gioi-thieu', label: 'Tổng quan về Khoa', url: 'mmt.html' },
+            { id: 'gt', label: 'Sứ mạng, tầm nhìn & cơ cấu tổ chức', url: 'gt.html' },
+            { id: 'dbcl', label: 'Đảm bảo chất lượng', url: 'dbcl.html' }
+          ]
+        },
         {
           id: 'dao-tao', label: 'Đào tạo', url: 'ctdt.html',
           children: [
@@ -116,6 +159,11 @@
       footLeaders: 'Ban lãnh đạo khoa',
       footUseful: 'Liên kết hữu ích',
       footFeedback: 'Góp ý cho Khoa',
+      syllabusTitle: 'Đề cương chi tiết học phần (PDF)',
+      openLink: 'Xem',
+      dataError: 'Chưa tải được dữ liệu. Vui lòng tải lại trang hoặc xem tệp gốc',
+      peopleResearch: 'Hướng NC',
+      peopleTeaching: 'Môn GD',
       footAddress: 'Địa chỉ:',
       footPhone: 'Điện thoại:',
       footEmail: 'Email:',
@@ -136,7 +184,7 @@
 
       pages: ['mmt.html', 'ctdt.html', 'ctdtmmt.html', 'ctdtmmtclc.html', 'ctdtattt.html',
               'cdr.html', 'dayhoc.html', 'ketqua.html', 'ts.html', 'nckh.html',
-              'ptn.html', 'ptnmmt.html', 'ptnattt.html', 'sv.html', 'gv.html']
+              'ptn.html', 'ptnmmt.html', 'ptnattt.html', 'sv.html', 'gv.html', 'gt.html', 'dbcl.html']
     },
 
     /* ------------------------------ ENGLISH ------------------------------ */
@@ -160,7 +208,14 @@
       ],
 
       menu: [
-        { id: 'gioi-thieu', label: 'Introduction', url: 'enmmt.html' },
+        {
+          id: 'gioi-thieu', label: 'Introduction', url: 'enmmt.html',
+          children: [
+            { id: 'gioi-thieu', label: 'About the Faculty', url: 'enmmt.html' },
+            { id: 'gt', label: 'Mission, vision & organisation', url: 'engt.html' },
+            { id: 'dbcl', label: 'Quality assurance', url: 'endbcl.html' }
+          ]
+        },
         {
           id: 'dao-tao', label: 'Academics', url: 'enctdt.html',
           children: [
@@ -213,6 +268,11 @@
       footLeaders: 'Faculty board',
       footUseful: 'Useful links',
       footFeedback: 'Send us your feedback',
+      syllabusTitle: 'Course syllabus (PDF)',
+      openLink: 'Open',
+      dataError: 'The data could not be loaded. Please reload the page or open the source file',
+      peopleResearch: 'Research',
+      peopleTeaching: 'Teaching',
       footAddress: 'Address:',
       footPhone: 'Phone:',
       footEmail: 'Email:',
@@ -233,7 +293,7 @@
 
       pages: ['enmmt.html', 'enctdt.html', 'enctdtmmt.html', 'enctdtmmtclc.html', 'enctdtattt.html',
               'encdr.html', 'endayhoc.html', 'enketqua.html', 'ents.html', 'ennckh.html',
-              'enptn.html', 'enptnmmt.html', 'enptnattt.html', 'ensv.html', 'engv.html']
+              'enptn.html', 'enptnmmt.html', 'enptnattt.html', 'ensv.html', 'engv.html', 'engt.html', 'endbcl.html']
     }
   };
 
@@ -410,13 +470,26 @@
           var doc = new DOMParser().parseFromString(html, 'text/html');
           var main = doc.getElementById('main') || doc.body;
           var h1 = doc.querySelector('h1');
-          var text = (main.textContent || '').replace(/\s+/g, ' ').trim();
-          return {
-            url: url,
-            title: (h1 && h1.textContent.trim()) || doc.title,
-            text: text,
-            norm: deaccent(text)
-          };
+          /* Bảng dữ liệu động chưa có trong HTML gốc: đọc thêm tệp CSV của trang */
+          var names = [];
+          main.querySelectorAll('[data-table],[data-people]').forEach(function (el) {
+            var n = el.getAttribute('data-table') || el.getAttribute('data-people');
+            if (names.indexOf(n) < 0) names.push(n);
+          });
+          return Promise.all(names.map(function (n) {
+            return loadData(n).then(function (rows) {
+              return rows.filter(function (r) { return !/^#(?!#)/.test(r[0].trim()); })
+                .map(function (r) { return r.map(function (c) { return pick(c.replace(/^##|^=/, '')); }).join(' '); }).join(' ');
+            }).catch(function () { return ''; });
+          })).then(function (extra) {
+            var text = ((main.textContent || '') + ' ' + extra.join(' ')).replace(/\s+/g, ' ').trim();
+            return {
+              url: url,
+              title: (h1 && h1.textContent.trim()) || doc.title,
+              text: text,
+              norm: deaccent(text)
+            };
+          });
         }).catch(function () { return null; });
     })).then(function (list) {
       index = list.filter(Boolean);
@@ -603,9 +676,169 @@
     gtag('config', id, { anonymize_ip: true });
   }
 
+  /* =====================================================================
+     9. Dữ liệu động (CSV / Google Sheets)
+     ---------------------------------------------------------------------
+     Quy ước tệp CSV (một tệp dùng chung cho cả hai ngôn ngữ):
+       - Dòng đầu tiên (không bắt đầu bằng #) là tiêu đề cột.
+       - Ô song ngữ viết "Tiếng Việt | English"; ô chỉ có một vế dùng cho cả hai.
+       - Dòng bắt đầu bằng "#"  : ghi chú, bỏ qua.
+       - Dòng bắt đầu bằng "##" : dòng nhóm, kéo dài hết bảng (vd. "## Học kỳ 1 | Semester 1").
+       - Dòng bắt đầu bằng "="  : dòng tổng ở chân bảng (vd. "=Tổng cộng | Total").
+       - Số thập phân viết bằng dấu chấm (70.71%); bản tiếng Việt tự đổi sang dấu phẩy.
+     Thuộc tính trên phần tử chứa bảng:
+       data-table="ten"         tên tệp / nguồn dữ liệu
+       data-class="table-num"   lớp CSS cho <table>
+       data-syllabus="1"        cột (đếm từ 0) chứa mã học phần, tự gắn link đề cương
+       data-irm                 tô màu ô I / R / M (ma trận chuẩn đầu ra)
+       data-caption="..."       chú thích ẩn cho trình đọc màn hình
+     ===================================================================== */
+  var dataCache = {};
+
+  function parseCSV(text) {
+    var rows = [], row = [], cell = '', q = false;
+    text = text.replace(/^﻿/, '');
+    for (var i = 0; i < text.length; i++) {
+      var c = text[i];
+      if (q) {
+        if (c === '"') { if (text[i + 1] === '"') { cell += '"'; i++; } else q = false; }
+        else cell += c;
+      } else if (c === '"') q = true;
+      else if (c === ',') { row.push(cell); cell = ''; }
+      else if (c === '\n' || c === '\r') {
+        if (c === '\r' && text[i + 1] === '\n') i++;
+        row.push(cell); rows.push(row); row = []; cell = '';
+      } else cell += c;
+    }
+    if (cell !== '' || row.length) { row.push(cell); rows.push(row); }
+    return rows.filter(function (r) { return r.some(function (x) { return x.trim() !== ''; }); });
+  }
+
+  function loadData(name) {
+    if (dataCache[name]) return dataCache[name];
+    var local = BASE + 'data/' + name + '.csv';
+    var remote = (COMMON.dataSources || {})[name];
+    var get = function (url) {
+      return fetch(url, { cache: 'no-cache' }).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.text();
+      });
+    };
+    dataCache[name] = (remote ? get(remote).catch(function () { return get(local); }) : get(local)).then(parseCSV);
+    return dataCache[name];
+  }
+
+  /* Chọn vế ngôn ngữ trong ô "VI | EN" */
+  function pick(s) {
+    s = (s || '').trim();
+    var parts = s.split(' | ');
+    return (LANG === 'en' && parts.length > 1 ? parts[1] : parts[0]).trim();
+  }
+  function fmtNum(s) {
+    if (LANG === 'vi' && /^-?\d+\.\d+%?$/.test(s)) return s.replace('.', ',');
+    return s;
+  }
+  function cellHTML(raw, col, opt) {
+    var v = fmtNum(pick(raw));
+    if (opt.syllabus === col && /^[A-Z]{2}\d{3}[A-Z]?$/.test(v)) {
+      return '<a href="' + esc(COMMON.syllabusUrl + v + '.pdf') + '" target="_blank" rel="noopener" title="' +
+        esc(T.syllabusTitle) + '">' + esc(v) + '</a>';
+    }
+    if (/^https?:\/\//.test(v)) {
+      return '<a href="' + esc(v) + '" target="_blank" rel="noopener">' + esc(T.openLink) + '</a>';
+    }
+    var m = v.match(/^\[(.+)\]\((https?:\/\/[^)]+|[\w./#-]+)\)$/);   /* [chữ](link) */
+    if (m) return '<a href="' + esc(m[2]) + '"' + ext(m[2]) + '>' + esc(m[1]) + '</a>';
+    return esc(v);
+  }
+
+  function renderTable(host, rows) {
+    var opt = {
+      syllabus: host.hasAttribute('data-syllabus') ? +host.getAttribute('data-syllabus') : -1,
+      irm: host.hasAttribute('data-irm')
+    };
+    rows = rows.filter(function (r) { return !/^#(?!#)/.test(r[0].trim()); });
+    if (!rows.length) return;
+    var head = rows.shift();
+    var n = head.length;
+    var body = [], foot = [];
+    rows.forEach(function (r) {
+      var first = r[0].trim();
+      if (first.indexOf('##') === 0) {
+        body.push('<tr class="row-group"><th colspan="' + n + '" scope="colgroup">' +
+          esc(pick(first.slice(2))) + '</th></tr>');
+        return;
+      }
+      var isFoot = first.indexOf('=') === 0;
+      var cells = [];
+      for (var i = 0; i < n; i++) {
+        var raw = i === 0 && isFoot ? first.slice(1) : (r[i] || '');
+        var val = pick(raw);
+        var cls = opt.irm && /^[IRM]$/.test(val) ? ' class="irm irm--' + val.toLowerCase() + '"' : '';
+        cells.push('<td' + cls + '>' + cellHTML(raw, i, opt) + '</td>');
+      }
+      (isFoot ? foot : body).push('<tr>' + cells.join('') + '</tr>');
+    });
+    var cap = host.getAttribute('data-caption');
+    host.innerHTML = '<table' + (host.getAttribute('data-class') ? ' class="' + esc(host.getAttribute('data-class')) + '"' : '') + '>' +
+      (cap ? '<caption class="visually-hidden">' + esc(cap) + '</caption>' : '') +
+      '<thead><tr>' + head.map(function (h) { return '<th scope="col">' + esc(pick(h)) + '</th>'; }).join('') + '</tr></thead>' +
+      '<tbody>' + body.join('') + '</tbody>' +
+      (foot.length ? '<tfoot>' + foot.join('') + '</tfoot>' : '') + '</table>';
+  }
+
+  /* Thẻ nhân sự: cột nhom, ho_ten, chuc_vu, email, anh, lien_ket_ten, huong_nc, mon_gd, lien_ket
+     lien_ket dạng "Google Scholar=https://...; DBLP=https://..." */
+  function renderPeople(host, rows) {
+    rows = rows.filter(function (r) { return !/^#/.test(r[0].trim()); });
+    var head = rows.shift().map(function (h) { return h.trim(); });
+    var group = host.getAttribute('data-group');
+    var col = function (r, k) { var i = head.indexOf(k); return i < 0 ? '' : pick(r[i] || ''); };
+    host.innerHTML = rows.filter(function (r) { return !group || col(r, 'nhom') === group; }).map(function (r) {
+      var name = col(r, 'ho_ten'), link = col(r, 'lien_ket_ten'), photo = col(r, 'anh') || 'imgs/person-placeholder.png';
+      if (!/^https?:/.test(photo)) photo = BASE + photo;
+      if (link && !/^https?:/.test(link)) link = BASE + link;
+      var meta = function (label, v) { return v ? '<p class="person__meta"><strong>' + label + ':</strong> ' + esc(v) + '</p>' : ''; };
+      var links = col(r, 'lien_ket').split(';').map(function (x) {
+        var i = x.indexOf('='); if (i < 0) return '';
+        var u = x.slice(i + 1).trim();
+        return '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(x.slice(0, i).trim()) + '</a>';
+      }).join('');
+      var email = col(r, 'email');
+      return '<article class="person">' +
+        '<img class="person__photo" src="' + esc(photo) + '" alt="' + esc(name) + '" loading="lazy">' +
+        '<div>' +
+          '<p class="person__name">' + (link ? '<a href="' + esc(link) + '"' + ext(link) + '>' + esc(name) + '</a>' : esc(name)) + '</p>' +
+          (col(r, 'chuc_vu') ? '<p class="person__role">' + esc(col(r, 'chuc_vu')) + '</p>' : '') +
+          (email ? '<p class="person__meta"><a href="mailto:' + esc(email) + '">' + esc(email) + '</a></p>' : '') +
+          meta(T.peopleResearch, col(r, 'huong_nc')) +
+          meta(T.peopleTeaching, col(r, 'mon_gd')) +
+          (links ? '<div class="person__links">' + links + '</div>' : '') +
+        '</div></article>';
+    }).join('');
+  }
+
+  function renderData() {
+    var fail = function (host, name) {
+      return function () {
+        host.innerHTML = '<p class="text-muted">' + esc(T.dataError) + ' (<a href="' + esc(BASE + 'data/' + name + '.csv') + '">' + esc(name) + '.csv</a>)</p>';
+      };
+    };
+    document.querySelectorAll('[data-table]').forEach(function (host) {
+      var name = host.getAttribute('data-table');
+      loadData(name).then(function (rows) { renderTable(host, rows); }).catch(fail(host, name));
+    });
+    document.querySelectorAll('[data-people]').forEach(function (host) {
+      var name = host.getAttribute('data-people');
+      loadData(name).then(function (rows) { renderPeople(host, rows); }).catch(fail(host, name));
+    });
+  }
+
   function init() {
+    if (COMMON.hidePending) document.documentElement.classList.add('hide-pending');
     buildHeader();
     buildFooter();
+    renderData();
     wireAccordions();
     wireReveal();
     loadAnalytics();
