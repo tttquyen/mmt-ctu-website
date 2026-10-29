@@ -1,0 +1,90 @@
+﻿"# Kế hoạch dạy học toàn khóa 13 học kỳ (4,5 năm). Nguồn: Bản mô tả CTĐT áp dụng từ Khóa 51."
+# Học phần tự chọn: chọn đủ số tín chỉ ghi ở dòng học kỳ. (*) Học phần điều kiện.
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+Mã HP | Code,Tên học phần | Course,Tín chỉ | Credits,Loại | Type,Tiết LT | Lecture hrs,Tiết TH | Lab hrs,Học phần tiên quyết | Prerequisites
+"## Học kỳ 1 — 15 tín chỉ (bắt buộc 15, tự chọn 0) | Semester 1 — 15 credits (15 compulsory, 0 elective)"
+FL010H,Nghe nói và ngữ âm thực hành (*) | Listening and Speaking (*),4,Bắt buộc | Compulsory,60,,
+FL011H,Đọc hiểu (*) | Reading (*),3,Bắt buộc | Compulsory,45,,
+FL012H,Viết (*) | Writing (*),3,Bắt buộc | Compulsory,45,,
+FL013H,Ngữ pháp ứng dụng (*) | Grammar in Use (*),2,Bắt buộc | Compulsory,30,,
+FL014H,Kỹ năng thuyết trình (*) | Presentation skills (*),3,Bắt buộc | Compulsory,45,,
+"## Học kỳ 2 — 13 tín chỉ (bắt buộc 13, tự chọn 0) | Semester 2 — 13 credits (13 compulsory, 0 elective)"
+CT100H,Kỹ năng học đại học | Study Skills for College Students,2,Bắt buộc | Compulsory,30,,
+ML014,Triết học Mác – Lênin | Marxist–Leninist Philosophy,3,Bắt buộc | Compulsory,45,,
+CT005H,Nền tảng công nghệ số | Digital Competence,4,Bắt buộc | Compulsory,30,60,
+CT054H,Lập trình căn bản A | Basic programming A,4,Bắt buộc | Compulsory,30,60,
+"## Học kỳ 3 — 13 tín chỉ (bắt buộc 13, tự chọn 0) | Semester 3 — 13 credits (13 compulsory, 0 elective)"
+QP010E,Giáo dục quốc phòng và An ninh 1 (*) | National Defence and Security Education 1 (*),2,Bắt buộc | Compulsory,37,8,
+QP011E,Giáo dục quốc phòng và An ninh 2 (*) | National Defence and Security Education 2 (*),2,Bắt buộc | Compulsory,22,8,
+QP012,Giáo dục quốc phòng và An ninh 3 (*) | National Defence and Security Education 3 (*),2,Bắt buộc | Compulsory,24,21,
+QP013,Giáo dục quốc phòng và An ninh 4 (*) | National Defence and Security Education 4 (*),2,Bắt buộc | Compulsory,4,56,
+CT052H,Đại số tuyến tính và hình học | Linear Algebra & Analytic Geometry,3,Bắt buộc | Compulsory,45,,
+FL100H,Thi đánh giá năng lực tiếng Anh (*) | English proficiency examination (*),2,Bắt buộc | Compulsory,30,,
+"## Học kỳ 4 — 14 tín chỉ (bắt buộc 12, tự chọn 2) | Semester 4 — 14 credits (12 compulsory, 2 elective)"
+ML016,Kinh tế chính trị Mác – Lênin | Marxist–Leninist Political Economy,2,Bắt buộc | Compulsory,30,,ML014
+CT053H,Xác suất thống kê | Probability & Statistics,3,Bắt buộc | Compulsory,45,,
+CT116H,Nền tảng kiến trúc máy tính | Fundamentals of Computer Architecture,3,Bắt buộc | Compulsory,45,,
+CT102H,Cấu trúc dữ liệu | Data Structures,4,Bắt buộc | Compulsory,45,30,CT054H
+CT055HE,Kỹ năng giao tiếp | Communication skills,1,Tự chọn | Elective,10,10,
+CT056HE,Kỹ năng thuyết trình | Presentation skills,1,Tự chọn | Elective,10,10,
+CT057HE,Kỹ năng làm việc nhóm | Teamwork skills,1,Tự chọn | Elective,10,10,
+CT058HE,Kỹ năng giải quyết vấn đề | Problem solving,1,Tự chọn | Elective,10,10,
+CT059HE,Kỹ năng tư duy phản biện | Critical Thinking Skills,1,Tự chọn | Elective,10,10,
+CT489E,Luật an ninh mạng và đạo đức trong lĩnh vực CNTT | Cybersecurity Law and Ethics in IT,2,Tự chọn | Elective,30,,
+"## Học kỳ 5 — 13 tín chỉ (bắt buộc 12, tự chọn 1) | Semester 5 — 13 credits (12 compulsory, 1 elective)"
+TC100,Giáo dục thể chất 1 (*) | Physical Education 1 (*),1,Tự chọn | Elective,10,10,
+ML018,Chủ nghĩa xã hội khoa học | Scientific Socialism,2,Bắt buộc | Compulsory,30,,ML016
+CT101H,Toán cho khoa học máy tính | Mathematics for Computer Science,4,Bắt buộc | Compulsory,60,,
+CT104H,Nguyên lý hệ điều hành | Principles of Operating System,3,Bắt buộc | Compulsory,30,30,CT005H
+CT108H,Lập trình hướng đối tượng | Object-Oriented Programming,3,Bắt buộc | Compulsory,30,30,CT054H
+"## Học kỳ 6 — 14 tín chỉ (bắt buộc 13, tự chọn 1) | Semester 6 — 14 credits (13 compulsory, 1 elective)"
+TC100,Giáo dục thể chất 2 (*) | Physical Education 2 (*),1,Tự chọn | Elective,10,10,
+CT051H,Vi – Tích phân | Calculus,4,Bắt buộc | Compulsory,60,,
+CT175H,Lý thuyết đồ thị | Graph Theory,3,Bắt buộc | Compulsory,30,30,CT102H
+CT110H,Cơ sở dữ liệu | Databases,3,Bắt buộc | Compulsory,30,30,CT102H
+CT106H,Mạng máy tính | Computer Networking,3,Bắt buộc | Compulsory,30,30,CT005H
+"## Học kỳ 7 — 12 tín chỉ (bắt buộc 11, tự chọn 1) | Semester 7 — 12 credits (11 compulsory, 1 elective)"
+TC100,Giáo dục thể chất 3 (*) | Physical Education 3 (*),1,Tự chọn | Elective,10,10,
+ML019,Lịch sử Đảng Cộng sản Việt Nam | History of the Communist Party of Vietnam,2,Bắt buộc | Compulsory,30,,ML018
+CT109H,Phân tích và thiết kế thuật toán | Design and Analysis of Computer Algorithms,3,Bắt buộc | Compulsory,30,30,CT102H
+CT112H,Phân tích và thiết kế hệ thống | Systems Analysis & Design,3,Bắt buộc | Compulsory,30,30,CT110H
+CT117H,Lập trình Web cơ bản | Web Development Fundamentals,3,Bắt buộc | Compulsory,30,30,CT110H
+"## Học kỳ 8 — 13 tín chỉ (bắt buộc 8, tự chọn 5) | Semester 8 — 13 credits (8 compulsory, 5 elective)"
+ML021,Tư tưởng Hồ Chí Minh | Ho Chi Minh Ideology,2,Bắt buộc | Compulsory,30,,ML019
+ML007,Logic học đại cương | Introduction to Logic,2,Tự chọn | Elective,30,,
+KN001E,Kỹ năng mềm | Soft Skills,2,Tự chọn | Elective,20,20,
+KN002E,Đổi mới sáng tạo và khởi nghiệp | Innovation and Entrepreneurship,2,Tự chọn | Elective,20,20,
+CT335H,Thiết kế và triển khai hệ thống mạng | Network System Design and Implementation,3,Bắt buộc | Compulsory,30,30,CT106H
+CT312H,Lập trình cho các thiết bị di động | Mobile Programming,3,Tự chọn | Elective,30,30,
+TN232H,Lập trình Python | Python Programming,3,Tự chọn | Elective,30,30,
+CT294H,Máy học ứng dụng | Applied Machine Learning,3,Tự chọn | Elective,30,30,
+CT436HE,Niên luận cơ sở ngành MMT-TTDL-CLC | Project - Fundamental Topics,3,Bắt buộc | Compulsory,,90,
+"## Học kỳ 9 — 14 tín chỉ (bắt buộc 14, tự chọn 0) | Semester 9 — 14 credits (14 compulsory, 0 elective)"
+KL001E,Pháp luật đại cương | Introduction to Law,2,Bắt buộc | Compulsory,30,,
+CT301H,An ninh mạng | Network Security,3,Bắt buộc | Compulsory,30,30,CT106H
+CT305H,Lập trình mạng | Network Programming,3,Bắt buộc | Compulsory,30,30,CT106H
+CT333H,Quản trị mạng | Network Administration,3,Bắt buộc | Compulsory,30,30,CT106H
+CT204H,Điện toán đám mây | Cloud Computing,3,Bắt buộc | Compulsory,30,30,CT106H
+"## Học kỳ 10 — 15 tín chỉ (bắt buộc 0, tự chọn 15) | Semester 10 — 15 credits (0 compulsory, 15 elective)"
+CT435H,Kỹ thuật phát hiện tấn công mạng | Techniques for Network Intrusion Detection,3,Tự chọn | Elective,30,30,
+CT166H,Tường lửa | Firewall,3,Tự chọn | Elective,30,30,CT335H
+CT344H,Giải quyết sự cố mạng | Network Troubleshooting,3,Tự chọn | Elective,30,30,CT335H
+CT232H,Đánh giá hiệu năng mạng | Network Performance Evaluation,3,Tự chọn | Elective,30,30,CT106H
+CT566HT,Phần mềm tự do mã nguồn mở | Free and Open-Source Software,3,Tự chọn | Elective,30,30,
+CT230H,Phát triển ứng dụng hướng dịch vụ | Service-Oriented Application Development,3,Tự chọn | Elective,30,30,
+CT097H,Phát triển ứng dụng Web nâng cao | Advanced Web Development,3,Tự chọn | Elective,30,30,CT117H
+CT306H,Lập trình song song | Parallel Programming,3,Tự chọn | Elective,30,30,CT106H
+CT482H,Xử lý dữ liệu lớn | Big Data Processing,3,Tự chọn | Elective,30,30,
+CT205H,Nguyên lý máy học | Machine Learning Principles,3,Tự chọn | Elective,30,30,
+"## Học kỳ 11 — 12 tín chỉ (bắt buộc 9, tự chọn 3) | Semester 11 — 12 credits (9 compulsory, 3 elective)"
+CT115H,Quản trị hệ thống máy tính | Computer Systems Administration,3,Bắt buộc | Compulsory,30,30,
+CT209H,Quản trị mạng trên MS Windows | MS Windows Network Administration,3,Bắt buộc | Compulsory,30,30,CT106H
+CT201H,An ninh máy tính | Computer Security,3,Tự chọn | Elective,30,30,CT106H
+CT490H,An ninh Web | Web Security,3,Tự chọn | Elective,30,30,CT117H
+CT439HE,Niên luận chuyên ngành MMT-TTDL-CLC | Project - Specialized Topics,3,Bắt buộc | Compulsory,,90,
+"## Học kỳ 12 — 15 tín chỉ (bắt buộc 15, tự chọn 0) | Semester 12 — 15 credits (15 compulsory, 0 elective)"
+CT555HE,Luận văn tốt nghiệp MMT-TTDL-CLC | Computer Networks and Data Communication Thesis,15,Bắt buộc | Compulsory,,450,
+"## Học kỳ 13 — 5 tín chỉ (bắt buộc 5, tự chọn 0) | Semester 13 — 5 credits (5 compulsory, 0 elective)"
+CT517HE,Thực tập doanh nghiệp MMT-TTDL-CLC | Internship in Computer Networks and Data Communication,5,Bắt buộc | Compulsory,,150,
+=Tổng cộng | Total,,168,"Bắt buộc 140, tự chọn 28 | Compulsory 140, elective 28",,,

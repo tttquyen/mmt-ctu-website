@@ -1,0 +1,162 @@
+﻿"# Danh mục đề cương chi tiết học phần. Ô URL trống = chưa có đề cương công khai, mã học phần hiển thị không có liên kết."
+"# Điền URL (máy chủ CICT, Google Drive...) để bổ sung. Kiểm tra ngày 29/10/2026: 104/157 học phần có đề cương trên www.cit.ctu.edu.vn/decuong/."
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+Mã HP | Code,Tên học phần | Course,Đề cương (URL) | Syllabus (URL)
+CT005,Nền tảng công nghệ số | Digital Technology Foundations,https://www.cit.ctu.edu.vn/decuong/CT005.pdf
+CT005H,Nền tảng công nghệ số | Digital Competence,
+CT051H,Vi – Tích phân | Calculus,https://www.cit.ctu.edu.vn/decuong/CT051H.pdf
+CT052H,Đại số tuyến tính và hình học | Linear Algebra & Analytic Geometry,https://www.cit.ctu.edu.vn/decuong/CT052H.pdf
+CT053H,Xác suất thống kê | Probability & Statistics,https://www.cit.ctu.edu.vn/decuong/CT053H.pdf
+CT054H,Lập trình căn bản A | Basic programming A,https://www.cit.ctu.edu.vn/decuong/CT054H.pdf
+CT055HE,Kỹ năng giao tiếp | Communication skills,
+CT056HE,Kỹ năng thuyết trình | Presentation skills,
+CT057HE,Kỹ năng làm việc nhóm | Teamwork skills,
+CT058HE,Kỹ năng giải quyết vấn đề | Problem solving,
+CT059HE,Kỹ năng tư duy phản biện | Critical Thinking Skills,
+CT097H,Phát triển ứng dụng Web nâng cao | Advanced Web Development,
+CT098,Phát triển ứng dụng IoT | IoT Application Development,https://www.cit.ctu.edu.vn/decuong/CT098.pdf
+CT100,Kỹ năng học đại học | University Study Skills,https://www.cit.ctu.edu.vn/decuong/CT100.pdf
+CT100H,Kỹ năng học đại học | Study Skills for College Students,
+CT101,Lập trình căn bản A | Fundamentals of Programming A,https://www.cit.ctu.edu.vn/decuong/CT101.pdf
+CT101H,Toán cho khoa học máy tính | Mathematics for Computer Science,https://www.cit.ctu.edu.vn/decuong/CT101H.pdf
+CT102H,Cấu trúc dữ liệu | Data Structures,https://www.cit.ctu.edu.vn/decuong/CT102H.pdf
+CT104H,Nguyên lý hệ điều hành | Principles of Operating System,https://www.cit.ctu.edu.vn/decuong/CT104H.pdf
+CT106H,Mạng máy tính | Computer Networking,https://www.cit.ctu.edu.vn/decuong/CT106H.pdf
+CT108H,Lập trình hướng đối tượng | Object-Oriented Programming,https://www.cit.ctu.edu.vn/decuong/CT108H.pdf
+CT109H,Phân tích và thiết kế thuật toán | Design and Analysis of Computer Algorithms,https://www.cit.ctu.edu.vn/decuong/CT109H.pdf
+CT110H,Cơ sở dữ liệu | Databases,https://www.cit.ctu.edu.vn/decuong/CT110H.pdf
+CT112,Mạng máy tính | Computer Networks,https://www.cit.ctu.edu.vn/decuong/CT112.pdf
+CT112H,Phân tích và thiết kế hệ thống | Systems Analysis & Design,https://www.cit.ctu.edu.vn/decuong/CT112H.pdf
+CT115H,Quản trị hệ thống máy tính | Computer Systems Administration,
+CT116H,Nền tảng kiến trúc máy tính | Fundamentals of Computer Architecture,
+CT117H,Lập trình Web cơ bản | Web Development Fundamentals,
+CT121,Tin học lý thuyết | Theory of Computation,https://www.cit.ctu.edu.vn/decuong/CT121.pdf
+CT126,Lý thuyết xếp hàng | Queueing Theory,https://www.cit.ctu.edu.vn/decuong/CT126.pdf
+CT127,Lý thuyết thông tin | Information Theory,https://www.cit.ctu.edu.vn/decuong/CT127.pdf
+CT166H,Tường lửa | Firewall,
+CT172E,Toán rời rạc | Discrete Mathematics,https://www.cit.ctu.edu.vn/decuong/CT172E.pdf
+CT173,Kiến trúc máy tính | Computer Architecture,https://www.cit.ctu.edu.vn/decuong/CT173.pdf
+CT174,Phân tích và thiết kế thuật toán | Algorithm Analysis and Design,https://www.cit.ctu.edu.vn/decuong/CT174.pdf
+CT175,Lý thuyết đồ thị | Graph Theory,https://www.cit.ctu.edu.vn/decuong/CT175.pdf
+CT175H,Lý thuyết đồ thị | Graph Theory,https://www.cit.ctu.edu.vn/decuong/CT175H.pdf
+CT176,Lập trình hướng đối tượng | Object-Oriented Programming,https://www.cit.ctu.edu.vn/decuong/CT176.pdf
+CT177,Cấu trúc dữ liệu | Data Structures,https://www.cit.ctu.edu.vn/decuong/CT177.pdf
+CT178,Nguyên lý hệ điều hành | Principles of Operating Systems,https://www.cit.ctu.edu.vn/decuong/CT178.pdf
+CT179,Quản trị hệ thống | System Administration,https://www.cit.ctu.edu.vn/decuong/CT179.pdf
+CT180,Cơ sở dữ liệu | Databases,https://www.cit.ctu.edu.vn/decuong/CT180.pdf
+CT182,Ngôn ngữ mô hình hóa | Modelling Languages,https://www.cit.ctu.edu.vn/decuong/CT182.pdf
+CT188,Nhập môn lập trình Web | Introduction to Web Programming,https://www.cit.ctu.edu.vn/decuong/CT188.pdf
+CT190E,Nhập môn trí tuệ nhân tạo | Introduction to Artificial Intelligence,https://www.cit.ctu.edu.vn/decuong/CT190E.pdf
+CT197,Cơ sở lý thuyết mật mã | Foundations of Cryptography,https://www.cit.ctu.edu.vn/decuong/CT197.pdf
+CT201H,An ninh máy tính | Computer Security,https://www.cit.ctu.edu.vn/decuong/CT201H.pdf
+CT204H,Điện toán đám mây | Cloud Computing,https://www.cit.ctu.edu.vn/decuong/CT204H.pdf
+CT205,Quản trị cơ sở dữ liệu | Database Administration,https://www.cit.ctu.edu.vn/decuong/CT205.pdf
+CT205H,Nguyên lý máy học | Machine Learning Principles,https://www.cit.ctu.edu.vn/decuong/CT205H.pdf
+CT206,Phát triển ứng dụng trên Linux | Application Development on Linux,https://www.cit.ctu.edu.vn/decuong/CT206.pdf
+CT207E,Phát triển phần mềm mã nguồn mở | Open-Source Software Development,
+CT209H,Quản trị mạng trên MS Windows | MS Windows Network Administration,https://www.cit.ctu.edu.vn/decuong/CT209H.pdf
+CT211,An ninh mạng | Network Security,https://www.cit.ctu.edu.vn/decuong/CT211.pdf
+CT212,Quản trị mạng | Network Administration,https://www.cit.ctu.edu.vn/decuong/CT212.pdf
+CT221,Lập trình mạng | Network Programming,https://www.cit.ctu.edu.vn/decuong/CT221.pdf
+CT222,An toàn hệ thống | System Security,https://www.cit.ctu.edu.vn/decuong/CT222.pdf
+CT223,Quản lý dự án phần mềm | Software Project Management,https://www.cit.ctu.edu.vn/decuong/CT223.pdf
+CT224E,Công nghệ J2EE | J2EE Technology,
+CT225,Lập trình Python | Python Programming,https://www.cit.ctu.edu.vn/decuong/CT225.pdf
+CT226E,Niên luận cơ sở mạng máy tính và truyền thông | Basic Project in Computer Networks and Communications,
+CT227,Kỹ thuật phát hiện tấn công mạng | Network Intrusion Detection Techniques,https://www.cit.ctu.edu.vn/decuong/CT227.pdf
+CT228,Tường lửa | Firewalls,https://www.cit.ctu.edu.vn/decuong/CT228.pdf
+CT230,Phát triển ứng dụng hướng dịch vụ | Service-Oriented Application Development,https://www.cit.ctu.edu.vn/decuong/CT230.pdf
+CT230H,Phát triển ứng dụng hướng dịch vụ | Service-Oriented Application Development,
+CT231,Lập trình song song | Parallel Programming,https://www.cit.ctu.edu.vn/decuong/CT231.pdf
+CT232E,Đánh giá hiệu năng mạng | Network Performance Evaluation,
+CT232H,Đánh giá hiệu năng mạng | Network Performance Evaluation,
+CT233,Điện toán đám mây | Cloud Computing,https://www.cit.ctu.edu.vn/decuong/CT233.pdf
+CT235,Quản trị mạng trên MS Windows | Network Administration on MS Windows,https://www.cit.ctu.edu.vn/decuong/CT235.pdf
+CT238E,Phân lớp dữ liệu lớn | Big Data Classification,
+CT251,Phát triển ứng dụng trên Windows | Application Development on Windows,https://www.cit.ctu.edu.vn/decuong/CT251.pdf
+CT273,Giao diện người – máy | Human–Computer Interaction,https://www.cit.ctu.edu.vn/decuong/CT273.pdf
+CT274,Lập trình cho thiết bị di động | Mobile Device Programming,https://www.cit.ctu.edu.vn/decuong/CT274.pdf
+CT279,Blockchain,https://www.cit.ctu.edu.vn/decuong/CT279.pdf
+CT294,Máy học ứng dụng | Applied Machine Learning,https://www.cit.ctu.edu.vn/decuong/CT294.pdf
+CT294H,Máy học ứng dụng | Applied Machine Learning,
+CT296,Phân tích và thiết kế hệ thống thông tin | Information Systems Analysis and Design,https://www.cit.ctu.edu.vn/decuong/CT296.pdf
+CT297,Pháp y máy tính | Computer Forensics,https://www.cit.ctu.edu.vn/decuong/CT297.pdf
+CT301H,An ninh mạng | Network Security,https://www.cit.ctu.edu.vn/decuong/CT301H.pdf
+CT305H,Lập trình mạng | Network Programming,https://www.cit.ctu.edu.vn/decuong/CT305H.pdf
+CT306H,Lập trình song song | Parallel Programming,https://www.cit.ctu.edu.vn/decuong/CT306H.pdf
+CT312H,Lập trình cho các thiết bị di động | Mobile Programming,https://www.cit.ctu.edu.vn/decuong/CT312H.pdf
+CT332,Trí tuệ nhân tạo | Artificial Intelligence,https://www.cit.ctu.edu.vn/decuong/CT332.pdf
+CT333H,Quản trị mạng | Network Administration,
+CT335,Thiết kế và cài đặt mạng | Network Design and Implementation,https://www.cit.ctu.edu.vn/decuong/CT335.pdf
+CT335H,Thiết kế và triển khai hệ thống mạng | Network System Design and Implementation,
+CT338,Mạng không dây và di động | Wireless and Mobile Networks,https://www.cit.ctu.edu.vn/decuong/CT338.pdf
+CT344,Giải quyết sự cố mạng | Network Troubleshooting,https://www.cit.ctu.edu.vn/decuong/CT344.pdf
+CT344H,Giải quyết sự cố mạng | Network Troubleshooting,
+CT428,Lập trình Web | Web Programming,https://www.cit.ctu.edu.vn/decuong/CT428.pdf
+CT435H,Kỹ thuật phát hiện tấn công mạng | Techniques for Network Intrusion Detection,
+CT436HE,Niên luận cơ sở ngành MMT-TTDL-CLC | Project - Fundamental Topics,
+CT439E,Niên luận mạng máy tính và truyền thông | Project in Computer Networks and Communications,
+CT439HE,Niên luận chuyên ngành MMT-TTDL-CLC | Project - Specialized Topics,
+CT467,Quản trị dữ liệu | Data Management,https://www.cit.ctu.edu.vn/decuong/CT467.pdf
+CT479,Phương pháp tính | Numerical Methods,https://www.cit.ctu.edu.vn/decuong/CT479.pdf
+CT482,Xử lý dữ liệu lớn | Big Data Processing,https://www.cit.ctu.edu.vn/decuong/CT482.pdf
+CT482H,Xử lý dữ liệu lớn | Big Data Processing,
+CT485,Các kỹ thuật tấn công mạng | Network Attack Techniques,https://www.cit.ctu.edu.vn/decuong/CT485.pdf
+CT486,Phát hiện và phân tích mã độc | Malware Detection and Analysis,https://www.cit.ctu.edu.vn/decuong/CT486.pdf
+CT488,Bảo mật hệ thống IoT | IoT System Security,https://www.cit.ctu.edu.vn/decuong/CT488.pdf
+CT489E,Luật an ninh mạng và đạo đức trong lĩnh vực CNTT | Cybersecurity Law and Ethics in IT,
+CT490,An ninh Web | Web Security,https://www.cit.ctu.edu.vn/decuong/CT490.pdf
+CT490H,An ninh Web | Web Security,
+CT491E,Niên luận cơ sở an toàn thông tin | Basic Project in Information Security,
+CT492E,Niên luận an toàn thông tin | Project in Information Security,
+CT493E,Thực tập doanh nghiệp – An toàn thông tin | Company Internship – Information Security,
+CT507E,Tiểu luận tốt nghiệp – TT&MMT | Graduation Essay – Computer Networks and Communications,
+CT517E,Thực tập doanh nghiệp – MMT&TTDL | Company Internship – Computer Networks and Data Communication,
+CT517HE,Thực tập doanh nghiệp MMT-TTDL-CLC | Internship in Computer Networks and Data Communication,
+CT520E,Tiểu luận tốt nghiệp – ATTT | Graduation Essay – Information Security,
+CT555E,Luận văn tốt nghiệp – TT&MMT | Graduation Thesis – Computer Networks and Communications,
+CT555HE,Luận văn tốt nghiệp MMT-TTDL-CLC | Computer Networks and Data Communication Thesis,
+CT556E,Luận văn tốt nghiệp – ATTT | Graduation Thesis – Information Security,
+CT566HT,Phần mềm tự do mã nguồn mở | Free and Open-Source Software,
+FL001,Pháp văn căn bản 1 (*) | Basic French 1 (*),https://www.cit.ctu.edu.vn/decuong/FL001.pdf
+FL002,Pháp văn căn bản 2 (*) | Basic French 2 (*),https://www.cit.ctu.edu.vn/decuong/FL002.pdf
+FL003,Pháp văn căn bản 3 (*) | Basic French 3 (*),https://www.cit.ctu.edu.vn/decuong/FL003.pdf
+FL007,Pháp văn tăng cường 1 (*) | Intensive French 1 (*),https://www.cit.ctu.edu.vn/decuong/FL007.pdf
+FL008,Pháp văn tăng cường 2 (*) | Intensive French 2 (*),https://www.cit.ctu.edu.vn/decuong/FL008.pdf
+FL009,Pháp văn tăng cường 3 (*) | Intensive French 3 (*),https://www.cit.ctu.edu.vn/decuong/FL009.pdf
+FL010H,Nghe nói và ngữ âm thực hành (*) | Listening and Speaking (*),
+FL011H,Đọc hiểu (*) | Reading (*),
+FL012H,Viết (*) | Writing (*),
+FL013H,Ngữ pháp ứng dụng (*) | Grammar in Use (*),
+FL014H,Kỹ năng thuyết trình (*) | Presentation skills (*),
+FL100H,Thi đánh giá năng lực tiếng Anh (*) | English proficiency examination (*),
+KL001E,Pháp luật đại cương | Introduction to Law,
+KN001E,Kỹ năng mềm | Soft Skills,
+KN002E,Đổi mới sáng tạo và khởi nghiệp | Innovation and Entrepreneurship,
+ML007,Logic học đại cương | Introduction to Logic,https://www.cit.ctu.edu.vn/decuong/ML007.pdf
+ML014,Triết học Mác – Lênin | Marxist–Leninist Philosophy,https://www.cit.ctu.edu.vn/decuong/ML014.pdf
+ML016,Kinh tế chính trị Mác – Lênin | Marxist–Leninist Political Economy,https://www.cit.ctu.edu.vn/decuong/ML016.pdf
+ML018,Chủ nghĩa xã hội khoa học | Scientific Socialism,https://www.cit.ctu.edu.vn/decuong/ML018.pdf
+ML019,Lịch sử Đảng Cộng sản Việt Nam | History of the Communist Party of Vietnam,https://www.cit.ctu.edu.vn/decuong/ML019.pdf
+ML021,Tư tưởng Hồ Chí Minh | Ho Chi Minh Ideology,https://www.cit.ctu.edu.vn/decuong/ML021.pdf
+QP010E,Giáo dục quốc phòng và An ninh 1 (*) | National Defence and Security Education 1 (*),
+QP011E,Giáo dục quốc phòng và An ninh 2 (*) | National Defence and Security Education 2 (*),
+QP012,Giáo dục quốc phòng và An ninh 3 (*) | National Defence and Security Education 3 (*),https://www.cit.ctu.edu.vn/decuong/QP012.pdf
+QP013,Giáo dục quốc phòng và An ninh 4 (*) | National Defence and Security Education 4 (*),https://www.cit.ctu.edu.vn/decuong/QP013.pdf
+TC100,Giáo dục thể chất 1+2+3 (*) | Physical Education 1+2+3 (*),https://www.cit.ctu.edu.vn/decuong/TC100.pdf
+TN001,Vi – Tích phân A1 | Calculus A1,https://www.cit.ctu.edu.vn/decuong/TN001.pdf
+TN002,Vi – Tích phân A2 | Calculus A2,https://www.cit.ctu.edu.vn/decuong/TN002.pdf
+TN010,Xác suất thống kê | Probability and Statistics,https://www.cit.ctu.edu.vn/decuong/TN010.pdf
+TN012,Đại số tuyến tính và hình học | Linear Algebra and Geometry,https://www.cit.ctu.edu.vn/decuong/TN012.pdf
+TN232H,Lập trình Python | Python Programming,
+XH011,Cơ sở văn hóa Việt Nam | Fundamentals of Vietnamese Culture,https://www.cit.ctu.edu.vn/decuong/XH011.pdf
+XH012,Tiếng Việt thực hành | Practical Vietnamese,https://www.cit.ctu.edu.vn/decuong/XH012.pdf
+XH014,Văn bản và lưu trữ học đại cương | Introduction to Records and Archives,https://www.cit.ctu.edu.vn/decuong/XH014.pdf
+XH023,Anh văn căn bản 1 (*) | Basic English 1 (*),https://www.cit.ctu.edu.vn/decuong/XH023.pdf
+XH024,Anh văn căn bản 2 (*) | Basic English 2 (*),https://www.cit.ctu.edu.vn/decuong/XH024.pdf
+XH025,Anh văn căn bản 3 (*) | Basic English 3 (*),https://www.cit.ctu.edu.vn/decuong/XH025.pdf
+XH028,Xã hội học đại cương | Introduction to Sociology,https://www.cit.ctu.edu.vn/decuong/XH028.pdf
+XH031,Anh văn tăng cường 1 (*) | Intensive English 1 (*),https://www.cit.ctu.edu.vn/decuong/XH031.pdf
+XH032,Anh văn tăng cường 2 (*) | Intensive English 2 (*),https://www.cit.ctu.edu.vn/decuong/XH032.pdf
+XH033,Anh văn tăng cường 3 (*) | Intensive English 3 (*),https://www.cit.ctu.edu.vn/decuong/XH033.pdf

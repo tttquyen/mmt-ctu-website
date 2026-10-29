@@ -1,10 +1,11 @@
-﻿# Nguồn: Thống kê NCKH Khoa MMT&TT 2022–2026 (đến tháng 8/2026).
+﻿"# Nguồn: Báo cáo tự đánh giá AUN-QA 2026, Bảng 2.7. (*) Năm 2026 chưa trọn năm."
+"# Bảng này dùng cho cả bảng ở ketqua.html và biểu đồ ở nckh.html (4 cột số đầu: quốc tế = cột 1+2, trong nước = cột 3+4)."
 "# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
 # Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
-Năm | Year,Tạp chí quốc tế | Int. journals,Kỷ yếu hội nghị quốc tế | Int. conference proceedings,Tạp chí trong nước | Domestic journals,Hội nghị trong nước | Domestic conferences,Tổng | Total
-2022,8,6,0,4,18
-2023,4,17,2,7,30
-2024,6,18,5,5,34
-2025,6,23,6,0,35
-2026 (*),7,6,0,1,14
-=Tổng cộng | Total,31,70,13,17,131
+Năm | Year,Tạp chí quốc tế | Int. journals,Hội nghị quốc tế | Int. conferences,Tạp chí trong nước | Domestic journals,Hội nghị trong nước | Domestic conferences,Tổng | Total,Công bố / giảng viên | Per lecturer
+2022,8,8,0,4,20,1.3
+2023,4,20,3,7,34,2.3
+2024,6,21,5,5,37,2.2
+2025,8,24,6,0,38,2.2
+2026 (*),12,6,0,1,19,1.1
+=Tổng cộng | Total,38,79,14,17,148,1.8

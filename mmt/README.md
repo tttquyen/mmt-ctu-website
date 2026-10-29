@@ -150,9 +150,11 @@ Trong HTML, chỗ đặt bảng chỉ là `<div data-table="ten-tep"></div>`; da
 
 | Tệp | Hiển thị ở |
 |---|---|
-| `tot-nghiep`, `viec-lam`, `viec-lam-chi-tiet`, `dat-cdr`, `hai-long`, `cong-bo` | `ketqua.html` |
-| `matran-mmt`, `matran-attt` (ma trận học phần – PLO, I/R/M) | `cdr.html` |
-| `ke-hoach-mmt`, `ke-hoach-attt` (kế hoạch 13 học kỳ) | `ctdtmmt.html`, `ctdtattt.html` |
+| `tot-nghiep`, `viec-lam`, `viec-lam-chi-tiet`, `dat-cdr`, `hai-long`, `cong-bo` | `ketqua.html` (`cong-bo` còn vẽ biểu đồ ở `nckh.html`) |
+| `matran-mmt`, `matran-attt`, `matran-clc` (ma trận học phần – PLO, I/R/M) | `cdr.html` |
+| `ke-hoach-mmt`, `ke-hoach-attt`, `ke-hoach-clc` (kế hoạch 13 học kỳ) | `ctdtmmt.html`, `ctdtattt.html`, `ctdtmmtclc.html` |
+| `de-cuong` (mã học phần → URL đề cương; ô trống = không gắn link) | mọi bảng có mã học phần |
+| `co-van`, `bieu-mau` | `sv.html` |
 | `cac-khoa` (CTĐT các khóa trên trang ĐHCT) | `ctdt.html` |
 | `nhan-su`, `nhan-su-thong-ke` | `gv.html` |
 | `de-tai-gv`, `de-tai-sv` | `nckh.html` |
@@ -162,8 +164,8 @@ Trong HTML, chỗ đặt bảng chỉ là `<div data-table="ten-tep"></div>`; da
 
 **Quy ước CSV:** ô song ngữ viết `Tiếng Việt | English`; dòng bắt đầu bằng `#` là ghi chú,
 `##` là dòng nhóm (vd. `## Học kỳ 1 | Semester 1`), `=` là dòng tổng; số thập phân dùng dấu chấm
-(`70.71%`), bản tiếng Việt tự đổi thành dấu phẩy. Mã học phần trong ma trận và kế hoạch tự gắn link
-đề cương `http://www.cit.ctu.edu.vn/decuong/<mã>.pdf`. Ô dạng `[chữ](https://...)` thành liên kết.
+(`70.71%`), bản tiếng Việt tự đổi thành dấu phẩy. Mã học phần trong ma trận và kế hoạch được gắn link
+đề cương nếu có URL trong `de-cuong.csv` (đã điền sẵn 104 đề cương có trên `www.cit.ctu.edu.vn/decuong/`). Ô dạng `[chữ](https://...)` thành liên kết.
 
 **Dùng Google Sheets thay cho tệp CSV:**
 1. Tạo một bảng tính, mỗi tab ứng với một tệp (dán nội dung CSV vào, giữ nguyên dòng tiêu đề).
@@ -185,7 +187,7 @@ Báo cáo tự đánh giá AUN-QA chu kỳ II (2026) của ngành Mạng máy t�
 | `ctdtmmt.html`, `ctdtattt.html`, `ctdt.html` | 2 — Programme Structure and Content | ✅ Kế hoạch 13 học kỳ, đề cương, CTĐT các khóa |
 | `dayhoc.html` | 3 — Teaching and Learning · 4 — Student Assessment | ✅ |
 | `gv.html` | 5 — Academic Staff | ✅ Còn thiếu thông tin ThS. Đoàn Minh Quý, KS. Vũ Xuân Lộc |
-| `sv.html` | 6 — Student Support Services | Còn thiếu danh sách cố vấn học tập, biểu mẫu |
+| `sv.html` | 6 — Student Support Services | Bảng cố vấn học tập, biểu mẫu đang trống (`co-van.csv`, `bieu-mau.csv`) |
 | `ptn.html`, `ptnmmt.html` | 7 — Facilities and Infrastructure | ✅ Còn thiếu thiết bị PTN An toàn thông tin |
 | `ketqua.html` | 8 — Output and Outcomes | ✅ |
 

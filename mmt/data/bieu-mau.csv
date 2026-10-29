@@ -1,0 +1,5 @@
+﻿"# Biểu mẫu và sổ tay sinh viên. Cột ""Tải về"" ghi URL (tệp trong mmt/docs/ hoặc Google Drive) để hiện nút liên kết."
+"# Ví dụ: Sổ tay sinh viên Khóa 52 | Student handbook, Cohort 52,Sinh viên năm nhất | First-year students,https://..."
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+"Biểu mẫu, tài liệu | Form or document",Dùng cho | Used for,Tải về | Download

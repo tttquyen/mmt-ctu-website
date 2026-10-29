@@ -42,8 +42,6 @@
        false = hien lai de biet con thieu noi dung gi. */
     hidePending: true,
 
-    /* Thu muc de cuong chi tiet hoc phan: <syllabusUrl><MA_HP>.pdf */
-    syllabusUrl: 'http://www.cit.ctu.edu.vn/decuong/',
 
     /* ------------------------------------------------------------------
        DU LIEU DONG — cac bang co thuoc tinh data-table="ten" / data-people="ten"
@@ -70,7 +68,12 @@
       'ke-hoach-mmt': '',
       'ke-hoach-attt': '',
       'khuyen-nghi-aun': '',
-      'doi-tac': ''
+      'doi-tac': '',
+      'matran-clc': '',
+      'ke-hoach-clc': '',
+      'de-cuong': '',
+      'co-van': '',
+      'bieu-mau': ''
     }
   };
 
@@ -164,6 +167,9 @@
       dataError: 'Chưa tải được dữ liệu. Vui lòng tải lại trang hoặc xem tệp gốc',
       peopleResearch: 'Hướng NC',
       peopleTeaching: 'Môn GD',
+      chartLabel: 'Biểu đồ số công bố khoa học theo năm',
+      chartIntl: 'Công bố quốc tế',
+      chartDom: 'Công bố trong nước',
       footAddress: 'Địa chỉ:',
       footPhone: 'Điện thoại:',
       footEmail: 'Email:',
@@ -273,6 +279,9 @@
       dataError: 'The data could not be loaded. Please reload the page or open the source file',
       peopleResearch: 'Research',
       peopleTeaching: 'Teaching',
+      chartLabel: 'Publications per year',
+      chartIntl: 'International publications',
+      chartDom: 'Domestic publications',
       footAddress: 'Address:',
       footPhone: 'Phone:',
       footEmail: 'Email:',
@@ -689,7 +698,8 @@
      Thuộc tính trên phần tử chứa bảng:
        data-table="ten"         tên tệp / nguồn dữ liệu
        data-class="table-num"   lớp CSS cho <table>
-       data-syllabus="1"        cột (đếm từ 0) chứa mã học phần, tự gắn link đề cương
+       data-syllabus="1"        cột (đếm từ 0) chứa mã học phần; mã nào có URL trong de-cuong.csv
+                                thì được gắn link đề cương, mã chưa có URL hiển thị chữ thường
        data-irm                 tô màu ô I / R / M (ma trận chuẩn đầu ra)
        data-caption="..."       chú thích ẩn cho trình đọc màn hình
      ===================================================================== */
@@ -740,8 +750,8 @@
   }
   function cellHTML(raw, col, opt) {
     var v = fmtNum(pick(raw));
-    if (opt.syllabus === col && /^[A-Z]{2}\d{3}[A-Z]?$/.test(v)) {
-      return '<a href="' + esc(COMMON.syllabusUrl + v + '.pdf') + '" target="_blank" rel="noopener" title="' +
+    if (opt.syllabus === col && opt.syllabi && opt.syllabi[v]) {
+      return '<a href="' + esc(opt.syllabi[v]) + '" target="_blank" rel="noopener" title="' +
         esc(T.syllabusTitle) + '">' + esc(v) + '</a>';
     }
     if (/^https?:\/\//.test(v)) {
@@ -752,8 +762,19 @@
     return esc(v);
   }
 
-  function renderTable(host, rows) {
+  /* de-cuong.csv: Mã HP, Tên học phần, URL đề cương -> { MÃ: URL } */
+  function syllabusMap(rows) {
+    var map = {};
+    rows.forEach(function (r) {
+      var code = (r[0] || '').trim(), url = (r[2] || '').trim();
+      if (/^[A-Z]{2}\d{3}[A-Z]{0,2}$/.test(code) && /^https?:\/\//.test(url)) map[code] = url;
+    });
+    return map;
+  }
+
+  function renderTable(host, rows, syllabi) {
     var opt = {
+      syllabi: syllabi,
       syllabus: host.hasAttribute('data-syllabus') ? +host.getAttribute('data-syllabus') : -1,
       irm: host.hasAttribute('data-irm')
     };
@@ -779,6 +800,9 @@
       }
       (isFoot ? foot : body).push('<tr>' + cells.join('') + '</tr>');
     });
+    if (!body.length && host.getAttribute('data-empty')) {
+      body.push('<tr><td colspan="' + n + '" class="text-muted">' + esc(host.getAttribute('data-empty')) + '</td></tr>');
+    }
     var cap = host.getAttribute('data-caption');
     host.innerHTML = '<table' + (host.getAttribute('data-class') ? ' class="' + esc(host.getAttribute('data-class')) + '"' : '') + '>' +
       (cap ? '<caption class="visually-hidden">' + esc(cap) + '</caption>' : '') +
@@ -810,7 +834,8 @@
         '<div>' +
           '<p class="person__name">' + (link ? '<a href="' + esc(link) + '"' + ext(link) + '>' + esc(name) + '</a>' : esc(name)) + '</p>' +
           (col(r, 'chuc_vu') ? '<p class="person__role">' + esc(col(r, 'chuc_vu')) + '</p>' : '') +
-          (email ? '<p class="person__meta"><a href="mailto:' + esc(email) + '">' + esc(email) + '</a></p>' : '') +
+          (email ? '<p class="person__meta">' + (email.indexOf('@') > 0 ? '<a href="mailto:' + esc(email) + '">' + esc(email) + '</a>'
+            : '<strong>Email:</strong> <span class="text-muted">' + esc(email) + '</span>') + '</p>' : '') +
           meta(T.peopleResearch, col(r, 'huong_nc')) +
           meta(T.peopleTeaching, col(r, 'mon_gd')) +
           (links ? '<div class="person__links">' + links + '</div>' : '') +
@@ -818,7 +843,36 @@
     }).join('');
   }
 
+  /* Biểu đồ cột chồng công bố khoa học từ cong-bo.csv:
+     cột 1–2 = quốc tế (tạp chí, hội nghị), cột 3–4 = trong nước; bỏ qua dòng tổng (=) */
+  function renderChart(host, rows) {
+    rows = rows.filter(function (r) { return !/^#/.test(r[0].trim()) && r[0].trim().indexOf('=') !== 0; });
+    rows.shift();
+    var num = function (x) { return parseFloat(x) || 0; };
+    var data = rows.map(function (r) {
+      return { label: pick(r[0]).replace(/\s*\(\*\)/, '*'), intl: num(r[1]) + num(r[2]), dom: num(r[3]) + num(r[4]) };
+    });
+    var max = Math.max.apply(null, data.map(function (d) { return d.intl + d.dom; })) || 1;
+    var px = function (v) { return Math.round(v / max * 170); };
+    host.setAttribute('role', 'img');
+    host.setAttribute('aria-label', T.chartLabel + ': ' + data.map(function (d) { return d.label + ': ' + (d.intl + d.dom); }).join(', '));
+    host.innerHTML =
+      '<div class="chart__plot">' + data.map(function (d) {
+        return '<div class="chart__col"><span class="chart__val">' + (d.intl + d.dom) + '</span>' +
+          '<div class="chart__stack" style="height:' + px(d.intl + d.dom) + 'px">' +
+          '<div class="chart__seg chart__seg--dom" style="height:' + px(d.dom) + 'px"></div>' +
+          '<div class="chart__seg chart__seg--intl" style="height:' + px(d.intl) + 'px"></div></div></div>';
+      }).join('') + '</div>' +
+      '<div class="chart__x">' + data.map(function (d) { return '<span>' + esc(d.label) + '</span>'; }).join('') + '</div>' +
+      '<div class="chart__key"><span><i style="background:var(--brand-600)"></i> ' + esc(T.chartIntl) + '</span>' +
+      '<span><i style="background:var(--accent)"></i> ' + esc(T.chartDom) + '</span></div>' +
+      (host.getAttribute('data-note') ? '<p class="chart__note">' + esc(host.getAttribute('data-note')) + '</p>' : '');
+  }
+
   function renderData() {
+    document.querySelectorAll('[data-chart]').forEach(function (host) {
+      loadData(host.getAttribute('data-chart')).then(function (rows) { renderChart(host, rows); }).catch(function () {});
+    });
     var fail = function (host, name) {
       return function () {
         host.innerHTML = '<p class="text-muted">' + esc(T.dataError) + ' (<a href="' + esc(BASE + 'data/' + name + '.csv') + '">' + esc(name) + '.csv</a>)</p>';
@@ -826,7 +880,8 @@
     };
     document.querySelectorAll('[data-table]').forEach(function (host) {
       var name = host.getAttribute('data-table');
-      loadData(name).then(function (rows) { renderTable(host, rows); }).catch(fail(host, name));
+      var syl = host.hasAttribute('data-syllabus') ? loadData('de-cuong').then(syllabusMap, function () { return {}; }) : Promise.resolve(null);
+      Promise.all([loadData(name), syl]).then(function (res) { renderTable(host, res[0], res[1]); }).catch(fail(host, name));
     });
     document.querySelectorAll('[data-people]').forEach(function (host) {
       var name = host.getAttribute('data-people');

@@ -1,0 +1,5 @@
+﻿"# Danh sách cố vấn học tập theo lớp. Thêm mỗi lớp một dòng dưới dòng tiêu đề, ví dụ:"
+"# K51,DI25V7A1,MMT & TTDL | CN & DC,ThS. Nguyễn Văn A | MSc. Nguyen Van A,nva@cit.ctu.edu.vn"
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+Khóa | Cohort,Lớp | Class,Ngành | Programme,Cố vấn học tập | Academic advisor,Email

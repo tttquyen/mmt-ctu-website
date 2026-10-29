@@ -1,0 +1,80 @@
+﻿"# Ma trận đóng góp của học phần vào chuẩn đầu ra (I: giới thiệu, R: tăng cường, M: thông thạo)."
+"# Nguồn: Bản mô tả CTĐT áp dụng từ Khóa 51 (QĐ 3922/QĐ-ĐHCT ngày 15/8/2025). 69 học phần, 241 liên kết."
+"# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
+# Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
+TT | No.,Mã HP | Code,Tên học phần | Course,PLO1,PLO2,PLO3,PLO4,PLO5,PLO6,PLO7,PLO8,PLO9,PLO10
+## Tiếng Anh tăng cường | Intensive English
+1,FL010H,Nghe nói và ngữ âm thực hành (*) | Listening and Speaking (*),,,,,,,,M,R,I
+2,FL011H,Đọc hiểu (*) | Reading (*),,,,,,,,M,R,I
+3,FL012H,Viết (*) | Writing (*),,,,,,,,M,R,I
+4,FL013H,Ngữ pháp ứng dụng (*) | Grammar in Use (*),,,,,,,,M,R,I
+5,FL014H,Kỹ năng thuyết trình (*) | Presentation skills (*),,,,,,,,M,R,I
+6,FL100H,Thi đánh giá năng lực tiếng Anh (*) | English proficiency examination (*),,,,,,,,M,,M
+## Khối kiến thức giáo dục đại cương | General education
+7,QP010E,Giáo dục quốc phòng và An ninh 1 (*) | National Defence and Security Education 1 (*),I,,,,,,,,,I
+8,QP011E,Giáo dục quốc phòng và An ninh 2 (*) | National Defence and Security Education 2 (*),R,,,,,,,,,I
+9,QP012,Giáo dục quốc phòng và An ninh 3 (*) | National Defence and Security Education 3 (*),R,,,,,,,,,R
+10,QP013,Giáo dục quốc phòng và An ninh 4 (*) | National Defence and Security Education 4 (*),R,,,,,,,,,R
+11,TC100,Giáo dục thể chất 1+2+3 (*) | Physical Education 1+2+3 (*),R,,,,,,,,R,I
+12,ML014,Triết học Mác – Lênin | Marxist–Leninist Philosophy,I,,,,,,,,,I
+13,ML016,Kinh tế chính trị Mác – Lênin | Marxist–Leninist Political Economy,I,,,,,,,,,I
+14,ML018,Chủ nghĩa xã hội khoa học | Scientific Socialism,I,,,,,,,,,I
+15,ML019,Lịch sử Đảng Cộng sản Việt Nam | History of the Communist Party of Vietnam,I,,,,,,,,,I
+16,ML021,Tư tưởng Hồ Chí Minh | Ho Chi Minh Ideology,I,,,,,,,,,I
+17,KL001E,Pháp luật đại cương | Introduction to Law,I,,,,,,,,,I
+18,ML007,Logic học đại cương | Introduction to Logic,,R,,,,,,,,I
+19,KN001E,Kỹ năng mềm | Soft Skills,,,,,,,,,M,I
+20,KN002E,Đổi mới sáng tạo và khởi nghiệp | Innovation and Entrepreneurship,,,,,,,,,R,I
+21,CT051H,Vi – Tích phân | Calculus,,R,,,,,,,,I
+22,CT052H,Đại số tuyến tính và hình học | Linear Algebra & Analytic Geometry,,R,,,,,,,,I
+23,CT053H,Xác suất thống kê | Probability & Statistics,,M,,,,,,,,I
+24,CT005H,Nền tảng công nghệ số | Digital Competence,,R,,,,,,,,I
+## Khối kiến thức cơ sở ngành | Foundation knowledge
+25,CT101H,Toán cho khoa học máy tính | Mathematics for Computer Science,,,M,,,,,I,,I
+26,CT054H,Lập trình căn bản A | Basic programming A,,,R,,,,I,I,,I
+27,CT102H,Cấu trúc dữ liệu | Data Structures,,,R,,,,I,I,,I
+28,CT175H,Lý thuyết đồ thị | Graph Theory,,,R,,,,I,I,,I
+29,CT104H,Nguyên lý hệ điều hành | Principles of Operating System,,,R,,,,I,R,,I
+30,CT115H,Quản trị hệ thống máy tính | Computer Systems Administration,,,R,,,R,,R,,I
+31,CT106H,Mạng máy tính | Computer Networking,,,R,,,R,,R,,I
+32,CT116H,Nền tảng kiến trúc máy tính | Fundamentals of Computer Architecture,,,R,,,,,I,,I
+33,CT108H,Lập trình hướng đối tượng | Object-Oriented Programming,,,R,,,,R,R,,I
+34,CT109H,Phân tích và thiết kế thuật toán | Design and Analysis of Computer Algorithms,,,M,,,,R,R,,I
+35,CT110H,Cơ sở dữ liệu | Databases,,,R,,,,R,R,,I
+36,CT100H,Kỹ năng học đại học | Study Skills for College Students,,,,,,,,R,R,R
+37,CT112H,Phân tích và thiết kế hệ thống | Systems Analysis & Design,,,R,,,,R,I,,I
+## Khối kiến thức chuyên ngành | Specialised knowledge
+38,CT335H,Thiết kế và triển khai hệ thống mạng | Network System Design and Implementation,,,,M,,M,,R,,R
+39,CT305H,Lập trình mạng | Network Programming,,,,,R,,R,R,,R
+40,CT333H,Quản trị mạng | Network Administration,,,,R,,R,,R,,R
+41,CT117H,Lập trình Web cơ bản | Web Development Fundamentals,,,,,R,,R,R,I,I
+42,CT204H,Điện toán đám mây | Cloud Computing,,,,R,I,M,I,R,,R
+43,CT312H,Lập trình cho các thiết bị di động | Mobile Programming,,,,,R,,R,R,,I
+44,TN232H,Lập trình Python | Python Programming,,,,,R,,R,R,,I
+45,CT294H,Máy học ứng dụng | Applied Machine Learning,,,,,M,,M,R,,R
+46,CT209H,Quản trị mạng trên MS Windows | MS Windows Network Administration,,,,R,,R,,R,,R
+47,CT301H,An ninh mạng | Network Security,,,,R,,R,,R,,R
+48,CT201H,An ninh máy tính | Computer Security,,,,R,,R,,R,,R
+49,CT490H,An ninh Web | Web Security,,,,R,,M,,R,M,R
+50,CT517HE,Thực tập doanh nghiệp MMT-TTDL-CLC | Internship in Computer Networks and Data Communication,,,,M,M,M,M,,M,M
+51,CT436HE,Niên luận cơ sở ngành MMT-TTDL-CLC | Project - Fundamental Topics,,,R,I,I,R,R,R,R,R
+52,CT439HE,Niên luận chuyên ngành MMT-TTDL-CLC | Project - Specialized Topics,,,,R,R,R,R,R,R,M
+53,CT555HE,Luận văn tốt nghiệp MMT-TTDL-CLC | Computer Networks and Data Communication Thesis,,,,M,M,M,M,R,M,M
+## Khối kiến thức chuyên ngành chuyên sâu | Advanced specialisation
+54,CT435H,Kỹ thuật phát hiện tấn công mạng | Techniques for Network Intrusion Detection,,,,R,R,R,R,R,,R
+55,CT166H,Tường lửa | Firewall,,,,R,,R,,R,,R
+56,CT344H,Giải quyết sự cố mạng | Network Troubleshooting,,,,M,,M,,R,,R
+57,CT232H,Đánh giá hiệu năng mạng | Network Performance Evaluation,,,,M,,M,,R,,R
+58,CT566HT,Phần mềm tự do mã nguồn mở | Free and Open-Source Software,,,R,,I,,R,R,R,R
+59,CT230H,Phát triển ứng dụng hướng dịch vụ | Service-Oriented Application Development,,,,,M,,M,R,M,M
+60,CT097H,Phát triển ứng dụng Web nâng cao | Advanced Web Development,,,,,M,,M,R,R,M
+61,CT306H,Lập trình song song | Parallel Programming,,,,,R,,R,R,,R
+62,CT482H,Xử lý dữ liệu lớn | Big Data Processing,,,,,R,,M,R,,M
+63,CT205H,Nguyên lý máy học | Machine Learning Principles,,,,,M,,M,R,,M
+## Kỹ năng làm việc chuyên nghiệp | Professional skills
+64,CT055HE,Kỹ năng giao tiếp | Communication skills,,,,,,,,,M,M
+65,CT056HE,Kỹ năng thuyết trình | Presentation skills,,,,,,,,,M,M
+66,CT057HE,Kỹ năng làm việc nhóm | Teamwork skills,,,,,,,,,M,M
+67,CT058HE,Kỹ năng giải quyết vấn đề | Problem solving,,,,,,,,,M,M
+68,CT059HE,Kỹ năng tư duy phản biện | Critical Thinking Skills,,,,,,,,,M,M
+69,CT489E,Luật an ninh mạng và đạo đức trong lĩnh vực CNTT | Cybersecurity Law and Ethics in IT,,,,,,,,,M,M
