@@ -186,7 +186,7 @@ Báo cáo tự đánh giá AUN-QA chu kỳ II (2026) của ngành Mạng máy t�
 | `cdr.html` | 1 — Expected Learning Outcomes | ✅ PEO, PLO, ma trận PEO–PLO và học phần–PLO (MMT, ATTT) |
 | `ctdtmmt.html`, `ctdtattt.html`, `ctdt.html` | 2 — Programme Structure and Content | ✅ Kế hoạch 13 học kỳ, đề cương, CTĐT các khóa |
 | `dayhoc.html` | 3 — Teaching and Learning · 4 — Student Assessment | ✅ |
-| `gv.html` | 5 — Academic Staff | ✅ Còn thiếu thông tin ThS. Đoàn Minh Quý, KS. Vũ Xuân Lộc |
+| `gv.html` | 5 — Academic Staff | ✅ Còn thiếu thông tin ThS. Nguyễn Đình Quý, KS. Vũ Xuân Lộc |
 | `sv.html` | 6 — Student Support Services | Bảng cố vấn học tập, biểu mẫu đang trống (`co-van.csv`, `bieu-mau.csv`) |
 | `ptn.html`, `ptnmmt.html` | 7 — Facilities and Infrastructure | ✅ Còn thiếu thiết bị PTN An toàn thông tin |
 | `ketqua.html` | 8 — Output and Outcomes | ✅ |
@@ -379,7 +379,7 @@ Mở `http://localhost:8123/mmt/mmt.html` và `http://localhost:8123/enmmt/enmmt
   chạy ổn định.
 - Điền số liệu vào 3 trang AUN-QA còn trống: `ketqua.html`, `dayhoc.html`, `sv.html`.
 - Bổ sung ma trận PLO ↔ học phần vào `cdr.html` (phần duy nhất còn thiếu ở tiêu chí 1).
-- Thêm ảnh và thông tin cho ThS. Đoàn Minh Quý và KS. Vũ Xuân Lộc
-  (đang dùng ảnh tạm `imgs/person-placeholder.png`).
+- Bổ sung email, chức vụ, môn giảng dạy của ThS. Nguyễn Đình Quý và KS. Vũ Xuân Lộc
+  (đã có ảnh; các ô còn ghi "Đang cập nhật" trong `data/nhan-su.csv`).
 - Chưa làm: trang tin tức, câu chuyện cựu sinh viên, hợp tác doanh nghiệp,
   kho tài liệu tải về, hồ sơ riêng từng giảng viên.
