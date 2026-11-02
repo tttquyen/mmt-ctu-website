@@ -155,6 +155,7 @@ Trong HTML, chỗ đặt bảng chỉ là `<div data-table="ten-tep"></div>`; da
 | `ke-hoach-mmt`, `ke-hoach-attt`, `ke-hoach-clc` (kế hoạch 13 học kỳ) | `ctdtmmt.html`, `ctdtattt.html`, `ctdtmmtclc.html` |
 | `de-cuong` (mã học phần → URL đề cương; ô trống = không gắn link) | mọi bảng có mã học phần |
 | `co-van`, `bieu-mau` | `sv.html` |
+| `tin-tuc` (tin tức, hình ảnh sinh viên) | `tintuc.html`, trang chủ |
 | `cac-khoa` (CTĐT các khóa trên trang ĐHCT) | `ctdt.html` |
 | `nhan-su`, `nhan-su-thong-ke` | `gv.html` |
 | `de-tai-gv`, `de-tai-sv` | `nckh.html` |
@@ -167,13 +168,87 @@ Trong HTML, chỗ đặt bảng chỉ là `<div data-table="ten-tep"></div>`; da
 (`70.71%`), bản tiếng Việt tự đổi thành dấu phẩy. Mã học phần trong ma trận và kế hoạch được gắn link
 đề cương nếu có URL trong `de-cuong.csv` (đã điền sẵn 104 đề cương có trên `www.cit.ctu.edu.vn/decuong/`). Ô dạng `[chữ](https://...)` thành liên kết.
 
-**Dùng Google Sheets thay cho tệp CSV:**
-1. Tạo một bảng tính, mỗi tab ứng với một tệp (dán nội dung CSV vào, giữ nguyên dòng tiêu đề).
-2. *Tệp → Chia sẻ → Công bố lên web* → chọn tab → định dạng *CSV* → *Công bố*.
-3. Dán URL nhận được vào `site.js` → `COMMON.dataSources['ten-tep']`.
+### Số liệu báo cáo trên Google Sheets
 
-Website đọc Google Sheet trước; nếu không đọc được thì dùng lại tệp CSV trong `mmt/data/`.
-Thay đổi trên Google Sheets hiện lên website sau vài phút, không cần đẩy mã.
+Mỗi bộ số liệu là **một tệp Google Sheets riêng** (tên tệp trùng tên CSV) trong thư mục Drive
+**"Website Khoa MMT&TT – Số liệu"** của tttquyen01@gmail.com:
+https://drive.google.com/drive/folders/1ICg9_vod5pLmVQa0RsFvNrKB9TYrp9I2
+
+| Tệp | Hiển thị ở |
+|---|---|
+| `tot-nghiep`, `viec-lam`, `viec-lam-chi-tiet`, `dat-cdr`, `hai-long` | Kết quả đào tạo (bảng + biểu đồ) |
+| `nhan-su-thong-ke` | Nhân sự (bảng + biểu đồ) |
+| `cong-bo` | Kết quả đào tạo, biểu đồ công bố ở Nghiên cứu |
+| `tuyen-sinh` | Tuyển sinh (bảng + biểu đồ điểm chuẩn) |
+| `tin-tuc` | Tin tức & hình ảnh, trang chủ |
+
+Cùng quy ước như CSV; mọi ô định dạng *Văn bản thuần* (đừng đổi sang Số). Sửa ô trong tệp là bảng
+**và biểu đồ** trên website (cả bản tĩnh lẫn Joomla) cập nhật sau vài phút. Không cần sửa HTML,
+không cần tải gì lên máy chủ.
+
+Để website đọc được, chọn **một** trong hai cách:
+
+- **Cách A (khuyên dùng):** bấm chuột phải vào **thư mục** → *Chia sẻ* → *Quyền truy cập chung* →
+  *Bất kỳ ai có đường liên kết* → *Người xem*. Mọi tệp trong thư mục được chia sẻ theo, kể cả tệp
+  thêm sau. ID các tệp đã điền sẵn ở `site.js` → `COMMON.sheetFiles`.
+- **Cách B:** mở từng tệp → *Tệp → Chia sẻ → Xuất bản lên web → Xuất bản*; dán chuỗi `2PACX-...`
+  trong đường dẫn nhận được vào `COMMON.sheetPub`, ví dụ `{ 'tot-nghiep': '2PACX-1v...' }`.
+
+Bản Joomla: *System › Site Template Styles › mmt - Mặc định › Advanced*, hai ô "Tệp Google Sheets"
+và "Tệp đã xuất bản lên web" (mỗi dòng `tên=giá-trị`).
+
+Không đọc được Google Sheets (chưa chia sẻ, mất mạng, Google lỗi) thì website tự dùng tệp CSV
+trong `mmt/data/`. Sau mỗi đợt cập nhật lớn nên tải tệp về (*Tệp → Tải xuống → CSV*) và chép đè
+CSV tương ứng để bản dự phòng luôn mới. Thêm bộ số liệu mới: tạo tệp cùng tên với CSV trong thư mục
+rồi thêm `tên: 'ID tệp'` vào `COMMON.sheetFiles`.
+
+> **Nguồn số liệu công bố:** bảng và biểu đồ số công bố trên website (`cong-bo`) lấy theo **Báo cáo tự
+> đánh giá AUN-QA 2026 (SAR, Bảng 2.7)** và giữ đúng số SAR. Danh mục chi tiết từng bài báo, đề tài nằm ở tệp
+> *Báo cáo NCKH 2022–2026* (thư mục Drive *Nghiên cứu khoa học*). Tệp đó được bổ sung dần nên số đếm có thể
+> khác SAR; không dùng tệp đó để sửa số trên website.
+
+### Biểu đồ
+
+Biểu đồ cột vẽ từ cùng nguồn dữ liệu với bảng, đặt ngay trên bảng:
+
+```html
+<figure class="vchart" data-bars="tot-nghiep" data-x="0" data-y="2,3,4" data-type="stack"
+        data-unit="%" data-max="100" data-total="5" aria-label="Tỉ lệ tốt nghiệp theo khóa"></figure>
+```
+
+`data-x` cột nhãn, `data-y` các cột số (mỗi cột một màu), `data-type` `stack` hoặc `group`,
+`data-transpose` khi mỗi dòng là một chuỗi (như `hai-long`), `data-label` ghi chú dưới biểu đồ.
+Đang có ở: Kết quả đào tạo (4 biểu đồ), Nhân sự, Tuyển sinh; biểu đồ công bố ở Nghiên cứu.
+
+### Nhúng nguyên khung từ Google Sheets
+
+Muốn nhúng một bảng hoặc biểu đồ tự làm trong Google Sheets (đã *Xuất bản lên web*):
+
+```html
+<div class="embed-frame" data-embed="https://docs.google.com/spreadsheets/d/e/2PACX-.../pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+     data-title="Tên bảng"></div>
+```
+
+Với biểu đồ: bấm vào biểu đồ → ⋮ → *Xuất bản biểu đồ* → *Nhúng*, lấy địa chỉ trong `src`.
+Khung nhúng không theo màu, font và song ngữ của website, và ô tìm kiếm không đọc được nội dung
+bên trong, nên ưu tiên cách vẽ biểu đồ ở trên.
+
+### Tin tức – Sự kiện và slide trang chủ
+
+Trang `tintuc.html` / `entintuc.html` (menu chính *Tin tức*) và slide *Tin nổi bật* ở trang chủ cùng đọc
+tệp `tin-tuc` (Google Sheets, dự phòng `data/tin-tuc.csv`). Cột: `ngay`, `nhom`, `tieu_de`, `tom_tat`,
+`anh`, `lien_ket`.
+
+- `nhom`: `su-kien` tin Khoa – sự kiện, `dau-vao` chào đón tân sinh viên, `hoat-dong` hoạt động sinh viên,
+  `dau-ra` sinh viên tốt nghiệp. Mở thẳng một nhóm: `tintuc.html#hoat-dong`.
+- **Tin mới thêm ở dòng đầu.** 5 tin trên cùng có ảnh tự lên slide trang chủ (tự chạy 6 giây/tin, dừng khi
+  rê chuột, vuốt được trên điện thoại).
+- Mỗi tin có trang chi tiết riêng `tintuc.html?tin=<mã>` (mã lấy từ tiêu đề tiếng Việt) hiển thị toàn bộ ảnh;
+  `lien_ket` (bài gốc trên Fanpage, PDF…) hiện thành nút *Xem bài gốc*.
+- `anh`: nhiều ảnh cách nhau bằng `;`, ảnh đầu là ảnh đại diện. Dùng tệp trong `imgs/` hoặc **ảnh trên Google
+  Drive**: tải ảnh vào thư mục *Ảnh tin tức* (trong thư mục *Website Khoa MMT&TT – Số liệu*, đã chia sẻ công khai)
+  https://drive.google.com/drive/folders/1sEPN8U6NO31t0BjfgUwDb8NpkITdmxt0 → chuột phải vào ảnh → *Chia sẻ* →
+  *Sao chép đường liên kết* → dán vào cột `anh`. Nên tạo thư mục con cho mỗi sự kiện; ảnh rộng khoảng 1600px là đủ.
 
 ## Các trang phục vụ kiểm định AUN-QA
 
@@ -187,7 +262,7 @@ Báo cáo tự đánh giá AUN-QA chu kỳ II (2026) của ngành Mạng máy t�
 | `ctdtmmt.html`, `ctdtattt.html`, `ctdt.html` | 2 — Programme Structure and Content | ✅ Kế hoạch 13 học kỳ, đề cương, CTĐT các khóa |
 | `dayhoc.html` | 3 — Teaching and Learning · 4 — Student Assessment | ✅ |
 | `gv.html` | 5 — Academic Staff | ✅ Còn thiếu thông tin ThS. Nguyễn Đình Quý, KS. Vũ Xuân Lộc |
-| `sv.html` | 6 — Student Support Services | Bảng cố vấn học tập, biểu mẫu đang trống (`co-van.csv`, `bieu-mau.csv`) |
+| `sv.html` | 6 — Student Support Services | ✅ Cố vấn học tập K43–K52 (`co-van.csv`); sổ tay sinh viên K52 (`docs/so-tay-sinh-vien-k52.pdf`); biểu mẫu niên luận, luận văn, thực tập còn trống (`bieu-mau.csv`) |
 | `ptn.html`, `ptnmmt.html` | 7 — Facilities and Infrastructure | ✅ Còn thiếu thiết bị PTN An toàn thông tin |
 | `ketqua.html` | 8 — Output and Outcomes | ✅ |
 

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="template" client="site" method="upgrade">
+	<name>mmt</name>
+	<version>1.1.0</version>
+	<creationDate>2026-11</creationDate>
+	<author>Khoa Mạng máy tính và Truyền thông — ĐHCT</author>
+	<authorEmail>lt_mmt_tt@cit.ctu.edu.vn</authorEmail>
+	<copyright>(C) 2026 Khoa MMT&amp;TT, Đại học Cần Thơ</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description>TPL_MMT_XML_DESCRIPTION</description>
+	<inheritable>1</inheritable>
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>index.php</filename>
+		<filename>joomla.asset.json</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>html</folder>
+		<folder>language</folder>
+	</files>
+	<media destination="templates/site/mmt" folder="media">
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+	</media>
+	<positions>
+		<position>topbar</position>
+		<position>language</position>
+		<position>menu</position>
+		<position>newsbar</position>
+		<position>footer</position>
+	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/tpl_mmt.ini</language>
+		<language tag="en-GB">en-GB/tpl_mmt.sys.ini</language>
+		<language tag="vi-VN">vi-VN/tpl_mmt.ini</language>
+		<language tag="vi-VN">vi-VN/tpl_mmt.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="phone" type="text" default="0292 3734 720" label="TPL_MMT_PHONE_LABEL" />
+				<field name="hidePending" type="radio" default="1" label="TPL_MMT_HIDEPENDING_LABEL" description="TPL_MMT_HIDEPENDING_DESC" layout="joomla.form.field.radio.switcher" filter="integer">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="analyticsId" type="text" default="" label="TPL_MMT_ANALYTICS_LABEL" description="TPL_MMT_ANALYTICS_DESC" />
+				<field name="sheetFiles" type="textarea" rows="10" default="tot-nghiep=1TPdntYX8MyyEUP47KTQhi4huajsiyNQporDXHsHCdDY&#10;viec-lam=10lfKR2efG_rizTqLI7VMcGrzMqY42v6y_WAGYPdv4Ig&#10;viec-lam-chi-tiet=1ADnCowk7zeB2R4q9tOf5AkWAmw0eRA7PyUEw6UNvBW8&#10;dat-cdr=1NKKKdh4Rwq3FygMmTqlwTbCyWxb4qg0nRDQks99OqaQ&#10;hai-long=1bsdD_3WKtUzsW5elkQARcWv9qp48uRAjfOBPTNismGI&#10;nhan-su-thong-ke=1aCWBf0T_ZvwjbQDEqqLPPNQ6CGePXaCc05OO-SK2BPA&#10;cong-bo=1zLGDwNSWtUQ_OYC-kFXfvlmP1ZInQYBc0TOixufCHdE&#10;tuyen-sinh=1ngIspvsTq64SFJeubZoW-YxX4-NqvHAzHcRhnQegnyg&#10;tin-tuc=1hThAFggh0_nn2Lwd9AtLRn1n427VC6ohLjmgdZHZt8s" label="TPL_MMT_SHEETFILES_LABEL" description="TPL_MMT_SHEETFILES_DESC" filter="raw" />
+				<field name="sheetPub" type="textarea" rows="6" default="" label="TPL_MMT_SHEETPUB_LABEL" description="TPL_MMT_SHEETPUB_DESC" filter="raw" />
+				<field name="dataFolder" type="text" default="images/mmt/" label="TPL_MMT_DATAFOLDER_LABEL" description="TPL_MMT_DATAFOLDER_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

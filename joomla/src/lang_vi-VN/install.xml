@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension client="site" type="language" method="upgrade">
+	<name>Tiếng Việt (vi-VN)</name>
+	<tag>vi-VN</tag>
+	<version>5.4.10</version>
+	<creationDate>2026-11</creationDate>
+	<author>Khoa Mạng máy tính và Truyền thông</author>
+	<copyright>(C) 2026 Khoa MMT&amp;TT, Đại học Cần Thơ</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description>Gói ngôn ngữ tiếng Việt tối giản cho phần hiển thị</description>
+	<files>
+		<filename file="meta">install.xml</filename>
+		<filename file="meta">langmetadata.xml</filename>
+		<filename>joomla.ini</filename>
+		<filename>com_content.ini</filename>
+		<filename>mod_languages.ini</filename>
+	</files>
+	<params />
+</extension>

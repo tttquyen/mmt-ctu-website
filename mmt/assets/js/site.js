@@ -50,6 +50,29 @@
        Cong bo len web > chon tab > dinh dang CSV > Cong bo, roi dan URL vao
        dong tuong ung ben duoi. De trong = dung tep CSV trong thu muc data/.
        ------------------------------------------------------------------ */
+    /* ------------------------------------------------------------------
+       GOOGLE SHEETS — mỗi bộ số liệu là một tệp Google Sheets riêng trong
+       thư mục Drive "Website Khoa MMT&TT – Số liệu" (tên tệp = tên CSV).
+       Cách A: chia sẻ cả thư mục "Bất kỳ ai có đường liên kết — Người xem"
+               → dùng sheetFiles (ID tệp, đã điền sẵn).
+       Cách B: mở từng tệp > Tệp > Chia sẻ > Xuất bản lên web > Xuất bản
+               → dán chuỗi 2PACX-... của tệp vào sheetPub.
+       Thêm bộ số liệu mới: tạo tệp cùng tên với CSV rồi thêm vào sheetFiles.
+       Không tải được Google Sheets thì website tự dùng tệp CSV trong data/.
+       ------------------------------------------------------------------ */
+    sheetFiles: {
+      'tot-nghiep': '1TPdntYX8MyyEUP47KTQhi4huajsiyNQporDXHsHCdDY',
+      'viec-lam': '10lfKR2efG_rizTqLI7VMcGrzMqY42v6y_WAGYPdv4Ig',
+      'viec-lam-chi-tiet': '1ADnCowk7zeB2R4q9tOf5AkWAmw0eRA7PyUEw6UNvBW8',
+      'dat-cdr': '1NKKKdh4Rwq3FygMmTqlwTbCyWxb4qg0nRDQks99OqaQ',
+      'hai-long': '1bsdD_3WKtUzsW5elkQARcWv9qp48uRAjfOBPTNismGI',
+      'nhan-su-thong-ke': '1aCWBf0T_ZvwjbQDEqqLPPNQ6CGePXaCc05OO-SK2BPA',
+      'cong-bo': '1zLGDwNSWtUQ_OYC-kFXfvlmP1ZInQYBc0TOixufCHdE',
+      'tuyen-sinh': '1ngIspvsTq64SFJeubZoW-YxX4-NqvHAzHcRhnQegnyg',
+      'tin-tuc': '1hThAFggh0_nn2Lwd9AtLRn1n427VC6ohLjmgdZHZt8s'
+    },
+    sheetPub: {},
+
     dataSources: {
       'tot-nghiep': '',
       'viec-lam': '',
@@ -73,7 +96,8 @@
       'ke-hoach-clc': '',
       'de-cuong': '',
       'co-van': '',
-      'bieu-mau': ''
+      'bieu-mau': '',
+      'tin-tuc': ''
     }
   };
 
@@ -133,7 +157,8 @@
         },
         { id: 'sv', label: 'Sinh viên', url: 'sv.html' },
         { id: 'gv', label: 'Nhân sự', url: 'gv.html' },
-        { id: 'ts', label: 'Tuyển sinh', url: 'ts.html' }
+        { id: 'ts', label: 'Tuyển sinh', url: 'ts.html' },
+        { id: 'tintuc', label: 'Tin tức', url: 'tintuc.html' }
       ],
 
       newsFlag: 'Nổi bật',
@@ -141,7 +166,8 @@
         { label: 'Tuyển sinh', url: 'ts.html' },
         { label: 'Chuẩn đầu ra', url: 'cdr.html' },
         { label: 'Kết quả đào tạo', url: 'ketqua.html' },
-        { label: 'Dành cho sinh viên', url: 'sv.html' }
+        { label: 'Dành cho sinh viên', url: 'sv.html' },
+        { label: 'Tin tức', url: 'tintuc.html' }
       ],
 
       searchPlaceholder: 'Nhập từ khoá cần tìm…',
@@ -190,7 +216,7 @@
 
       pages: ['mmt.html', 'ctdt.html', 'ctdtmmt.html', 'ctdtmmtclc.html', 'ctdtattt.html',
               'cdr.html', 'dayhoc.html', 'ketqua.html', 'ts.html', 'nckh.html',
-              'ptn.html', 'ptnmmt.html', 'ptnattt.html', 'sv.html', 'gv.html', 'gt.html', 'dbcl.html']
+              'ptn.html', 'ptnmmt.html', 'ptnattt.html', 'sv.html', 'tintuc.html', 'gv.html', 'gt.html', 'dbcl.html']
     },
 
     /* ------------------------------ ENGLISH ------------------------------ */
@@ -245,7 +271,8 @@
         },
         { id: 'sv', label: 'Students', url: 'ensv.html' },
         { id: 'gv', label: 'People', url: 'engv.html' },
-        { id: 'ts', label: 'Admissions', url: 'ents.html' }
+        { id: 'ts', label: 'Admissions', url: 'ents.html' },
+        { id: 'tintuc', label: 'News', url: 'entintuc.html' }
       ],
 
       newsFlag: 'Highlights',
@@ -253,7 +280,8 @@
         { label: 'Admissions', url: 'ents.html' },
         { label: 'Learning outcomes', url: 'encdr.html' },
         { label: 'Programme outcomes', url: 'enketqua.html' },
-        { label: 'For students', url: 'ensv.html' }
+        { label: 'For students', url: 'ensv.html' },
+        { label: 'News', url: 'entintuc.html' }
       ],
 
       searchPlaceholder: 'Enter a keyword…',
@@ -302,7 +330,7 @@
 
       pages: ['enmmt.html', 'enctdt.html', 'enctdtmmt.html', 'enctdtmmtclc.html', 'enctdtattt.html',
               'encdr.html', 'endayhoc.html', 'enketqua.html', 'ents.html', 'ennckh.html',
-              'enptn.html', 'enptnmmt.html', 'enptnattt.html', 'ensv.html', 'engv.html', 'engt.html', 'endbcl.html']
+              'enptn.html', 'enptnmmt.html', 'enptnattt.html', 'ensv.html', 'entintuc.html', 'engv.html', 'engt.html', 'endbcl.html']
     }
   };
 
@@ -724,14 +752,39 @@
     return rows.filter(function (r) { return r.some(function (x) { return x.trim() !== ''; }); });
   }
 
+  /* Địa chỉ CSV của một bộ số liệu trên Google Sheets (mỗi bộ một tệp, xem COMMON.sheetFiles) */
+  function sheetUrl(name) {
+    var pub = (COMMON.sheetPub || {})[name], id = (COMMON.sheetFiles || {})[name];
+    if (pub) {                                                   /* Cách B: tệp đã Xuất bản lên web */
+      return 'https://docs.google.com/spreadsheets/d/e/' + encodeURIComponent(pub) + '/pub?output=csv';
+    }
+    if (id) {                                                    /* Cách A: tệp chia sẻ bằng liên kết */
+      return 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(id) + '/gviz/tq?tqx=out:csv&headers=0';
+    }
+    return '';
+  }
+
+  /* Khung nhúng Google Sheets / biểu đồ đã xuất bản: <div class="embed-frame" data-embed="URL" data-title="..."></div> */
+  function renderEmbeds() {
+    document.querySelectorAll('[data-embed]').forEach(function (host) {
+      var url = host.getAttribute('data-embed');
+      if (!/^https:\/\/docs\.google\.com\//.test(url)) return;
+      host.innerHTML = '<iframe src="' + esc(url) + '" title="' + esc(host.getAttribute('data-title') || 'Google Sheets') +
+        '" loading="lazy" referrerpolicy="no-referrer"></iframe>';
+    });
+  }
+
   function loadData(name) {
     if (dataCache[name]) return dataCache[name];
     var local = BASE + 'data/' + name + '.csv';
-    var remote = (COMMON.dataSources || {})[name];
+    var remote = (COMMON.dataSources || {})[name] || sheetUrl(name);
     var get = function (url) {
       return fetch(url, { cache: 'no-cache' }).then(function (r) {
         if (!r.ok) throw new Error(r.status);
         return r.text();
+      }).then(function (t) {
+        if (/^\s*</.test(t)) throw new Error('not csv');   /* trang đăng nhập Google = chưa chia sẻ công khai */
+        return t;
       });
     };
     dataCache[name] = (remote ? get(remote).catch(function () { return get(local); }) : get(local)).then(parseCSV);
@@ -758,7 +811,10 @@
       return '<a href="' + esc(v) + '" target="_blank" rel="noopener">' + esc(T.openLink) + '</a>';
     }
     var m = v.match(/^\[(.+)\]\((https?:\/\/[^)]+|[\w./#-]+)\)$/);   /* [chữ](link) */
-    if (m) return '<a href="' + esc(m[2]) + '"' + ext(m[2]) + '>' + esc(m[1]) + '</a>';
+    if (m) {
+      var href = /^(docs|imgs|cv|data)\//.test(m[2]) ? BASE + m[2] : m[2];   /* tệp dùng chung */
+      return '<a href="' + esc(href) + '"' + ext(href) + '>' + esc(m[1]) + '</a>';
+    }
     return esc(v);
   }
 
@@ -869,6 +925,354 @@
       (host.getAttribute('data-note') ? '<p class="chart__note">' + esc(host.getAttribute('data-note')) + '</p>' : '');
   }
 
+  /* =====================================================================
+     10. Biểu đồ cột từ dữ liệu bảng (CSV / Google Sheets)
+     ---------------------------------------------------------------------
+     <figure class="vchart" data-bars="ten" data-x="0" data-y="2,3,4" data-type="stack"></figure>
+       data-bars       tên nguồn dữ liệu (giống data-table)
+       data-x          cột nhãn trục ngang; nhiều cột nối bằng dấu phẩy ("0,1")
+       data-y          các cột số liệu (mỗi cột một chuỗi màu)
+       data-type       "stack" (cột chồng) hoặc "group" (cột cạnh nhau, mặc định)
+       data-transpose  mỗi DÒNG là một chuỗi, các cột từ data-y là trục ngang
+       data-unit       đơn vị hiển thị ("%"); data-max: giá trị lớn nhất trục dọc
+       data-total      cột ghi tổng phía trên cột chồng
+       data-label      ghi chú dưới biểu đồ
+     Bảng số liệu gốc luôn đặt ngay dưới biểu đồ (phương án thay thế cho
+     người dùng trình đọc màn hình và khi in).
+     ===================================================================== */
+  var SERIES = ['#1f5ca9', '#00afef', '#e8833a', '#7a4fb5'];
+
+  function num(v) {
+    v = String(v || '').replace('%', '').replace(',', '.').trim();
+    return v === '' || isNaN(+v) ? null : +v;
+  }
+  function fmtVal(v, unit) {
+    var s = (Math.round(v * 100) / 100).toString();
+    if (LANG === 'vi') s = s.replace('.', ',');
+    return s + (unit || '');
+  }
+
+  function renderBars(host, rows) {
+    rows = rows.filter(function (r) { return !/^#/.test(r[0].trim()) && r[0].trim().indexOf('=') !== 0; });
+    var head = rows.shift();
+    var xs = (host.getAttribute('data-x') || '0').split(',').map(Number);
+    var ys = (host.getAttribute('data-y') || '1').split(',').map(Number);
+    var stack = host.getAttribute('data-type') === 'stack';
+    var unit = host.getAttribute('data-unit') || '';
+    var totalCol = host.hasAttribute('data-total') ? +host.getAttribute('data-total') : -1;
+    var cats, series;
+    if (host.hasAttribute('data-transpose')) {
+      cats = ys.map(function (c) { return pick(head[c]); });
+      series = rows.map(function (r) {
+        return { name: pick(r[0]), vals: ys.map(function (c) { return num(r[c]); }) };
+      });
+    } else {
+      cats = rows.map(function (r) { return xs.map(function (c) { return pick(r[c]); }).join(' · '); });
+      series = ys.map(function (c) {
+        return { name: pick(head[c]), vals: rows.map(function (r) { return num(r[c]); }) };
+      });
+    }
+    var totals = cats.map(function (_, i) {
+      if (totalCol >= 0 && !host.hasAttribute('data-transpose')) return num(rows[i][totalCol]);
+      return series.reduce(function (s, se) { return s + (se.vals[i] || 0); }, 0);
+    });
+    var peak = stack ? Math.max.apply(null, totals)
+      : Math.max.apply(null, series.map(function (s) { return Math.max.apply(null, s.vals.map(function (v) { return v || 0; })); }));
+    var step = niceStep((+host.getAttribute('data-max') || peak) / 4);
+    var max = +host.getAttribute('data-max') || Math.max(step, Math.ceil(peak / step) * step);
+    var ticks = Math.round(max / step);
+
+    /* Vẽ theo bề rộng thật của khung để chữ không bị thu nhỏ trên điện thoại */
+    var L = 44, R = 8, T = 22;
+    /* mỗi nhóm cột rộng tối thiểu ~78px; hẹp hơn thì khung cho vuốt ngang */
+    var W = Math.max(300, (host.clientWidth || 720) - 34, L + R + cats.length * 78);
+    var band = (W - L - R) / cats.length;
+    var perLine = Math.max(6, Math.floor(band / 6.6));
+    var wrap = function (t) {                       /* xuống dòng nhãn trục ngang, tối đa 3 dòng */
+      var out = [''], words = t.split(' ');
+      words.forEach(function (w) {
+        var cur = out[out.length - 1];
+        if (cur && (cur + ' ' + w).length > perLine && out.length < 3) out.push(w);
+        else out[out.length - 1] = cur ? cur + ' ' + w : w;
+      });
+      return out;
+    };
+    var labels = cats.map(wrap);
+    var lines = Math.max.apply(null, labels.map(function (l) { return l.length; }));
+    var B = 24 + lines * 14, H = (W < 500 ? 230 : 260) + (lines - 1) * 14;
+    var pw = W - L - R, ph = H - T - B;
+    var n = series.length, gap = 2;
+    var barW = stack ? Math.min(56, band * 0.56) : Math.min(28, (band * 0.74 - gap * (n - 1)) / n);
+    var y = function (v) { return T + ph - (v / max) * ph; };
+    var svg = [];
+    for (var t = 0; t <= ticks; t++) {                  /* lưới ngang mờ */
+      var tv = step * t, ty = y(tv);
+      svg.push('<line x1="' + L + '" x2="' + (W - R) + '" y1="' + ty + '" y2="' + ty + '" class="vchart__grid"/>' +
+        '<text x="' + (L - 6) + '" y="' + (ty + 4) + '" class="vchart__tick" text-anchor="end">' + fmtVal(tv, unit) + '</text>');
+    }
+    cats.forEach(function (cat, i) {
+      var cx = L + band * i + band / 2;
+      var acc = 0;
+      series.forEach(function (se, k) {
+        var v = se.vals[i];
+        if (v === null) return;
+        var x = stack ? cx - barW / 2 : cx - (n * barW + (n - 1) * gap) / 2 + k * (barW + gap);
+        var y0 = stack ? y(acc + v) : y(v), hgt = (v / max) * ph;
+        if (stack && k < n - 1 && hgt > gap) hgt -= gap;          /* khe 2px giữa các đoạn chồng */
+        svg.push('<rect class="vchart__bar" x="' + x.toFixed(1) + '" y="' + y0.toFixed(1) + '" width="' + barW.toFixed(1) +
+          '" height="' + Math.max(hgt, 0).toFixed(1) + '" rx="3" fill="' + SERIES[k % SERIES.length] + '" tabindex="0" ' +
+          'data-tip="' + esc(cat + ' — ' + se.name + ': ' + fmtVal(v, unit)) + '"/>');
+        if (!stack && cats.length * n <= 12 && barW >= 22) {
+          svg.push('<text x="' + (x + barW / 2).toFixed(1) + '" y="' + (y0 - 5).toFixed(1) + '" class="vchart__val" text-anchor="middle">' + fmtVal(v, unit) + '</text>');
+        }
+        acc += v;
+      });
+      if (stack && totals[i] !== null) {
+        svg.push('<text x="' + cx + '" y="' + (y(acc) - 6) + '" class="vchart__val" text-anchor="middle">' + fmtVal(totals[i], unit) + '</text>');
+      }
+      svg.push('<text x="' + cx + '" y="' + (H - B + 17) + '" class="vchart__cat" text-anchor="middle">' +
+        labels[i].map(function (l, j) { return j ? '<tspan x="' + cx + '" dy="14">' + esc(l) + '</tspan>' : esc(l); }).join('') + '</text>');
+    });
+    svg.push('<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(0) + '" y2="' + y(0) + '" class="vchart__axis"/>');
+
+    var legend = series.length > 1 ? '<ul class="vchart__legend">' + series.map(function (se, k) {
+      return '<li><i style="background:' + SERIES[k % SERIES.length] + '"></i>' + esc(se.name) + '</li>';
+    }).join('') + '</ul>' : '';
+    var label = host.getAttribute('aria-label') || '';
+    host.innerHTML = legend +
+      '<div class="vchart__plot"><svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" role="img" aria-label="' + esc(label) + '">' + svg.join('') + '</svg>' +
+      '<div class="vchart__tip" hidden></div></div>' +
+      (host.getAttribute('data-label') ? '<figcaption>' + esc(host.getAttribute('data-label')) + '</figcaption>' : '');
+
+    var tip = host.querySelector('.vchart__tip'), plot = host.querySelector('.vchart__plot');
+    var show = function (el) {
+      tip.textContent = el.getAttribute('data-tip'); tip.hidden = false;
+      var pr = plot.getBoundingClientRect(), br = el.getBoundingClientRect();
+      tip.style.left = Math.min(Math.max(br.left - pr.left + br.width / 2, 70), pr.width - 70) + 'px';
+      tip.style.top = (br.top - pr.top - 8) + 'px';
+    };
+    host.querySelectorAll('.vchart__bar').forEach(function (b) {
+      b.addEventListener('mouseenter', function () { show(b); });
+      b.addEventListener('focus', function () { show(b); });
+      b.addEventListener('mouseleave', function () { tip.hidden = true; });
+      b.addEventListener('blur', function () { tip.hidden = true; });
+    });
+  }
+  function niceStep(v) {
+    if (!v) return 1;
+    var p = Math.pow(10, Math.floor(Math.log10(v))), m = v / p;
+    return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p;
+  }
+
+  /* =====================================================================
+     11. Tin tức (data-news) và slide tin nổi bật (data-slider)
+     Cột: ngay, nhom, tieu_de, tom_tat, anh, lien_ket
+       nhom: su-kien (tin Khoa – sự kiện) | dau-vao (chào đón tân sinh viên)
+             | hoat-dong (hoạt động sinh viên) | dau-ra (sinh viên tốt nghiệp)
+       data-news="tin-tuc"                 trang tin tức: nút lọc + thẻ tin; ?tin=<ma> mở trang chi tiết
+       data-news="tin-tuc" data-limit="3"  N tin mới nhất, không có nút lọc
+       data-slider="tin-tuc" data-limit="5" slide N tin mới nhất có ảnh (dòng trên cùng = mới nhất)
+       data-href="tintuc.html"             trang tin tức để liên kết tới trang chi tiết
+     ===================================================================== */
+  var NEWS_GROUPS = {
+    vi: { all: 'Tất cả', 'su-kien': 'Tin Khoa – Sự kiện', 'dau-vao': 'Chào đón tân sinh viên', 'hoat-dong': 'Hoạt động sinh viên',
+          'dau-ra': 'Sinh viên tốt nghiệp', more: 'Xem chi tiết', source: 'Xem bài gốc', back: 'Tất cả tin tức',
+          empty: 'Đang cập nhật tin và hình ảnh cho mục này.', notFound: 'Không tìm thấy tin này.', photos: 'ảnh',
+          prev: 'Tin trước', next: 'Tin sau', slide: 'Tin', of: '/', pause: 'Tạm dừng', play: 'Tự chạy', featured: 'Tin nổi bật' },
+    en: { all: 'All', 'su-kien': 'Faculty news & events', 'dau-vao': 'Welcoming new students', 'hoat-dong': 'Student activities',
+          'dau-ra': 'Graduates', more: 'Read more', source: 'Original post', back: 'All news',
+          empty: 'News and photos for this section are being updated.', notFound: 'This news item could not be found.', photos: 'photos',
+          prev: 'Previous', next: 'Next', slide: 'Slide', of: 'of', pause: 'Pause', play: 'Play', featured: 'Featured news' }
+  };
+  var GROUP_KEYS = ['su-kien', 'dau-vao', 'hoat-dong', 'dau-ra'];
+
+  function assetUrl(u) {
+    u = (u || '').trim();
+    return /^(https?:|\/)/.test(u) ? u : BASE + u;
+  }
+  /* Ảnh: tệp trong imgs/, URL ảnh, hoặc đường dẫn chia sẻ ảnh trên Google Drive
+     (https://drive.google.com/file/d/<ID>/view...) — đổi sang địa chỉ ảnh hiển thị được */
+  function imageUrl(u) {
+    u = (u || '').trim();
+    var m = /^https:\/\/drive\.google\.com\/.*?(?:\/d\/|[?&]id=)([\w-]{20,})/.exec(u);
+    return m ? 'https://drive.google.com/thumbnail?id=' + m[1] + '&sz=w1600' : assetUrl(u);
+  }
+  /* Mã tin (dùng trong ?tin=...): lấy từ tiêu đề tiếng Việt, bỏ dấu */
+  function newsSlug(title) {
+    return deaccent((title || '').split(' | ')[0].trim()).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
+  }
+  function newsItems(rows) {
+    rows = rows.filter(function (r) { return !/^#/.test(r[0].trim()); });
+    var head = rows.shift().map(function (h) { return h.trim(); });
+    var col = function (r, k) { var i = head.indexOf(k); return i < 0 ? '' : (r[i] || '').trim(); };
+    return rows.filter(function (r) { return col(r, 'tieu_de'); }).map(function (r) {
+      var link = col(r, 'lien_ket');
+      return {
+        date: col(r, 'ngay'), group: col(r, 'nhom'), slug: newsSlug(col(r, 'tieu_de')),
+        title: pick(col(r, 'tieu_de')), summary: pick(col(r, 'tom_tat')),
+        imgs: col(r, 'anh').split(';').map(function (s) { return s.trim(); }).filter(Boolean).map(imageUrl),
+        link: link ? assetUrl(link) : ''
+      };
+    });
+  }
+  /* Trang tin tức: data-href, hoặc liên kết <a data-news-page> trên trang (Joomla tự đổi href này sang URL đẹp) */
+  function newsPage(host) {
+    var a = document.querySelector('a[data-news-page]');
+    return host.getAttribute('data-href') || (a ? a.getAttribute('href') : '') || location.pathname;
+  }
+  function detailUrl(host, it) {
+    var base = newsPage(host);
+    return base + (base.indexOf('?') < 0 ? '?' : '&') + 'tin=' + encodeURIComponent(it.slug);
+  }
+  function badge(G, it) {
+    return '<span class="badge news__badge news__badge--' + esc(it.group) + '">' + esc(G[it.group] || it.group) + '</span>';
+  }
+
+  function renderNews(host, rows) {
+    var G = NEWS_GROUPS[LANG];
+    var items = newsItems(rows);
+    var limit = +host.getAttribute('data-limit') || 0;
+    var want = new URLSearchParams(location.search).get('tin');
+
+    /* ---------- Trang chi tiết một tin ---------- */
+    if (want && !limit) {
+      var it = items.filter(function (x) { return x.slug === want; })[0];
+      var backUrl = location.pathname;
+      if (!it) {
+        host.innerHTML = '<p class="text-muted">' + G.notFound + '</p><p><a class="link-arrow" href="' + esc(backUrl) + '">' + G.back + '</a></p>';
+        return;
+      }
+      document.title = it.title + ' — ' + document.title.split(' — ').slice(-1)[0];
+      var h1 = document.querySelector('.page-head h1');
+      if (h1) h1.textContent = it.title;
+      var lead = document.querySelector('.page-head p');
+      if (lead) lead.textContent = (G[it.group] || '') + (it.date ? ' · ' + it.date : '');
+      host.innerHTML = '<article class="news-detail">' +
+        '<p class="news__meta">' + badge(G, it) + (it.date ? '<time>' + esc(it.date) + '</time>' : '') + '</p>' +
+        (it.summary ? '<p class="news-detail__lead">' + esc(it.summary) + '</p>' : '') +
+        (it.imgs.length ? '<div class="news-detail__gallery news-detail__gallery--' + Math.min(it.imgs.length, 3) + '">' + it.imgs.map(function (u, i) {
+          return '<a href="' + esc(u) + '" target="_blank" rel="noopener"><img src="' + esc(u) + '" alt="' + esc(it.title + ' — ' + (i + 1)) + '"' + (i ? ' loading="lazy"' : '') + '></a>';
+        }).join('') + '</div>' : '') +
+        '<p class="news-detail__actions">' +
+          (it.link ? '<a class="btn btn--brand" href="' + esc(it.link) + '"' + ext(it.link) + '>' + G.source + '</a> ' : '') +
+          '<a class="link-arrow" href="' + esc(backUrl) + '">' + G.back + '</a></p>' +
+        '</article>';
+      return;
+    }
+
+    /* ---------- Danh sách tin ---------- */
+    if (limit) items = items.slice(0, limit);
+    var card = function (it) {
+      var url = detailUrl(host, it);
+      var cover = it.imgs[0] ? '<a class="news__cover" href="' + esc(url) + '" tabindex="-1" aria-hidden="true">' +
+        '<img src="' + esc(it.imgs[0]) + '" alt="" loading="lazy">' +
+        (it.imgs.length > 1 ? '<span class="news__count">' + it.imgs.length + ' ' + G.photos + '</span>' : '') + '</a>' : '';
+      return '<article class="news__item" data-group="' + esc(it.group) + '">' + cover +
+        '<div class="news__body"><p class="news__meta">' + badge(G, it) + (it.date ? '<time>' + esc(it.date) + '</time>' : '') + '</p>' +
+        '<h3><a href="' + esc(url) + '">' + esc(it.title) + '</a></h3>' +
+        (it.summary ? '<p>' + esc(it.summary) + '</p>' : '') +
+        '<a class="link-arrow" href="' + esc(url) + '">' + G.more + '</a>' +
+        '</div></article>';
+    };
+    var tabs = limit ? '' : '<div class="news__tabs" role="tablist">' + ['all'].concat(GROUP_KEYS).map(function (g) {
+      return '<button type="button" role="tab" data-filter="' + g + '" aria-selected="false">' + G[g] + '</button>';
+    }).join('') + '</div>';
+    host.innerHTML = tabs + '<div class="news__grid">' + items.map(card).join('') + '</div>' +
+      '<p class="news__empty text-muted" hidden>' + G.empty + '</p>';
+    if (limit) return;
+
+    var apply = function (g) {
+      var shown = 0;
+      host.querySelectorAll('.news__item').forEach(function (a) {
+        var on = g === 'all' || a.getAttribute('data-group') === g;
+        a.hidden = !on; if (on) shown++;
+      });
+      host.querySelectorAll('[data-filter]').forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-filter') === g ? 'true' : 'false'); });
+      host.querySelector('.news__empty').hidden = shown > 0;
+    };
+    host.querySelectorAll('[data-filter]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var g = b.getAttribute('data-filter');
+        apply(g);
+        if (history.replaceState) history.replaceState(null, '', g === 'all' ? location.pathname : '#' + g);
+      });
+    });
+    var h = location.hash.slice(1);
+    apply(GROUP_KEYS.indexOf(h) >= 0 ? h : 'all');
+  }
+
+  /* ---------- Slide tin nổi bật ---------- */
+  function renderSlider(host, rows) {
+    var G = NEWS_GROUPS[LANG];
+    var limit = +host.getAttribute('data-limit') || 5;
+    var items = newsItems(rows).filter(function (it) { return it.imgs.length; }).slice(0, limit);
+    if (!items.length) { host.hidden = true; return; }
+    var n = items.length, cur = 0, timer = null;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var autoplay = !reduce && n > 1;
+
+    host.setAttribute('role', 'region');
+    host.setAttribute('aria-roledescription', 'carousel');
+    host.setAttribute('aria-label', G.featured);
+    host.innerHTML =
+      '<div class="slider__track" aria-live="' + (autoplay ? 'off' : 'polite') + '">' + items.map(function (it, i) {
+        return '<article class="slider__slide' + (i ? '' : ' is-active') + '" role="group" aria-roledescription="slide" ' +
+          'aria-label="' + (i + 1) + ' ' + G.of + ' ' + n + '"' + (i ? ' aria-hidden="true"' : '') + '>' +
+          '<img class="slider__img" src="' + esc(it.imgs[0]) + '" alt=""' + (i ? ' loading="lazy"' : '') + '>' +
+          '<div class="slider__caption"><p class="news__meta">' + badge(G, it) + (it.date ? '<time>' + esc(it.date) + '</time>' : '') + '</p>' +
+          '<h3><a href="' + esc(detailUrl(host, it)) + '"' + (i ? ' tabindex="-1"' : '') + '>' + esc(it.title) + '</a></h3>' +
+          (it.summary ? '<p class="slider__text">' + esc(it.summary) + '</p>' : '') + '</div></article>';
+      }).join('') + '</div>' +
+      (n > 1 ? '<button class="slider__arrow slider__arrow--prev" type="button" aria-label="' + G.prev + '">&#8249;</button>' +
+        '<button class="slider__arrow slider__arrow--next" type="button" aria-label="' + G.next + '">&#8250;</button>' +
+        '<div class="slider__dots">' + items.map(function (it, i) {
+          return '<button type="button" aria-label="' + G.slide + ' ' + (i + 1) + '"' + (i ? '' : ' aria-current="true"') + '></button>';
+        }).join('') + '</div>' +
+        (autoplay ? '<button class="slider__toggle" type="button" aria-label="' + G.pause + '">&#10073;&#10073;</button>' : '') : '');
+
+    var slides = host.querySelectorAll('.slider__slide'), dots = host.querySelectorAll('.slider__dots button');
+    var go = function (i) {
+      cur = (i + n) % n;
+      slides.forEach(function (s, k) {
+        var on = k === cur;
+        s.classList.toggle('is-active', on);
+        if (on) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true');
+        s.querySelectorAll('a').forEach(function (a) { if (on) a.removeAttribute('tabindex'); else a.setAttribute('tabindex', '-1'); });
+      });
+      dots.forEach(function (d, k) { if (k === cur) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
+    };
+    if (n < 2) return;
+    var paused = !autoplay, hover = false;
+    var stop = function () { clearInterval(timer); timer = null; };
+    var start = function () { stop(); if (!paused && !hover) timer = setInterval(function () { go(cur + 1); }, 6000); };
+    host.querySelector('.slider__arrow--prev').addEventListener('click', function () { go(cur - 1); start(); });
+    host.querySelector('.slider__arrow--next').addEventListener('click', function () { go(cur + 1); start(); });
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); start(); }); });
+    var tg = host.querySelector('.slider__toggle');
+    if (tg) tg.addEventListener('click', function () {
+      paused = !paused;
+      tg.setAttribute('aria-label', paused ? G.play : G.pause);
+      tg.innerHTML = paused ? '&#9654;' : '&#10073;&#10073;';
+      start();
+    });
+    host.addEventListener('mouseenter', function () { hover = true; stop(); });
+    host.addEventListener('mouseleave', function () { hover = false; start(); });
+    host.addEventListener('focusin', function () { hover = true; stop(); });
+    host.addEventListener('focusout', function () { hover = false; start(); });
+    host.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { go(cur - 1); } else if (e.key === 'ArrowRight') { go(cur + 1); }
+    });
+    var x0 = null;                                         /* vuốt trên điện thoại */
+    host.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    host.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 40) { go(cur + (dx < 0 ? 1 : -1)); start(); }
+    }, { passive: true });
+    document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+    start();
+  }
+
   function renderData() {
     document.querySelectorAll('[data-chart]').forEach(function (host) {
       loadData(host.getAttribute('data-chart')).then(function (rows) { renderChart(host, rows); }).catch(function () {});
@@ -887,6 +1291,24 @@
       var name = host.getAttribute('data-people');
       loadData(name).then(function (rows) { renderPeople(host, rows); }).catch(fail(host, name));
     });
+    document.querySelectorAll('[data-bars]').forEach(function (host) {
+      loadData(host.getAttribute('data-bars')).then(function (rows) {
+        var draw = function () { renderBars(host, rows.map(function (r) { return r.slice(); })); };
+        draw();
+        var w = host.clientWidth, timer;
+        window.addEventListener('resize', function () {
+          clearTimeout(timer);
+          timer = setTimeout(function () { if (Math.abs(host.clientWidth - w) > 40) { w = host.clientWidth; draw(); } }, 200);
+        });
+      }).catch(function () { host.hidden = true; });
+    });
+    document.querySelectorAll('[data-news]').forEach(function (host) {
+      var name = host.getAttribute('data-news');
+      loadData(name).then(function (rows) { renderNews(host, rows); }).catch(fail(host, name));
+    });
+    document.querySelectorAll('[data-slider]').forEach(function (host) {
+      loadData(host.getAttribute('data-slider')).then(function (rows) { renderSlider(host, rows); }).catch(function () { host.hidden = true; });
+    });
   }
 
   function init() {
@@ -894,6 +1316,7 @@
     buildHeader();
     buildFooter();
     renderData();
+    renderEmbeds();
     wireAccordions();
     wireReveal();
     loadAnalytics();

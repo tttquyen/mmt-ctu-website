@@ -965,3 +965,117 @@ details.data-more > summary { cursor: pointer; font-weight: 600; color: var(--br
   .accordion__panel[hidden] { display: block !important; }
   .js [data-reveal] { opacity: 1 !important; transform: none !important; }
 }
+
+/* ==========================================================================
+   Biểu đồ cột (data-bars) — vẽ từ CSV / Google Sheets
+   ========================================================================== */
+.vchart { margin: 0 0 var(--sp-4); padding: var(--sp-4) var(--sp-4) var(--sp-3); background: var(--bg);
+  border: 1px solid var(--line); border-radius: var(--r-md); }
+.vchart__plot { position: relative; overflow-x: auto; overflow-y: visible; }
+.vchart svg { display: block; max-width: none; overflow: visible; }
+.vchart__grid { stroke: var(--line-soft); stroke-width: 1; }
+.vchart__axis { stroke: var(--line); stroke-width: 1; }
+.vchart__tick { fill: var(--ink-muted); font-size: 11px; }
+.vchart__cat  { fill: var(--ink-soft); font-size: 12px; }
+.vchart__val  { fill: var(--ink); font-size: 11.5px; font-weight: 600; }
+.vchart__bar  { cursor: pointer; transition: opacity .15s; }
+.vchart__plot:hover .vchart__bar { opacity: .55; }
+.vchart__plot .vchart__bar:hover, .vchart__bar:focus { opacity: 1; outline: none; stroke: var(--ink); stroke-width: 1.5; }
+.vchart__legend { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; margin: 0 0 var(--sp-2); padding: 0;
+  font-size: var(--fs-xs); color: var(--ink-soft); }
+.vchart__legend li { display: flex; align-items: center; gap: 6px; margin: 0; }
+.vchart__legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.vchart__tip { position: absolute; transform: translate(-50%, -100%); background: var(--brand-950); color: #fff;
+  font-size: var(--fs-xs); line-height: 1.4; padding: 6px 10px; border-radius: var(--r-sm); white-space: nowrap;
+  pointer-events: none; box-shadow: var(--shadow-sm); z-index: 2; }
+.vchart figcaption { font-size: var(--fs-xs); color: var(--ink-muted); margin-top: var(--sp-2); }
+@media print { .vchart__tip { display: none; } }
+
+/* ==========================================================================
+   Tin tức & hình ảnh sinh viên (data-news)
+   ========================================================================== */
+.news__tabs { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-5); }
+.news__tabs button { font: inherit; font-size: var(--fs-sm); font-weight: 600; cursor: pointer;
+  padding: 8px 16px; border-radius: var(--r-full); border: 1px solid var(--brand-200); background: var(--bg); color: var(--brand-700); }
+.news__tabs button:hover { background: var(--brand-50); }
+.news__tabs button[aria-selected="true"] { background: var(--brand-600); border-color: var(--brand-600); color: #fff; }
+.news__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-5); }
+.news__item { display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--line);
+  border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-xs); }
+.news__item[hidden] { display: none; }
+.news__cover { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--bg-tint); }
+.news__cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.news__cover:hover img { transform: scale(1.04); }
+.news__count { position: absolute; right: 10px; bottom: 10px; background: rgba(11,32,59,.78); color: #fff;
+  font-size: var(--fs-xs); font-weight: 600; padding: 3px 10px; border-radius: var(--r-full); }
+.news__body { padding: var(--sp-4) var(--sp-5) var(--sp-5); display: flex; flex-direction: column; flex: 1; }
+.news__body h3 { font-size: var(--fs-lg); margin: 0 0 var(--sp-2); }
+.news__body p { font-size: var(--fs-sm); color: var(--ink-soft); }
+.news__body .link-arrow { margin-top: auto; }
+.news__meta { display: flex; align-items: center; gap: var(--sp-3); margin: 0 0 var(--sp-2); font-size: var(--fs-xs); color: var(--ink-muted); }
+.news__badge--dau-vao   { background: var(--accent-50); color: #006c94; }
+.news__badge--hoat-dong { background: var(--brand-100); color: var(--brand-800); }
+.news__badge--dau-ra    { background: var(--util-amber-soft); color: var(--util-amber); }
+.news__thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 0 0 var(--sp-3); }
+.news__thumbs img { aspect-ratio: 1; width: 100%; object-fit: cover; border-radius: var(--r-sm); }
+
+/* Khung nhúng Google Sheets / biểu đồ đã xuất bản lên web */
+.embed-frame { position: relative; width: 100%; aspect-ratio: 16 / 10; margin: 0 0 var(--sp-5);
+  border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: var(--bg-soft); }
+.embed-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 600px) { .embed-frame { aspect-ratio: 4 / 5; } }
+
+/* ==========================================================================
+   Slide tin nổi bật (data-slider) và trang chi tiết tin
+   ========================================================================== */
+.slider { position: relative; overflow: hidden; border-radius: var(--r-lg); background: var(--brand-950);
+  box-shadow: var(--shadow-md); aspect-ratio: 21 / 9; min-height: 340px; }
+.slider__track { position: absolute; inset: 0; }
+.slider__slide { position: absolute; inset: 0; opacity: 0; visibility: hidden;
+  transition: opacity .7s var(--ease, ease), visibility 0s linear .7s; }
+.slider__slide.is-active { opacity: 1; visibility: visible; transition: opacity .7s var(--ease, ease); }
+.slider__img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform 7s linear; }
+.slider__slide.is-active .slider__img { transform: scale(1); }
+.slider__slide::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(11,32,59,0) 35%, rgba(11,32,59,.55) 62%, rgba(11,32,59,.92) 100%); }
+.slider__caption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: var(--sp-6) var(--sp-7) calc(var(--sp-6) + 18px);
+  color: #fff; max-width: 860px; }
+.slider__caption h3 { font-size: clamp(1.25rem, .9rem + 1.4vw, 2rem); line-height: 1.25; margin: 0 0 var(--sp-2); color: #fff; }
+.slider__caption h3 a { color: #fff; }
+.slider__caption h3 a:hover { text-decoration: underline; }
+.slider__text { margin: 0; color: rgba(255,255,255,.88); font-size: var(--fs-sm); display: -webkit-box;
+  -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.slider .news__meta { margin-bottom: var(--sp-2); color: rgba(255,255,255,.85); }
+.slider__arrow { position: absolute; top: 50%; z-index: 2; transform: translateY(-50%); width: 44px; height: 44px;
+  border: 0; border-radius: 50%; background: rgba(255,255,255,.18); color: #fff; font-size: 30px; line-height: 1;
+  cursor: pointer; backdrop-filter: blur(4px); transition: background .2s; }
+.slider__arrow:hover, .slider__arrow:focus-visible { background: rgba(255,255,255,.36); }
+.slider__arrow--prev { left: 14px; } .slider__arrow--next { right: 14px; }
+.slider__dots { position: absolute; z-index: 2; left: 50%; bottom: 14px; transform: translateX(-50%); display: flex; gap: 8px; }
+.slider__dots button { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 999px; cursor: pointer;
+  background: rgba(255,255,255,.45); transition: width .3s, background .3s; }
+.slider__dots button[aria-current="true"] { width: 28px; background: var(--accent); }
+.slider__toggle { position: absolute; z-index: 2; right: 14px; bottom: 10px; width: 30px; height: 30px; border: 0;
+  border-radius: 50%; background: rgba(255,255,255,.18); color: #fff; font-size: 11px; cursor: pointer; }
+.slider__more { text-align: right; margin: var(--sp-3) 0 0; }
+@media (max-width: 700px) {
+  .slider { aspect-ratio: 4 / 5; min-height: 0; border-radius: var(--r-md); }
+  .slider__caption { padding: var(--sp-4) var(--sp-4) 40px; }
+  .slider__arrow { width: 36px; height: 36px; font-size: 24px; top: 38%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slider__slide, .slider__slide.is-active, .slider__img { transition: none; }
+}
+
+.news__body h3 a { color: inherit; }
+.news__body h3 a:hover { color: var(--brand-600); }
+.news-detail { max-width: 980px; }
+.news-detail__lead { font-size: var(--fs-lg); color: var(--ink-soft); line-height: 1.6; }
+.news-detail__gallery { display: grid; gap: var(--sp-3); margin: var(--sp-5) 0; }
+.news-detail__gallery--2 { grid-template-columns: 1fr 1fr; }
+.news-detail__gallery--3 { grid-template-columns: repeat(2, 1fr); }
+.news-detail__gallery--3 a:first-child { grid-column: 1 / -1; }
+.news-detail__gallery img { width: 100%; border-radius: var(--r-md); aspect-ratio: 3 / 2; object-fit: cover; }
+.news-detail__gallery--3 a:first-child img { aspect-ratio: 16 / 9; }
+.news-detail__actions { display: flex; flex-wrap: wrap; gap: var(--sp-4); align-items: center; }
+@media (max-width: 600px) { .news-detail__gallery--2, .news-detail__gallery--3 { grid-template-columns: 1fr; } }
