@@ -228,13 +228,22 @@ Với biểu đồ: bấm vào biểu đồ → ⋮ → *Xuất bản biểu đ�
 Khung nhúng không theo màu, font và song ngữ của website, và ô tìm kiếm không đọc được nội dung
 bên trong, nên ưu tiên cách vẽ biểu đồ ở trên.
 
-### Tin tức & hình ảnh sinh viên
+### Tin tức – Sự kiện và slide trang chủ
 
-Trang `tintuc.html` / `entintuc.html` (menu *Sinh viên › Tin tức & hình ảnh*) và khối 3 tin mới
-ở trang chủ đọc thẻ `tin-tuc`. Cột: `ngay`, `nhom` (`dau-vao` chào đón tân sinh viên, `hoat-dong`
-hoạt động sinh viên, `dau-ra` sinh viên tốt nghiệp), `tieu_de`, `tom_tat`, `anh` (nhiều ảnh cách
-nhau bằng `;`, ảnh đầu là ảnh đại diện; tệp trong `imgs/` hoặc URL ảnh công khai), `lien_ket`.
-Tin mới thêm ở **đầu** bảng. Mở thẳng một nhóm bằng `tintuc.html#dau-vao`, `#hoat-dong`, `#dau-ra`.
+Trang `tintuc.html` / `entintuc.html` (menu chính *Tin tức*) và slide *Tin nổi bật* ở trang chủ cùng đọc
+tệp `tin-tuc` (Google Sheets, dự phòng `data/tin-tuc.csv`). Cột: `ngay`, `nhom`, `tieu_de`, `tom_tat`,
+`anh`, `lien_ket`.
+
+- `nhom`: `su-kien` tin Khoa – sự kiện, `dau-vao` chào đón tân sinh viên, `hoat-dong` hoạt động sinh viên,
+  `dau-ra` sinh viên tốt nghiệp. Mở thẳng một nhóm: `tintuc.html#hoat-dong`.
+- **Tin mới thêm ở dòng đầu.** 5 tin trên cùng có ảnh tự lên slide trang chủ (tự chạy 6 giây/tin, dừng khi
+  rê chuột, vuốt được trên điện thoại).
+- Mỗi tin có trang chi tiết riêng `tintuc.html?tin=<mã>` (mã lấy từ tiêu đề tiếng Việt) hiển thị toàn bộ ảnh;
+  `lien_ket` (bài gốc trên Fanpage, PDF…) hiện thành nút *Xem bài gốc*.
+- `anh`: nhiều ảnh cách nhau bằng `;`, ảnh đầu là ảnh đại diện. Dùng tệp trong `imgs/` hoặc **ảnh trên Google
+  Drive**: tải ảnh vào thư mục *Ảnh tin tức* (trong thư mục *Website Khoa MMT&TT – Số liệu*, đã chia sẻ công khai)
+  https://drive.google.com/drive/folders/1sEPN8U6NO31t0BjfgUwDb8NpkITdmxt0 → chuột phải vào ảnh → *Chia sẻ* →
+  *Sao chép đường liên kết* → dán vào cột `anh`. Nên tạo thư mục con cho mỗi sự kiện; ảnh rộng khoảng 1600px là đủ.
 
 ## Các trang phục vụ kiểm định AUN-QA
 

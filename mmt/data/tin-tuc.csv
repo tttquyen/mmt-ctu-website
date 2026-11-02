@@ -1,7 +1,7 @@
 ﻿"# Tin tức và hình ảnh sinh viên. Mỗi tin một dòng; dòng trên cùng hiển thị trước."
-"# nhom: dau-vao (chào đón tân sinh viên) | hoat-dong (hoạt động sinh viên) | dau-ra (sinh viên tốt nghiệp)."
+"# nhom: su-kien (tin Khoa – sự kiện) | dau-vao (chào đón tân sinh viên) | hoat-dong (hoạt động sinh viên) | dau-ra (sinh viên tốt nghiệp). 5 tin trên cùng có ảnh hiện ở slide trang chủ."
 "# ngay: dd/mm/yyyy, để trống nếu không rõ. anh: nhiều ảnh cách nhau bằng dấu chấm phẩy; ảnh đầu là ảnh đại diện."
-"# anh có thể là tệp trong imgs/ hoặc URL ảnh công khai. lien_ket: bài viết đầy đủ (Fanpage, website Trường), để trống nếu không có."
+"# anh: tệp trong imgs/, URL ảnh, hoặc đường dẫn chia sẻ ảnh trong thư mục Drive ""Ảnh tin tức"". lien_ket: bài viết đầy đủ (Fanpage, website Trường), để trống nếu không có."
 "# Ô song ngữ: ""Tiếng Việt | English""."
 ngay,nhom,tieu_de,tom_tat,anh,lien_ket
 ,dau-vao,"Chào đón tân sinh viên Khóa 52 | Welcoming Cohort 52 freshmen","Khoa Mạng máy tính và Truyền thông tổ chức chương trình chào đón tân sinh viên Khóa 52: giới thiệu về Khoa và chương trình đào tạo, trao đổi – hỏi đáp cùng giảng viên, giao lưu và chia sẻ kinh nghiệm cùng sinh viên khóa trước. | The Faculty of Computer Networks and Communications welcomed its Cohort 52 freshmen with an introduction to the faculty and its programmes, a Q&A session with lecturers, and an experience-sharing session with senior students.",imgs/k52-chao-don-1.jpg;imgs/k52-chao-don-2.jpg;imgs/k52-chao-don-3.jpg,

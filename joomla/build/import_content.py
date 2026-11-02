@@ -119,19 +119,18 @@ PAGES = [
                    'enptnattt.html',  'information-security-lab', 'Information Security Lab', 'nckh'),
     ('sv',         'sv.html',         'sinh-vien',             'Sinh viên',
                    'ensv.html',       'students',              'Students', None),
-    ('tintuc',     'tintuc.html',     'tin-tuc',               'Tin tức & hình ảnh',
-                   'entintuc.html',   'news-photos',           'News & photos', 'sv'),
     ('gv',         'gv.html',         'nhan-su',               'Nhân sự',
                    'engv.html',       'people',                'People', None),
     ('ts',         'ts.html',         'tuyen-sinh',            'Tuyển sinh',
                    'ents.html',       'admissions',            'Admissions', None),
+    ('tintuc',     'tintuc.html',     'tin-tuc',               'Tin tức',
+                   'entintuc.html',   'news',                  'News', None),
 ]
 # Mục "tổng quan" đầu mỗi menu con (trỏ về chính mục cha)
 OVERVIEW = {
     'home': ('Tổng quan về Khoa', 'About the Faculty'),
     'ctdt': ('Tổng quan chương trình đào tạo', 'Programmes overview'),
     'nckh': ('Hoạt động nghiên cứu khoa học', 'Research activities'),
-    'sv': ('Dành cho sinh viên', 'Student support'),
 }
 
 LANGS = {
@@ -323,8 +322,8 @@ def main():
                ('Elearning', 'https://elearning.ctu.edu.vn/'), ('Learning Resource Center', 'https://lrc.ctu.edu.vn/')],
     }
     NEWS = {
-        'vi': [('Tuyển sinh', 'ts'), ('Chuẩn đầu ra', 'cdr'), ('Kết quả đào tạo', 'ketqua'), ('Dành cho sinh viên', 'sv'), ('Tin tức sinh viên', 'tintuc')],
-        'en': [('Admissions', 'ts'), ('Learning outcomes', 'cdr'), ('Programme outcomes', 'ketqua'), ('For students', 'sv'), ('Student news', 'tintuc')],
+        'vi': [('Tuyển sinh', 'ts'), ('Chuẩn đầu ra', 'cdr'), ('Kết quả đào tạo', 'ketqua'), ('Dành cho sinh viên', 'sv'), ('Tin tức', 'tintuc')],
+        'en': [('Admissions', 'ts'), ('Learning outcomes', 'cdr'), ('Programme outcomes', 'ketqua'), ('For students', 'sv'), ('News', 'tintuc')],
     }
     for lg, L in LANGS.items():
         mt = 'topbar-' + lg

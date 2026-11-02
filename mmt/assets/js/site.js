@@ -155,15 +155,10 @@
             { id: 'ptnattt', label: 'PTN An toàn thông tin', url: 'ptnattt.html' }
           ]
         },
-        {
-          id: 'sinh-vien', label: 'Sinh viên', url: 'sv.html',
-          children: [
-            { id: 'sv', label: 'Dành cho sinh viên', url: 'sv.html' },
-            { id: 'tintuc', label: 'Tin tức & hình ảnh', url: 'tintuc.html' }
-          ]
-        },
+        { id: 'sv', label: 'Sinh viên', url: 'sv.html' },
         { id: 'gv', label: 'Nhân sự', url: 'gv.html' },
-        { id: 'ts', label: 'Tuyển sinh', url: 'ts.html' }
+        { id: 'ts', label: 'Tuyển sinh', url: 'ts.html' },
+        { id: 'tintuc', label: 'Tin tức', url: 'tintuc.html' }
       ],
 
       newsFlag: 'Nổi bật',
@@ -172,7 +167,7 @@
         { label: 'Chuẩn đầu ra', url: 'cdr.html' },
         { label: 'Kết quả đào tạo', url: 'ketqua.html' },
         { label: 'Dành cho sinh viên', url: 'sv.html' },
-        { label: 'Tin tức sinh viên', url: 'tintuc.html' }
+        { label: 'Tin tức', url: 'tintuc.html' }
       ],
 
       searchPlaceholder: 'Nhập từ khoá cần tìm…',
@@ -274,15 +269,10 @@
             { id: 'ptnattt', label: 'Information Security Lab', url: 'enptnattt.html' }
           ]
         },
-        {
-          id: 'sinh-vien', label: 'Students', url: 'ensv.html',
-          children: [
-            { id: 'sv', label: 'Student support', url: 'ensv.html' },
-            { id: 'tintuc', label: 'News & photos', url: 'entintuc.html' }
-          ]
-        },
+        { id: 'sv', label: 'Students', url: 'ensv.html' },
         { id: 'gv', label: 'People', url: 'engv.html' },
-        { id: 'ts', label: 'Admissions', url: 'ents.html' }
+        { id: 'ts', label: 'Admissions', url: 'ents.html' },
+        { id: 'tintuc', label: 'News', url: 'entintuc.html' }
       ],
 
       newsFlag: 'Highlights',
@@ -291,7 +281,7 @@
         { label: 'Learning outcomes', url: 'encdr.html' },
         { label: 'Programme outcomes', url: 'enketqua.html' },
         { label: 'For students', url: 'ensv.html' },
-        { label: 'Student news', url: 'entintuc.html' }
+        { label: 'News', url: 'entintuc.html' }
       ],
 
       searchPlaceholder: 'Enter a keyword…',
@@ -1075,49 +1065,116 @@
   }
 
   /* =====================================================================
-     11. Tin tức & hình ảnh sinh viên (data-news="tin-tuc")
-     Cột: ngay, nhom (dau-vao | hoat-dong | dau-ra), tieu_de, tom_tat, anh, lien_ket
-       data-limit="3"  chỉ hiện N tin mới nhất, không có nút lọc (dùng ở trang chủ)
+     11. Tin tức (data-news) và slide tin nổi bật (data-slider)
+     Cột: ngay, nhom, tieu_de, tom_tat, anh, lien_ket
+       nhom: su-kien (tin Khoa – sự kiện) | dau-vao (chào đón tân sinh viên)
+             | hoat-dong (hoạt động sinh viên) | dau-ra (sinh viên tốt nghiệp)
+       data-news="tin-tuc"                 trang tin tức: nút lọc + thẻ tin; ?tin=<ma> mở trang chi tiết
+       data-news="tin-tuc" data-limit="3"  N tin mới nhất, không có nút lọc
+       data-slider="tin-tuc" data-limit="5" slide N tin mới nhất có ảnh (dòng trên cùng = mới nhất)
+       data-href="tintuc.html"             trang tin tức để liên kết tới trang chi tiết
      ===================================================================== */
   var NEWS_GROUPS = {
-    vi: { all: 'Tất cả', 'dau-vao': 'Chào đón tân sinh viên', 'hoat-dong': 'Hoạt động sinh viên', 'dau-ra': 'Sinh viên tốt nghiệp',
-          more: 'Xem chi tiết', empty: 'Đang cập nhật tin và hình ảnh cho mục này.', photos: 'ảnh' },
-    en: { all: 'All', 'dau-vao': 'Welcoming new students', 'hoat-dong': 'Student activities', 'dau-ra': 'Graduates',
-          more: 'Read more', empty: 'News and photos for this section are being updated.', photos: 'photos' }
+    vi: { all: 'Tất cả', 'su-kien': 'Tin Khoa – Sự kiện', 'dau-vao': 'Chào đón tân sinh viên', 'hoat-dong': 'Hoạt động sinh viên',
+          'dau-ra': 'Sinh viên tốt nghiệp', more: 'Xem chi tiết', source: 'Xem bài gốc', back: 'Tất cả tin tức',
+          empty: 'Đang cập nhật tin và hình ảnh cho mục này.', notFound: 'Không tìm thấy tin này.', photos: 'ảnh',
+          prev: 'Tin trước', next: 'Tin sau', slide: 'Tin', of: '/', pause: 'Tạm dừng', play: 'Tự chạy', featured: 'Tin nổi bật' },
+    en: { all: 'All', 'su-kien': 'Faculty news & events', 'dau-vao': 'Welcoming new students', 'hoat-dong': 'Student activities',
+          'dau-ra': 'Graduates', more: 'Read more', source: 'Original post', back: 'All news',
+          empty: 'News and photos for this section are being updated.', notFound: 'This news item could not be found.', photos: 'photos',
+          prev: 'Previous', next: 'Next', slide: 'Slide', of: 'of', pause: 'Pause', play: 'Play', featured: 'Featured news' }
   };
+  var GROUP_KEYS = ['su-kien', 'dau-vao', 'hoat-dong', 'dau-ra'];
+
   function assetUrl(u) {
     u = (u || '').trim();
     return /^(https?:|\/)/.test(u) ? u : BASE + u;
   }
-  function renderNews(host, rows) {
-    var G = NEWS_GROUPS[LANG];
+  /* Ảnh: tệp trong imgs/, URL ảnh, hoặc đường dẫn chia sẻ ảnh trên Google Drive
+     (https://drive.google.com/file/d/<ID>/view...) — đổi sang địa chỉ ảnh hiển thị được */
+  function imageUrl(u) {
+    u = (u || '').trim();
+    var m = /^https:\/\/drive\.google\.com\/.*?(?:\/d\/|[?&]id=)([\w-]{20,})/.exec(u);
+    return m ? 'https://drive.google.com/thumbnail?id=' + m[1] + '&sz=w1600' : assetUrl(u);
+  }
+  /* Mã tin (dùng trong ?tin=...): lấy từ tiêu đề tiếng Việt, bỏ dấu */
+  function newsSlug(title) {
+    return deaccent((title || '').split(' | ')[0].trim()).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
+  }
+  function newsItems(rows) {
     rows = rows.filter(function (r) { return !/^#/.test(r[0].trim()); });
     var head = rows.shift().map(function (h) { return h.trim(); });
     var col = function (r, k) { var i = head.indexOf(k); return i < 0 ? '' : (r[i] || '').trim(); };
-    var items = rows.filter(function (r) { return col(r, 'tieu_de'); });
-    var limit = +host.getAttribute('data-limit') || 0;
-    if (limit) items = items.slice(0, limit);
+    return rows.filter(function (r) { return col(r, 'tieu_de'); }).map(function (r) {
+      var link = col(r, 'lien_ket');
+      return {
+        date: col(r, 'ngay'), group: col(r, 'nhom'), slug: newsSlug(col(r, 'tieu_de')),
+        title: pick(col(r, 'tieu_de')), summary: pick(col(r, 'tom_tat')),
+        imgs: col(r, 'anh').split(';').map(function (s) { return s.trim(); }).filter(Boolean).map(imageUrl),
+        link: link ? assetUrl(link) : ''
+      };
+    });
+  }
+  /* Trang tin tức: data-href, hoặc liên kết <a data-news-page> trên trang (Joomla tự đổi href này sang URL đẹp) */
+  function newsPage(host) {
+    var a = document.querySelector('a[data-news-page]');
+    return host.getAttribute('data-href') || (a ? a.getAttribute('href') : '') || location.pathname;
+  }
+  function detailUrl(host, it) {
+    var base = newsPage(host);
+    return base + (base.indexOf('?') < 0 ? '?' : '&') + 'tin=' + encodeURIComponent(it.slug);
+  }
+  function badge(G, it) {
+    return '<span class="badge news__badge news__badge--' + esc(it.group) + '">' + esc(G[it.group] || it.group) + '</span>';
+  }
 
-    var card = function (r) {
-      var grp = col(r, 'nhom'), imgs = col(r, 'anh').split(';').map(function (s) { return s.trim(); }).filter(Boolean);
-      var link = col(r, 'lien_ket'), title = pick(col(r, 'tieu_de'));
-      var href = link ? assetUrl(link) : (imgs[0] ? assetUrl(imgs[0]) : '');
-      var cover = imgs[0] ? '<a class="news__cover" href="' + esc(href) + '"' + (link ? ext(href) : ' target="_blank" rel="noopener"') + '>' +
-        '<img src="' + esc(assetUrl(imgs[0])) + '" alt="' + esc(title) + '" loading="lazy">' +
-        (imgs.length > 1 ? '<span class="news__count">' + imgs.length + ' ' + G.photos + '</span>' : '') + '</a>' : '';
-      var thumbs = imgs.length > 1 ? '<div class="news__thumbs">' + imgs.slice(1, 5).map(function (u) {
-        return '<a href="' + esc(assetUrl(u)) + '" target="_blank" rel="noopener"><img src="' + esc(assetUrl(u)) + '" alt="" loading="lazy"></a>';
-      }).join('') + '</div>' : '';
-      return '<article class="news__item" data-group="' + esc(grp) + '">' + cover +
-        '<div class="news__body"><p class="news__meta"><span class="badge news__badge news__badge--' + esc(grp) + '">' + esc(G[grp] || grp) + '</span>' +
-        (col(r, 'ngay') ? '<time>' + esc(col(r, 'ngay')) + '</time>' : '') + '</p>' +
-        '<h3>' + esc(title) + '</h3>' +
-        (col(r, 'tom_tat') ? '<p>' + esc(pick(col(r, 'tom_tat'))) + '</p>' : '') + thumbs +
-        (link ? '<a class="link-arrow" href="' + esc(assetUrl(link)) + '"' + ext(assetUrl(link)) + '>' + G.more + '</a>' : '') +
+  function renderNews(host, rows) {
+    var G = NEWS_GROUPS[LANG];
+    var items = newsItems(rows);
+    var limit = +host.getAttribute('data-limit') || 0;
+    var want = new URLSearchParams(location.search).get('tin');
+
+    /* ---------- Trang chi tiết một tin ---------- */
+    if (want && !limit) {
+      var it = items.filter(function (x) { return x.slug === want; })[0];
+      var backUrl = location.pathname;
+      if (!it) {
+        host.innerHTML = '<p class="text-muted">' + G.notFound + '</p><p><a class="link-arrow" href="' + esc(backUrl) + '">' + G.back + '</a></p>';
+        return;
+      }
+      document.title = it.title + ' — ' + document.title.split(' — ').slice(-1)[0];
+      var h1 = document.querySelector('.page-head h1');
+      if (h1) h1.textContent = it.title;
+      var lead = document.querySelector('.page-head p');
+      if (lead) lead.textContent = (G[it.group] || '') + (it.date ? ' · ' + it.date : '');
+      host.innerHTML = '<article class="news-detail">' +
+        '<p class="news__meta">' + badge(G, it) + (it.date ? '<time>' + esc(it.date) + '</time>' : '') + '</p>' +
+        (it.summary ? '<p class="news-detail__lead">' + esc(it.summary) + '</p>' : '') +
+        (it.imgs.length ? '<div class="news-detail__gallery news-detail__gallery--' + Math.min(it.imgs.length, 3) + '">' + it.imgs.map(function (u, i) {
+          return '<a href="' + esc(u) + '" target="_blank" rel="noopener"><img src="' + esc(u) + '" alt="' + esc(it.title + ' — ' + (i + 1)) + '"' + (i ? ' loading="lazy"' : '') + '></a>';
+        }).join('') + '</div>' : '') +
+        '<p class="news-detail__actions">' +
+          (it.link ? '<a class="btn btn--brand" href="' + esc(it.link) + '"' + ext(it.link) + '>' + G.source + '</a> ' : '') +
+          '<a class="link-arrow" href="' + esc(backUrl) + '">' + G.back + '</a></p>' +
+        '</article>';
+      return;
+    }
+
+    /* ---------- Danh sách tin ---------- */
+    if (limit) items = items.slice(0, limit);
+    var card = function (it) {
+      var url = detailUrl(host, it);
+      var cover = it.imgs[0] ? '<a class="news__cover" href="' + esc(url) + '" tabindex="-1" aria-hidden="true">' +
+        '<img src="' + esc(it.imgs[0]) + '" alt="" loading="lazy">' +
+        (it.imgs.length > 1 ? '<span class="news__count">' + it.imgs.length + ' ' + G.photos + '</span>' : '') + '</a>' : '';
+      return '<article class="news__item" data-group="' + esc(it.group) + '">' + cover +
+        '<div class="news__body"><p class="news__meta">' + badge(G, it) + (it.date ? '<time>' + esc(it.date) + '</time>' : '') + '</p>' +
+        '<h3><a href="' + esc(url) + '">' + esc(it.title) + '</a></h3>' +
+        (it.summary ? '<p>' + esc(it.summary) + '</p>' : '') +
+        '<a class="link-arrow" href="' + esc(url) + '">' + G.more + '</a>' +
         '</div></article>';
     };
-
-    var tabs = limit ? '' : '<div class="news__tabs" role="tablist">' + ['all', 'dau-vao', 'hoat-dong', 'dau-ra'].map(function (g) {
+    var tabs = limit ? '' : '<div class="news__tabs" role="tablist">' + ['all'].concat(GROUP_KEYS).map(function (g) {
       return '<button type="button" role="tab" data-filter="' + g + '" aria-selected="false">' + G[g] + '</button>';
     }).join('') + '</div>';
     host.innerHTML = tabs + '<div class="news__grid">' + items.map(card).join('') + '</div>' +
@@ -1135,12 +1192,85 @@
     };
     host.querySelectorAll('[data-filter]').forEach(function (b) {
       b.addEventListener('click', function () {
-        apply(b.getAttribute('data-filter'));
-        if (history.replaceState) history.replaceState(null, '', b.getAttribute('data-filter') === 'all' ? location.pathname : '#' + b.getAttribute('data-filter'));
+        var g = b.getAttribute('data-filter');
+        apply(g);
+        if (history.replaceState) history.replaceState(null, '', g === 'all' ? location.pathname : '#' + g);
       });
     });
     var h = location.hash.slice(1);
-    apply(G[h] && h !== 'more' && h !== 'empty' && h !== 'photos' ? h : 'all');
+    apply(GROUP_KEYS.indexOf(h) >= 0 ? h : 'all');
+  }
+
+  /* ---------- Slide tin nổi bật ---------- */
+  function renderSlider(host, rows) {
+    var G = NEWS_GROUPS[LANG];
+    var limit = +host.getAttribute('data-limit') || 5;
+    var items = newsItems(rows).filter(function (it) { return it.imgs.length; }).slice(0, limit);
+    if (!items.length) { host.hidden = true; return; }
+    var n = items.length, cur = 0, timer = null;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var autoplay = !reduce && n > 1;
+
+    host.setAttribute('role', 'region');
+    host.setAttribute('aria-roledescription', 'carousel');
+    host.setAttribute('aria-label', G.featured);
+    host.innerHTML =
+      '<div class="slider__track" aria-live="' + (autoplay ? 'off' : 'polite') + '">' + items.map(function (it, i) {
+        return '<article class="slider__slide' + (i ? '' : ' is-active') + '" role="group" aria-roledescription="slide" ' +
+          'aria-label="' + (i + 1) + ' ' + G.of + ' ' + n + '"' + (i ? ' aria-hidden="true"' : '') + '>' +
+          '<img class="slider__img" src="' + esc(it.imgs[0]) + '" alt=""' + (i ? ' loading="lazy"' : '') + '>' +
+          '<div class="slider__caption"><p class="news__meta">' + badge(G, it) + (it.date ? '<time>' + esc(it.date) + '</time>' : '') + '</p>' +
+          '<h3><a href="' + esc(detailUrl(host, it)) + '"' + (i ? ' tabindex="-1"' : '') + '>' + esc(it.title) + '</a></h3>' +
+          (it.summary ? '<p class="slider__text">' + esc(it.summary) + '</p>' : '') + '</div></article>';
+      }).join('') + '</div>' +
+      (n > 1 ? '<button class="slider__arrow slider__arrow--prev" type="button" aria-label="' + G.prev + '">&#8249;</button>' +
+        '<button class="slider__arrow slider__arrow--next" type="button" aria-label="' + G.next + '">&#8250;</button>' +
+        '<div class="slider__dots">' + items.map(function (it, i) {
+          return '<button type="button" aria-label="' + G.slide + ' ' + (i + 1) + '"' + (i ? '' : ' aria-current="true"') + '></button>';
+        }).join('') + '</div>' +
+        (autoplay ? '<button class="slider__toggle" type="button" aria-label="' + G.pause + '">&#10073;&#10073;</button>' : '') : '');
+
+    var slides = host.querySelectorAll('.slider__slide'), dots = host.querySelectorAll('.slider__dots button');
+    var go = function (i) {
+      cur = (i + n) % n;
+      slides.forEach(function (s, k) {
+        var on = k === cur;
+        s.classList.toggle('is-active', on);
+        if (on) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true');
+        s.querySelectorAll('a').forEach(function (a) { if (on) a.removeAttribute('tabindex'); else a.setAttribute('tabindex', '-1'); });
+      });
+      dots.forEach(function (d, k) { if (k === cur) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
+    };
+    if (n < 2) return;
+    var paused = !autoplay, hover = false;
+    var stop = function () { clearInterval(timer); timer = null; };
+    var start = function () { stop(); if (!paused && !hover) timer = setInterval(function () { go(cur + 1); }, 6000); };
+    host.querySelector('.slider__arrow--prev').addEventListener('click', function () { go(cur - 1); start(); });
+    host.querySelector('.slider__arrow--next').addEventListener('click', function () { go(cur + 1); start(); });
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); start(); }); });
+    var tg = host.querySelector('.slider__toggle');
+    if (tg) tg.addEventListener('click', function () {
+      paused = !paused;
+      tg.setAttribute('aria-label', paused ? G.play : G.pause);
+      tg.innerHTML = paused ? '&#9654;' : '&#10073;&#10073;';
+      start();
+    });
+    host.addEventListener('mouseenter', function () { hover = true; stop(); });
+    host.addEventListener('mouseleave', function () { hover = false; start(); });
+    host.addEventListener('focusin', function () { hover = true; stop(); });
+    host.addEventListener('focusout', function () { hover = false; start(); });
+    host.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { go(cur - 1); } else if (e.key === 'ArrowRight') { go(cur + 1); }
+    });
+    var x0 = null;                                         /* vuốt trên điện thoại */
+    host.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    host.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 40) { go(cur + (dx < 0 ? 1 : -1)); start(); }
+    }, { passive: true });
+    document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+    start();
   }
 
   function renderData() {
@@ -1175,6 +1305,9 @@
     document.querySelectorAll('[data-news]').forEach(function (host) {
       var name = host.getAttribute('data-news');
       loadData(name).then(function (rows) { renderNews(host, rows); }).catch(fail(host, name));
+    });
+    document.querySelectorAll('[data-slider]').forEach(function (host) {
+      loadData(host.getAttribute('data-slider')).then(function (rows) { renderSlider(host, rows); }).catch(function () { host.hidden = true; });
     });
   }
 
