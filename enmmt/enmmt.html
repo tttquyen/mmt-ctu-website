@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Font theo Sổ tay thương hiệu ĐHCT: K2D (tiêu đề) + Readex Pro (nội dung) -->
 <link href="https://fonts.googleapis.com/css2?family=K2D:wght@400;500;600;700;800&amp;family=Readex+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../mmt/assets/css/main.css?v=20261101">
+<link rel="stylesheet" href="../mmt/assets/css/main.css?v=20261105">
 <script>document.documentElement.className="js";</script>
 <!-- seo:auto -->
 <link rel="canonical" href="https://cit.ctu.edu.vn/enmmt/enmmt.html">
@@ -69,22 +69,27 @@
 
 <main id="main">
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="hero__media"><img src="../mmt/imgs/mmt2.jpg" alt="" aria-hidden="true"></div>
-    <div class="container">
-      <div class="hero__inner">
-        <span class="hero__eyebrow">College of Information &amp; Communication Technology — CTU</span>
-        <h1>Faculty of Computer Networks and Communications</h1>
-        <p class="hero__lead">
+  <!-- ================= TIN NỔI BẬT (slide đầu trang, đọc từ tin-tuc) ================= -->
+  <section class="hero-slider">
+    <div class="slider slider--hero" data-slider="tin-tuc" data-limit="5">
+      <article class="slider__slide slider__slide--intro is-active" data-static>
+        <img class="slider__img" src="../mmt/imgs/mmt2.jpg" alt="">
+        <div class="slider__caption">
+          <div class="container">
+            <span class="hero__eyebrow">College of Information &amp; Communication Technology — CTU</span>
+            <h1>Faculty of Computer Networks and Communications</h1>
+            <p class="hero__lead">
           More than 25 years of teaching and research in computer networks, data communications
           and information security — a highly qualified academic staff and modern laboratories.
-        </p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="ents.html">Admissions</a>
-          <a class="btn btn--ghost" href="enctdt.html">Our programmes</a>
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="ents.html">Admissions</a>
+              <a class="btn btn--ghost" href="enctdt.html">Our programmes</a>
+              <a class="link-arrow hero-slider__news" href="entintuc.html" data-news-page>News &amp; events</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -100,17 +105,6 @@
     </div>
   </section>
 
-  <!-- ================= TIN NỔI BẬT (slide, đọc từ tin-tuc) ================= -->
-  <section class="section section--tight">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">News</span>
-        <h2>Featured news</h2>
-      </div>
-      <div class="slider" data-slider="tin-tuc" data-limit="5"></div>
-      <p class="slider__more"><a class="link-arrow" href="entintuc.html" data-news-page>All news</a></p>
-    </div>
-  </section>
 
   <!-- ================= INTRODUCTION ================= -->
   <section class="section section--soft">
@@ -341,6 +335,6 @@
 </main>
 
 <div id="site-footer"></div>
-<script src="../mmt/assets/js/site.js?v=20261102" defer></script>
+<script src="../mmt/assets/js/site.js?v=20261105" defer></script>
 </body>
 </html>

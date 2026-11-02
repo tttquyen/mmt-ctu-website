@@ -399,6 +399,18 @@ lên web" và nhúng vào trang bằng thẻ `<iframe>`.
   bên trong bảng**. Nếu cần tìm được, phải chuyển danh mục thành bảng HTML tĩnh
   trong trang — báo tôi nếu Khoa muốn làm theo hướng này.
 
+## Sau khi sửa `main.css` hoặc `site.js`
+
+Trình duyệt và GitHub Pages lưu đệm hai tệp này theo mã phiên bản `?v=...` trong thẻ `<link>`/`<script>`.
+**Mỗi lần sửa phải tăng mã phiên bản trên mọi trang**, nếu không người xem vẫn dùng tệp cũ (ví dụ slide tin
+tức bị trải dài vì CSS cũ chưa có phần định dạng slide):
+
+```bash
+sed -i -E 's/main\.css\?v=[0-9]+/main.css?v=YYYYMMDD/; s/site\.js\?v=[0-9]+/site.js?v=YYYYMMDD/' mmt/*.html enmmt/*.html
+```
+
+Bản Joomla không cần bước này (Joomla tự gắn mã phiên bản khi cài lại template).
+
 ## Thêm một trang mới
 
 1. Chép một tệp `.html` có sẵn (ví dụ `ptn.html`) làm khuôn.

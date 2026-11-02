@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Font theo Sổ tay thương hiệu ĐHCT: K2D (tiêu đề) + Readex Pro (nội dung) -->
 <link href="https://fonts.googleapis.com/css2?family=K2D:wght@400;500;600;700;800&amp;family=Readex+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css?v=20261101">
+<link rel="stylesheet" href="assets/css/main.css?v=20261105">
 <script>document.documentElement.className="js";</script>
 <!-- seo:auto -->
 <link rel="canonical" href="https://cit.ctu.edu.vn/mmt/mmt.html">
@@ -72,22 +72,27 @@
 
 <main id="main">
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="hero__media"><img src="imgs/mmt2.jpg" alt="" aria-hidden="true"></div>
-    <div class="container">
-      <div class="hero__inner">
-        <span class="hero__eyebrow">Trường Công nghệ Thông tin &amp; Truyền thông — ĐHCT</span>
-        <h1>Khoa Mạng máy tính và Truyền thông</h1>
-        <p class="hero__lead">
+  <!-- ================= TIN NỔI BẬT (slide đầu trang, đọc từ tin-tuc) ================= -->
+  <section class="hero-slider">
+    <div class="slider slider--hero" data-slider="tin-tuc" data-limit="5">
+      <article class="slider__slide slider__slide--intro is-active" data-static>
+        <img class="slider__img" src="imgs/mmt2.jpg" alt="">
+        <div class="slider__caption">
+          <div class="container">
+            <span class="hero__eyebrow">Trường Công nghệ Thông tin &amp; Truyền thông — ĐHCT</span>
+            <h1>Khoa Mạng máy tính và Truyền thông</h1>
+            <p class="hero__lead">
           Hơn 25 năm đào tạo và nghiên cứu trong lĩnh vực mạng máy tính, truyền thông dữ liệu và
           an toàn thông tin — nơi hội tụ đội ngũ giảng viên trình độ cao và hệ thống phòng thí nghiệm hiện đại.
-        </p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="ts.html">Thông tin tuyển sinh</a>
-          <a class="btn btn--ghost" href="ctdt.html">Chương trình đào tạo</a>
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="ts.html">Thông tin tuyển sinh</a>
+              <a class="btn btn--ghost" href="ctdt.html">Chương trình đào tạo</a>
+              <a class="link-arrow hero-slider__news" href="tintuc.html" data-news-page>Tin tức – Sự kiện</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -103,17 +108,6 @@
     </div>
   </section>
 
-  <!-- ================= TIN NỔI BẬT (slide, đọc từ tin-tuc) ================= -->
-  <section class="section section--tight">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">Tin tức</span>
-        <h2>Tin nổi bật</h2>
-      </div>
-      <div class="slider" data-slider="tin-tuc" data-limit="5"></div>
-      <p class="slider__more"><a class="link-arrow" href="tintuc.html" data-news-page>Xem tất cả tin tức</a></p>
-    </div>
-  </section>
 
   <!-- ================= GIỚI THIỆU ================= -->
   <section class="section section--soft">
@@ -361,6 +355,6 @@
 </main>
 
 <div id="site-footer"></div>
-<script src="assets/js/site.js?v=20261102" defer></script>
+<script src="assets/js/site.js?v=20261105" defer></script>
 </body>
 </html>

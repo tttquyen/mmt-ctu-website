@@ -69,7 +69,7 @@
       'nhan-su-thong-ke': '1aCWBf0T_ZvwjbQDEqqLPPNQ6CGePXaCc05OO-SK2BPA',
       'cong-bo': '1zLGDwNSWtUQ_OYC-kFXfvlmP1ZInQYBc0TOixufCHdE',
       'tuyen-sinh': '1ngIspvsTq64SFJeubZoW-YxX4-NqvHAzHcRhnQegnyg',
-      'tin-tuc': '1hThAFggh0_nn2Lwd9AtLRn1n427VC6ohLjmgdZHZt8s'
+      'tin-tuc': '1KmwQpI6T2SnG5ghn-pgrg2dUvuqHaAXdLM_fl-mm7H8'
     },
     sheetPub: {},
 
@@ -1205,30 +1205,37 @@
   function renderSlider(host, rows) {
     var G = NEWS_GROUPS[LANG];
     var limit = +host.getAttribute('data-limit') || 5;
-    var items = newsItems(rows).filter(function (it) { return it.imgs.length; }).slice(0, limit);
-    if (!items.length) { host.hidden = true; return; }
-    var n = items.length, cur = 0, timer = null;
+    var items = rows ? newsItems(rows).filter(function (it) { return it.imgs.length; }).slice(0, limit) : [];
+    /* Slide có sẵn trong HTML (vd. giới thiệu Khoa) giữ ở đầu */
+    var statics = Array.prototype.map.call(host.querySelectorAll('.slider__slide[data-static]'), function (el) {
+      el.classList.remove('is-active'); return el.outerHTML;
+    });
+    var n = statics.length + items.length, cur = 0, timer = null;
+    if (!n) { host.hidden = true; return; }
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var autoplay = !reduce && n > 1;
+    var hero = host.classList.contains('slider--hero');
 
     host.setAttribute('role', 'region');
     host.setAttribute('aria-roledescription', 'carousel');
     host.setAttribute('aria-label', G.featured);
+    var newsHtml = items.map(function (it) {
+      var cap = '<p class="news__meta">' + badge(G, it) + (it.date ? '<time>' + esc(it.date) + '</time>' : '') + '</p>' +
+        '<h3><a href="' + esc(detailUrl(host, it)) + '">' + esc(it.title) + '</a></h3>' +
+        (it.summary ? '<p class="slider__text">' + esc(it.summary) + '</p>' : '');
+      return '<article class="slider__slide" role="group" aria-roledescription="slide">' +
+        '<img class="slider__img" src="' + esc(it.imgs[0]) + '" alt="" loading="lazy">' +
+        '<div class="slider__caption">' + (hero ? '<div class="container">' + cap + '</div>' : cap) + '</div></article>';
+    });
     host.innerHTML =
-      '<div class="slider__track" aria-live="' + (autoplay ? 'off' : 'polite') + '">' + items.map(function (it, i) {
-        return '<article class="slider__slide' + (i ? '' : ' is-active') + '" role="group" aria-roledescription="slide" ' +
-          'aria-label="' + (i + 1) + ' ' + G.of + ' ' + n + '"' + (i ? ' aria-hidden="true"' : '') + '>' +
-          '<img class="slider__img" src="' + esc(it.imgs[0]) + '" alt=""' + (i ? ' loading="lazy"' : '') + '>' +
-          '<div class="slider__caption"><p class="news__meta">' + badge(G, it) + (it.date ? '<time>' + esc(it.date) + '</time>' : '') + '</p>' +
-          '<h3><a href="' + esc(detailUrl(host, it)) + '"' + (i ? ' tabindex="-1"' : '') + '>' + esc(it.title) + '</a></h3>' +
-          (it.summary ? '<p class="slider__text">' + esc(it.summary) + '</p>' : '') + '</div></article>';
-      }).join('') + '</div>' +
+      '<div class="slider__track" aria-live="' + (autoplay ? 'off' : 'polite') + '">' + statics.concat(newsHtml).join('') + '</div>' +
       (n > 1 ? '<button class="slider__arrow slider__arrow--prev" type="button" aria-label="' + G.prev + '">&#8249;</button>' +
         '<button class="slider__arrow slider__arrow--next" type="button" aria-label="' + G.next + '">&#8250;</button>' +
-        '<div class="slider__dots">' + items.map(function (it, i) {
-          return '<button type="button" aria-label="' + G.slide + ' ' + (i + 1) + '"' + (i ? '' : ' aria-current="true"') + '></button>';
+        '<div class="slider__dots">' + Array.apply(null, Array(n)).map(function (x, i) {
+          return '<button type="button" aria-label="' + G.slide + ' ' + (i + 1) + '"></button>';
         }).join('') + '</div>' +
         (autoplay ? '<button class="slider__toggle" type="button" aria-label="' + G.pause + '">&#10073;&#10073;</button>' : '') : '');
+    host.querySelectorAll('.slider__slide').forEach(function (s, i) { s.setAttribute('aria-label', (i + 1) + ' ' + G.of + ' ' + n); });
 
     var slides = host.querySelectorAll('.slider__slide'), dots = host.querySelectorAll('.slider__dots button');
     var go = function (i) {
@@ -1241,6 +1248,7 @@
       });
       dots.forEach(function (d, k) { if (k === cur) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
     };
+    go(0);
     if (n < 2) return;
     var paused = !autoplay, hover = false;
     var stop = function () { clearInterval(timer); timer = null; };
@@ -1307,7 +1315,7 @@
       loadData(name).then(function (rows) { renderNews(host, rows); }).catch(fail(host, name));
     });
     document.querySelectorAll('[data-slider]').forEach(function (host) {
-      loadData(host.getAttribute('data-slider')).then(function (rows) { renderSlider(host, rows); }).catch(function () { host.hidden = true; });
+      loadData(host.getAttribute('data-slider')).then(function (rows) { renderSlider(host, rows); }).catch(function () { renderSlider(host, null); });
     });
   }
 
