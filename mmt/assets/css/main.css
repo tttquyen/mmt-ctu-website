@@ -1079,3 +1079,5 @@ details.data-more > summary { cursor: pointer; font-weight: 600; color: var(--br
 .news-detail__gallery--3 a:first-child img { aspect-ratio: 16 / 9; }
 .news-detail__actions { display: flex; flex-wrap: wrap; gap: var(--sp-4); align-items: center; }
 @media (max-width: 600px) { .news-detail__gallery--2, .news-detail__gallery--3 { grid-template-columns: 1fr; } }
+.embed-frame--tall { aspect-ratio: auto; height: 720px; }
+@media (max-width: 600px) { .embed-frame--tall { height: 560px; } }
