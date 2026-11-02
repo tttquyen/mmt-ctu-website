@@ -202,6 +202,11 @@ trong `mmt/data/`. Sau mỗi đợt cập nhật lớn nên tải tệp về (*T
 CSV tương ứng để bản dự phòng luôn mới. Thêm bộ số liệu mới: tạo tệp cùng tên với CSV trong thư mục
 rồi thêm `tên: 'ID tệp'` vào `COMMON.sheetFiles`.
 
+> **Nguồn số liệu công bố:** bảng và biểu đồ số công bố trên website (`cong-bo`) lấy theo **Báo cáo tự
+> đánh giá AUN-QA 2026 (SAR, Bảng 2.7)** và giữ đúng số SAR. Danh mục chi tiết từng bài báo, đề tài nằm ở tệp
+> *Báo cáo NCKH 2022–2026* (thư mục Drive *Nghiên cứu khoa học*). Tệp đó được bổ sung dần nên số đếm có thể
+> khác SAR; không dùng tệp đó để sửa số trên website.
+
 ### Biểu đồ
 
 Biểu đồ cột vẽ từ cùng nguồn dữ liệu với bảng, đặt ngay trên bảng:
