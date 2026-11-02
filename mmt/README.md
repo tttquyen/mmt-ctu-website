@@ -241,7 +241,7 @@ tệp `tin-tuc` (Google Sheets, dự phòng `data/tin-tuc.csv`). Cột: `ngay`, 
 
 - `nhom`: `su-kien` tin Khoa – sự kiện, `dau-vao` chào đón tân sinh viên, `hoat-dong` hoạt động sinh viên,
   `dau-ra` sinh viên tốt nghiệp. Mở thẳng một nhóm: `tintuc.html#hoat-dong`.
-- **Tin mới thêm ở dòng đầu.** 5 tin trên cùng có ảnh tự lên slide trang chủ (tự chạy 6 giây/tin, dừng khi
+- **Tin mới thêm ở dòng đầu.** 5 tin trên cùng có ảnh tự lên slide trang chủ (tự chạy 4 giây/tin, dừng khi
   rê chuột, vuốt được trên điện thoại).
 - Mỗi tin có trang chi tiết riêng `tintuc.html?tin=<mã>` (mã lấy từ tiêu đề tiếng Việt) hiển thị toàn bộ ảnh;
   `lien_ket` (bài gốc trên Fanpage, PDF…) hiện thành nút *Xem bài gốc*.

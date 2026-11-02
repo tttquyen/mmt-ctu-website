@@ -1128,3 +1128,17 @@ details.data-more > summary { cursor: pointer; font-weight: 600; color: var(--br
   .slider__slide--intro .hero__actions .btn { padding: 10px 18px; font-size: var(--fs-sm); }
   .slider--hero .slider__dots { left: 16px; transform: none; bottom: 30px; }
 }
+
+/* Slide đầu: bớt lớp phủ xanh để ảnh Khoa nổi lên; chỉ tối nhẹ phía chữ */
+.slider__slide--intro::after { background: linear-gradient(90deg, rgba(8,24,46,.72) 0%, rgba(8,24,46,.45) 42%, rgba(8,24,46,.08) 75%, rgba(8,24,46,0) 100%); }
+.slider__slide--intro .slider__img { opacity: 1; }
+.slider__slide--intro h1, .slider__slide--intro .hero__lead { text-shadow: 0 2px 12px rgba(0,0,0,.45); }
+.slider__img { transition: transform 5s linear; }
+@media (max-width: 700px) {
+  .slider__slide--intro::after { background: linear-gradient(180deg, rgba(8,24,46,.15) 0%, rgba(8,24,46,.55) 45%, rgba(8,24,46,.85) 100%); }
+}
+
+.news-detail__body { max-width: 820px; margin: var(--sp-4) 0 var(--sp-2); }
+.news-detail__body p { font-size: var(--fs-md); line-height: 1.75; color: var(--ink); margin: 0 0 var(--sp-4); }
+.news-detail__lead { font-weight: 500; }
+.slider__slide--intro .btn--ghost { background: rgba(8,24,46,.5); border-color: rgba(255,255,255,.7); }
