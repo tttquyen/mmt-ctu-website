@@ -187,7 +187,7 @@ Báo cáo tự đánh giá AUN-QA chu kỳ II (2026) của ngành Mạng máy t�
 | `ctdtmmt.html`, `ctdtattt.html`, `ctdt.html` | 2 — Programme Structure and Content | ✅ Kế hoạch 13 học kỳ, đề cương, CTĐT các khóa |
 | `dayhoc.html` | 3 — Teaching and Learning · 4 — Student Assessment | ✅ |
 | `gv.html` | 5 — Academic Staff | ✅ Còn thiếu thông tin ThS. Nguyễn Đình Quý, KS. Vũ Xuân Lộc |
-| `sv.html` | 6 — Student Support Services | ✅ Cố vấn học tập K43–K52 (`co-van.csv`); biểu mẫu đang trống (`bieu-mau.csv`) |
+| `sv.html` | 6 — Student Support Services | ✅ Cố vấn học tập K43–K52 (`co-van.csv`); sổ tay sinh viên K52 (`docs/so-tay-sinh-vien-k52.pdf`); biểu mẫu niên luận, luận văn, thực tập còn trống (`bieu-mau.csv`) |
 | `ptn.html`, `ptnmmt.html` | 7 — Facilities and Infrastructure | ✅ Còn thiếu thiết bị PTN An toàn thông tin |
 | `ketqua.html` | 8 — Output and Outcomes | ✅ |
 

@@ -758,7 +758,10 @@
       return '<a href="' + esc(v) + '" target="_blank" rel="noopener">' + esc(T.openLink) + '</a>';
     }
     var m = v.match(/^\[(.+)\]\((https?:\/\/[^)]+|[\w./#-]+)\)$/);   /* [chữ](link) */
-    if (m) return '<a href="' + esc(m[2]) + '"' + ext(m[2]) + '>' + esc(m[1]) + '</a>';
+    if (m) {
+      var href = /^(docs|imgs|cv|data)\//.test(m[2]) ? BASE + m[2] : m[2];   /* tệp dùng chung */
+      return '<a href="' + esc(href) + '"' + ext(href) + '>' + esc(m[1]) + '</a>';
+    }
     return esc(v);
   }
 
