@@ -208,7 +208,7 @@ def configure():
     sql(f"UPDATE {P}template_styles SET home='1', title='mmt - Mặc định' WHERE client_id=0 AND template='mmt'")
     set_params(('template_styles', "client_id=0 AND template='mmt'"),
                {'phone': '0292 3734 720', 'hidePending': 1, 'analyticsId': '', 'dataFolder': 'images/mmt/',
-                'sheetFiles': 'tot-nghiep=1TPdntYX8MyyEUP47KTQhi4huajsiyNQporDXHsHCdDY\nviec-lam=10lfKR2efG_rizTqLI7VMcGrzMqY42v6y_WAGYPdv4Ig\nviec-lam-chi-tiet=1ADnCowk7zeB2R4q9tOf5AkWAmw0eRA7PyUEw6UNvBW8\ndat-cdr=1NKKKdh4Rwq3FygMmTqlwTbCyWxb4qg0nRDQks99OqaQ\nhai-long=1bsdD_3WKtUzsW5elkQARcWv9qp48uRAjfOBPTNismGI\nnhan-su-thong-ke=1aCWBf0T_ZvwjbQDEqqLPPNQ6CGePXaCc05OO-SK2BPA\ncong-bo=1zLGDwNSWtUQ_OYC-kFXfvlmP1ZInQYBc0TOixufCHdE\ntuyen-sinh=1ngIspvsTq64SFJeubZoW-YxX4-NqvHAzHcRhnQegnyg\ntin-tuc=1hThAFggh0_nn2Lwd9AtLRn1n427VC6ohLjmgdZHZt8s', 'sheetPub': ''})
+                'sheetFiles': 'tot-nghiep=1TPdntYX8MyyEUP47KTQhi4huajsiyNQporDXHsHCdDY\nviec-lam=10lfKR2efG_rizTqLI7VMcGrzMqY42v6y_WAGYPdv4Ig\nviec-lam-chi-tiet=1ADnCowk7zeB2R4q9tOf5AkWAmw0eRA7PyUEw6UNvBW8\ndat-cdr=1NKKKdh4Rwq3FygMmTqlwTbCyWxb4qg0nRDQks99OqaQ\nhai-long=1bsdD_3WKtUzsW5elkQARcWv9qp48uRAjfOBPTNismGI\nnhan-su-thong-ke=1aCWBf0T_ZvwjbQDEqqLPPNQ6CGePXaCc05OO-SK2BPA\ncong-bo=1zLGDwNSWtUQ_OYC-kFXfvlmP1ZInQYBc0TOixufCHdE\ntuyen-sinh=1ngIspvsTq64SFJeubZoW-YxX4-NqvHAzHcRhnQegnyg\ntin-tuc=1KpnsvZDUuJGGa6AxM0XBKRum6SSABWgkFRXtfHsuE14', 'sheetPub': ''})
 
     # Bài viết: ẩn mọi thông tin phụ (tác giả, ngày, lượt xem...) — nội dung tự có tiêu đề trang
     set_params(('extensions', "element='com_content' AND type='component'"), {
