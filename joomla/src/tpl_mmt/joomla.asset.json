@@ -1,0 +1,28 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "mmt",
+  "version": "1.0.0",
+  "description": "Assets for the MMT template",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "template.mmt.fonts",
+      "type": "style",
+      "uri": "https://fonts.googleapis.com/css2?family=K2D:wght@400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap"
+    },
+    {
+      "name": "template.mmt",
+      "type": "style",
+      "uri": "main.css",
+      "version": "auto",
+      "dependencies": ["template.mmt.fonts"]
+    },
+    {
+      "name": "template.mmt",
+      "type": "script",
+      "uri": "site.js",
+      "version": "auto",
+      "attributes": {"defer": true}
+    }
+  ]
+}

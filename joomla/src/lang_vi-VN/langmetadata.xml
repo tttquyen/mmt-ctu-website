@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metafile client="site">
+	<name>Tiếng Việt (vi-VN)</name>
+	<version>5.4.10</version>
+	<creationDate>2026-11</creationDate>
+	<author>Khoa Mạng máy tính và Truyền thông</author>
+	<authorEmail>lt_mmt_tt@cit.ctu.edu.vn</authorEmail>
+	<authorUrl>cit.ctu.edu.vn</authorUrl>
+	<copyright>(C) 2026 Khoa MMT&amp;TT, Đại học Cần Thơ</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description><![CDATA[Gói ngôn ngữ tiếng Việt tối giản cho phần hiển thị (site). Các chuỗi chưa dịch tự động dùng tiếng Anh. Có thể thay bằng gói vi-VN chính thức qua Hệ thống > Cài đặt ngôn ngữ.]]></description>
+	<metadata>
+		<name>Tiếng Việt (Việt Nam)</name>
+		<nativeName>Tiếng Việt (Việt Nam)</nativeName>
+		<tag>vi-VN</tag>
+		<rtl>0</rtl>
+		<locale>vi_VN.utf8, vi_VN.UTF-8, vi_VN, vi, vietnamese</locale>
+		<firstDay>1</firstDay>
+		<weekEnd>0,6</weekEnd>
+		<calendar>gregorian</calendar>
+	</metadata>
+	<params />
+</metafile>
