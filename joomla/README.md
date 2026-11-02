@@ -28,7 +28,8 @@ Máy chủ Apache có mod_rewrite thì dùng được URL gọn (`/nhan-su`), n�
 | Chân trang (liên hệ, ban lãnh đạo, liên kết hữu ích) | Content › Site Modules, vị trí `footer` |
 | Số điện thoại đầu trang, Google Analytics, ẩn mục "Đang cập nhật" | System › Site Template Styles › mmt - Mặc định › Advanced |
 | Tên khoa trên đầu trang, chữ nút tìm kiếm | System › Language Overrides (khoá `TPL_MMT_…`) |
-| **Nhân sự, cố vấn học tập, bảng số liệu** | Content › Media › `images/mmt/data/` — tải lên đè tệp CSV cùng tên |
+| **Số liệu báo cáo, biểu đồ, tin tức sinh viên** | Các tệp Google Sheets trong thư mục Drive *Website Khoa MMT&TT – Số liệu* (xem `mmt/README.md`, mục Google Sheets). Ô cấu hình: Template Styles › mmt › Advanced |
+| **Nhân sự, cố vấn học tập, các bảng khác** | Content › Media › `images/mmt/data/` — tải lên đè tệp CSV cùng tên |
 | Ảnh, PDF (CTĐT, sổ tay sinh viên) | Content › Media › `images/mmt/imgs/`, `images/mmt/docs/` |
 
 Các bảng và thẻ nhân sự đọc từ tệp CSV giống website tĩnh, nên chỉ cần sửa CSV

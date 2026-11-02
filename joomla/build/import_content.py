@@ -119,6 +119,8 @@ PAGES = [
                    'enptnattt.html',  'information-security-lab', 'Information Security Lab', 'nckh'),
     ('sv',         'sv.html',         'sinh-vien',             'Sinh viên',
                    'ensv.html',       'students',              'Students', None),
+    ('tintuc',     'tintuc.html',     'tin-tuc',               'Tin tức & hình ảnh',
+                   'entintuc.html',   'news-photos',           'News & photos', 'sv'),
     ('gv',         'gv.html',         'nhan-su',               'Nhân sự',
                    'engv.html',       'people',                'People', None),
     ('ts',         'ts.html',         'tuyen-sinh',            'Tuyển sinh',
@@ -129,6 +131,7 @@ OVERVIEW = {
     'home': ('Tổng quan về Khoa', 'About the Faculty'),
     'ctdt': ('Tổng quan chương trình đào tạo', 'Programmes overview'),
     'nckh': ('Hoạt động nghiên cứu khoa học', 'Research activities'),
+    'sv': ('Dành cho sinh viên', 'Student support'),
 }
 
 LANGS = {
@@ -205,7 +208,8 @@ def configure():
     sql(f"UPDATE {P}template_styles SET home='0' WHERE client_id=0")
     sql(f"UPDATE {P}template_styles SET home='1', title='mmt - Mặc định' WHERE client_id=0 AND template='mmt'")
     set_params(('template_styles', "client_id=0 AND template='mmt'"),
-               {'phone': '0292 3734 720', 'hidePending': 1, 'analyticsId': '', 'dataFolder': 'images/mmt/'})
+               {'phone': '0292 3734 720', 'hidePending': 1, 'analyticsId': '', 'dataFolder': 'images/mmt/',
+                'sheetFiles': 'tot-nghiep=1TPdntYX8MyyEUP47KTQhi4huajsiyNQporDXHsHCdDY\nviec-lam=10lfKR2efG_rizTqLI7VMcGrzMqY42v6y_WAGYPdv4Ig\nviec-lam-chi-tiet=1ADnCowk7zeB2R4q9tOf5AkWAmw0eRA7PyUEw6UNvBW8\ndat-cdr=1NKKKdh4Rwq3FygMmTqlwTbCyWxb4qg0nRDQks99OqaQ\nhai-long=1bsdD_3WKtUzsW5elkQARcWv9qp48uRAjfOBPTNismGI\nnhan-su-thong-ke=1aCWBf0T_ZvwjbQDEqqLPPNQ6CGePXaCc05OO-SK2BPA\ncong-bo=1zLGDwNSWtUQ_OYC-kFXfvlmP1ZInQYBc0TOixufCHdE\ntuyen-sinh=1ngIspvsTq64SFJeubZoW-YxX4-NqvHAzHcRhnQegnyg\ntin-tuc=1pzOOFenv_QRZ4IRLqAE8Q7Odo16KPyMaIm2kfEGqkUQ', 'sheetPub': ''})
 
     # Bài viết: ẩn mọi thông tin phụ (tác giả, ngày, lượt xem...) — nội dung tự có tiêu đề trang
     set_params(('extensions', "element='com_content' AND type='component'"), {
@@ -319,8 +323,8 @@ def main():
                ('Elearning', 'https://elearning.ctu.edu.vn/'), ('Learning Resource Center', 'https://lrc.ctu.edu.vn/')],
     }
     NEWS = {
-        'vi': [('Tuyển sinh', 'ts'), ('Chuẩn đầu ra', 'cdr'), ('Kết quả đào tạo', 'ketqua'), ('Dành cho sinh viên', 'sv')],
-        'en': [('Admissions', 'ts'), ('Learning outcomes', 'cdr'), ('Programme outcomes', 'ketqua'), ('For students', 'sv')],
+        'vi': [('Tuyển sinh', 'ts'), ('Chuẩn đầu ra', 'cdr'), ('Kết quả đào tạo', 'ketqua'), ('Dành cho sinh viên', 'sv'), ('Tin tức sinh viên', 'tintuc')],
+        'en': [('Admissions', 'ts'), ('Learning outcomes', 'cdr'), ('Programme outcomes', 'ketqua'), ('For students', 'sv'), ('Student news', 'tintuc')],
     }
     for lg, L in LANGS.items():
         mt = 'topbar-' + lg

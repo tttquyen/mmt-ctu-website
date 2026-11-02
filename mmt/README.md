@@ -155,6 +155,7 @@ Trong HTML, chỗ đặt bảng chỉ là `<div data-table="ten-tep"></div>`; da
 | `ke-hoach-mmt`, `ke-hoach-attt`, `ke-hoach-clc` (kế hoạch 13 học kỳ) | `ctdtmmt.html`, `ctdtattt.html`, `ctdtmmtclc.html` |
 | `de-cuong` (mã học phần → URL đề cương; ô trống = không gắn link) | mọi bảng có mã học phần |
 | `co-van`, `bieu-mau` | `sv.html` |
+| `tin-tuc` (tin tức, hình ảnh sinh viên) | `tintuc.html`, trang chủ |
 | `cac-khoa` (CTĐT các khóa trên trang ĐHCT) | `ctdt.html` |
 | `nhan-su`, `nhan-su-thong-ke` | `gv.html` |
 | `de-tai-gv`, `de-tai-sv` | `nckh.html` |
@@ -167,13 +168,73 @@ Trong HTML, chỗ đặt bảng chỉ là `<div data-table="ten-tep"></div>`; da
 (`70.71%`), bản tiếng Việt tự đổi thành dấu phẩy. Mã học phần trong ma trận và kế hoạch được gắn link
 đề cương nếu có URL trong `de-cuong.csv` (đã điền sẵn 104 đề cương có trên `www.cit.ctu.edu.vn/decuong/`). Ô dạng `[chữ](https://...)` thành liên kết.
 
-**Dùng Google Sheets thay cho tệp CSV:**
-1. Tạo một bảng tính, mỗi tab ứng với một tệp (dán nội dung CSV vào, giữ nguyên dòng tiêu đề).
-2. *Tệp → Chia sẻ → Công bố lên web* → chọn tab → định dạng *CSV* → *Công bố*.
-3. Dán URL nhận được vào `site.js` → `COMMON.dataSources['ten-tep']`.
+### Số liệu báo cáo trên Google Sheets
 
-Website đọc Google Sheet trước; nếu không đọc được thì dùng lại tệp CSV trong `mmt/data/`.
-Thay đổi trên Google Sheets hiện lên website sau vài phút, không cần đẩy mã.
+Mỗi bộ số liệu là **một tệp Google Sheets riêng** (tên tệp trùng tên CSV) trong thư mục Drive
+**"Website Khoa MMT&TT – Số liệu"** của tttquyen01@gmail.com:
+https://drive.google.com/drive/folders/1ICg9_vod5pLmVQa0RsFvNrKB9TYrp9I2
+
+| Tệp | Hiển thị ở |
+|---|---|
+| `tot-nghiep`, `viec-lam`, `viec-lam-chi-tiet`, `dat-cdr`, `hai-long` | Kết quả đào tạo (bảng + biểu đồ) |
+| `nhan-su-thong-ke` | Nhân sự (bảng + biểu đồ) |
+| `cong-bo` | Kết quả đào tạo, biểu đồ công bố ở Nghiên cứu |
+| `tuyen-sinh` | Tuyển sinh (bảng + biểu đồ điểm chuẩn) |
+| `tin-tuc` | Tin tức & hình ảnh, trang chủ |
+
+Cùng quy ước như CSV; mọi ô định dạng *Văn bản thuần* (đừng đổi sang Số). Sửa ô trong tệp là bảng
+**và biểu đồ** trên website (cả bản tĩnh lẫn Joomla) cập nhật sau vài phút. Không cần sửa HTML,
+không cần tải gì lên máy chủ.
+
+Để website đọc được, chọn **một** trong hai cách:
+
+- **Cách A (khuyên dùng):** bấm chuột phải vào **thư mục** → *Chia sẻ* → *Quyền truy cập chung* →
+  *Bất kỳ ai có đường liên kết* → *Người xem*. Mọi tệp trong thư mục được chia sẻ theo, kể cả tệp
+  thêm sau. ID các tệp đã điền sẵn ở `site.js` → `COMMON.sheetFiles`.
+- **Cách B:** mở từng tệp → *Tệp → Chia sẻ → Xuất bản lên web → Xuất bản*; dán chuỗi `2PACX-...`
+  trong đường dẫn nhận được vào `COMMON.sheetPub`, ví dụ `{ 'tot-nghiep': '2PACX-1v...' }`.
+
+Bản Joomla: *System › Site Template Styles › mmt - Mặc định › Advanced*, hai ô "Tệp Google Sheets"
+và "Tệp đã xuất bản lên web" (mỗi dòng `tên=giá-trị`).
+
+Không đọc được Google Sheets (chưa chia sẻ, mất mạng, Google lỗi) thì website tự dùng tệp CSV
+trong `mmt/data/`. Sau mỗi đợt cập nhật lớn nên tải tệp về (*Tệp → Tải xuống → CSV*) và chép đè
+CSV tương ứng để bản dự phòng luôn mới. Thêm bộ số liệu mới: tạo tệp cùng tên với CSV trong thư mục
+rồi thêm `tên: 'ID tệp'` vào `COMMON.sheetFiles`.
+
+### Biểu đồ
+
+Biểu đồ cột vẽ từ cùng nguồn dữ liệu với bảng, đặt ngay trên bảng:
+
+```html
+<figure class="vchart" data-bars="tot-nghiep" data-x="0" data-y="2,3,4" data-type="stack"
+        data-unit="%" data-max="100" data-total="5" aria-label="Tỉ lệ tốt nghiệp theo khóa"></figure>
+```
+
+`data-x` cột nhãn, `data-y` các cột số (mỗi cột một màu), `data-type` `stack` hoặc `group`,
+`data-transpose` khi mỗi dòng là một chuỗi (như `hai-long`), `data-label` ghi chú dưới biểu đồ.
+Đang có ở: Kết quả đào tạo (4 biểu đồ), Nhân sự, Tuyển sinh; biểu đồ công bố ở Nghiên cứu.
+
+### Nhúng nguyên khung từ Google Sheets
+
+Muốn nhúng một bảng hoặc biểu đồ tự làm trong Google Sheets (đã *Xuất bản lên web*):
+
+```html
+<div class="embed-frame" data-embed="https://docs.google.com/spreadsheets/d/e/2PACX-.../pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+     data-title="Tên bảng"></div>
+```
+
+Với biểu đồ: bấm vào biểu đồ → ⋮ → *Xuất bản biểu đồ* → *Nhúng*, lấy địa chỉ trong `src`.
+Khung nhúng không theo màu, font và song ngữ của website, và ô tìm kiếm không đọc được nội dung
+bên trong, nên ưu tiên cách vẽ biểu đồ ở trên.
+
+### Tin tức & hình ảnh sinh viên
+
+Trang `tintuc.html` / `entintuc.html` (menu *Sinh viên › Tin tức & hình ảnh*) và khối 3 tin mới
+ở trang chủ đọc thẻ `tin-tuc`. Cột: `ngay`, `nhom` (`dau-vao` chào đón tân sinh viên, `hoat-dong`
+hoạt động sinh viên, `dau-ra` sinh viên tốt nghiệp), `tieu_de`, `tom_tat`, `anh` (nhiều ảnh cách
+nhau bằng `;`, ảnh đầu là ảnh đại diện; tệp trong `imgs/` hoặc URL ảnh công khai), `lien_ket`.
+Tin mới thêm ở **đầu** bảng. Mở thẳng một nhóm bằng `tintuc.html#dau-vao`, `#hoat-dong`, `#dau-ra`.
 
 ## Các trang phục vụ kiểm định AUN-QA
 

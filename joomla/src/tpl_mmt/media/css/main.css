@@ -978,3 +978,62 @@ details.data-more > summary { cursor: pointer; font-weight: 600; color: var(--br
 }
 #system-message-container .alert-heading { font-weight: 700; margin: 0 0 4px; }
 .mmt-article > :first-child { margin-top: 0; }
+
+/* ==========================================================================
+   Biểu đồ cột (data-bars) — vẽ từ CSV / Google Sheets
+   ========================================================================== */
+.vchart { margin: 0 0 var(--sp-4); padding: var(--sp-4) var(--sp-4) var(--sp-3); background: var(--bg);
+  border: 1px solid var(--line); border-radius: var(--r-md); }
+.vchart__plot { position: relative; overflow-x: auto; overflow-y: visible; }
+.vchart svg { display: block; max-width: none; overflow: visible; }
+.vchart__grid { stroke: var(--line-soft); stroke-width: 1; }
+.vchart__axis { stroke: var(--line); stroke-width: 1; }
+.vchart__tick { fill: var(--ink-muted); font-size: 11px; }
+.vchart__cat  { fill: var(--ink-soft); font-size: 12px; }
+.vchart__val  { fill: var(--ink); font-size: 11.5px; font-weight: 600; }
+.vchart__bar  { cursor: pointer; transition: opacity .15s; }
+.vchart__plot:hover .vchart__bar { opacity: .55; }
+.vchart__plot .vchart__bar:hover, .vchart__bar:focus { opacity: 1; outline: none; stroke: var(--ink); stroke-width: 1.5; }
+.vchart__legend { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; margin: 0 0 var(--sp-2); padding: 0;
+  font-size: var(--fs-xs); color: var(--ink-soft); }
+.vchart__legend li { display: flex; align-items: center; gap: 6px; margin: 0; }
+.vchart__legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.vchart__tip { position: absolute; transform: translate(-50%, -100%); background: var(--brand-950); color: #fff;
+  font-size: var(--fs-xs); line-height: 1.4; padding: 6px 10px; border-radius: var(--r-sm); white-space: nowrap;
+  pointer-events: none; box-shadow: var(--shadow-sm); z-index: 2; }
+.vchart figcaption { font-size: var(--fs-xs); color: var(--ink-muted); margin-top: var(--sp-2); }
+@media print { .vchart__tip { display: none; } }
+
+/* ==========================================================================
+   Tin tức & hình ảnh sinh viên (data-news)
+   ========================================================================== */
+.news__tabs { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-5); }
+.news__tabs button { font: inherit; font-size: var(--fs-sm); font-weight: 600; cursor: pointer;
+  padding: 8px 16px; border-radius: var(--r-full); border: 1px solid var(--brand-200); background: var(--bg); color: var(--brand-700); }
+.news__tabs button:hover { background: var(--brand-50); }
+.news__tabs button[aria-selected="true"] { background: var(--brand-600); border-color: var(--brand-600); color: #fff; }
+.news__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-5); }
+.news__item { display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--line);
+  border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-xs); }
+.news__item[hidden] { display: none; }
+.news__cover { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--bg-tint); }
+.news__cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.news__cover:hover img { transform: scale(1.04); }
+.news__count { position: absolute; right: 10px; bottom: 10px; background: rgba(11,32,59,.78); color: #fff;
+  font-size: var(--fs-xs); font-weight: 600; padding: 3px 10px; border-radius: var(--r-full); }
+.news__body { padding: var(--sp-4) var(--sp-5) var(--sp-5); display: flex; flex-direction: column; flex: 1; }
+.news__body h3 { font-size: var(--fs-lg); margin: 0 0 var(--sp-2); }
+.news__body p { font-size: var(--fs-sm); color: var(--ink-soft); }
+.news__body .link-arrow { margin-top: auto; }
+.news__meta { display: flex; align-items: center; gap: var(--sp-3); margin: 0 0 var(--sp-2); font-size: var(--fs-xs); color: var(--ink-muted); }
+.news__badge--dau-vao   { background: var(--accent-50); color: #006c94; }
+.news__badge--hoat-dong { background: var(--brand-100); color: var(--brand-800); }
+.news__badge--dau-ra    { background: var(--util-amber-soft); color: var(--util-amber); }
+.news__thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 0 0 var(--sp-3); }
+.news__thumbs img { aspect-ratio: 1; width: 100%; object-fit: cover; border-radius: var(--r-sm); }
+
+/* Khung nhúng Google Sheets / biểu đồ đã xuất bản lên web */
+.embed-frame { position: relative; width: 100%; aspect-ratio: 16 / 10; margin: 0 0 var(--sp-5);
+  border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: var(--bg-soft); }
+.embed-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 600px) { .embed-frame { aspect-ratio: 4 / 5; } }

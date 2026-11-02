@@ -43,6 +43,17 @@ foreach ($menu->getItems(['language', 'access'], [[$tag, '*'], $app->getIdentity
     }
 }
 
+/* Google Sheets: mỗi dòng "tên-bộ-số-liệu=giá-trị" (ID tệp, hoặc mã xuất bản 2PACX-...) */
+$sheetMap = static function (string $text): object {
+    $out = [];
+    foreach (preg_split('/\R/', $text) as $line) {
+        if (preg_match('/^\s*([a-z0-9-]+)\s*=\s*([A-Za-z0-9_-]+)\s*$/', $line, $m)) {
+            $out[$m[1]] = $m[2];
+        }
+    }
+    return (object) $out;
+};
+
 $wa = $this->getWebAssetManager();
 $wa->useStyle('template.mmt')->useScript('template.mmt');
 $wa->addInlineScript(
@@ -52,6 +63,8 @@ $wa->addInlineScript(
         'pages'       => array_keys($pages),
         'hidePending' => (bool) $params->get('hidePending', 1),
         'analyticsId' => trim($params->get('analyticsId', '')),
+        'sheetFiles'  => $sheetMap((string) $params->get('sheetFiles', '')),
+        'sheetPub'    => $sheetMap((string) $params->get('sheetPub', '')),
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . ';',
     ['position' => 'before'],
     [],

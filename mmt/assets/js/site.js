@@ -50,6 +50,29 @@
        Cong bo len web > chon tab > dinh dang CSV > Cong bo, roi dan URL vao
        dong tuong ung ben duoi. De trong = dung tep CSV trong thu muc data/.
        ------------------------------------------------------------------ */
+    /* ------------------------------------------------------------------
+       GOOGLE SHEETS — mỗi bộ số liệu là một tệp Google Sheets riêng trong
+       thư mục Drive "Website Khoa MMT&TT – Số liệu" (tên tệp = tên CSV).
+       Cách A: chia sẻ cả thư mục "Bất kỳ ai có đường liên kết — Người xem"
+               → dùng sheetFiles (ID tệp, đã điền sẵn).
+       Cách B: mở từng tệp > Tệp > Chia sẻ > Xuất bản lên web > Xuất bản
+               → dán chuỗi 2PACX-... của tệp vào sheetPub.
+       Thêm bộ số liệu mới: tạo tệp cùng tên với CSV rồi thêm vào sheetFiles.
+       Không tải được Google Sheets thì website tự dùng tệp CSV trong data/.
+       ------------------------------------------------------------------ */
+    sheetFiles: {
+      'tot-nghiep': '1TPdntYX8MyyEUP47KTQhi4huajsiyNQporDXHsHCdDY',
+      'viec-lam': '10lfKR2efG_rizTqLI7VMcGrzMqY42v6y_WAGYPdv4Ig',
+      'viec-lam-chi-tiet': '1ADnCowk7zeB2R4q9tOf5AkWAmw0eRA7PyUEw6UNvBW8',
+      'dat-cdr': '1NKKKdh4Rwq3FygMmTqlwTbCyWxb4qg0nRDQks99OqaQ',
+      'hai-long': '1bsdD_3WKtUzsW5elkQARcWv9qp48uRAjfOBPTNismGI',
+      'nhan-su-thong-ke': '1aCWBf0T_ZvwjbQDEqqLPPNQ6CGePXaCc05OO-SK2BPA',
+      'cong-bo': '1zLGDwNSWtUQ_OYC-kFXfvlmP1ZInQYBc0TOixufCHdE',
+      'tuyen-sinh': '1ngIspvsTq64SFJeubZoW-YxX4-NqvHAzHcRhnQegnyg',
+      'tin-tuc': '1pzOOFenv_QRZ4IRLqAE8Q7Odo16KPyMaIm2kfEGqkUQ'
+    },
+    sheetPub: {},
+
     dataSources: {
       'tot-nghiep': '',
       'viec-lam': '',
@@ -73,7 +96,8 @@
       'ke-hoach-clc': '',
       'de-cuong': '',
       'co-van': '',
-      'bieu-mau': ''
+      'bieu-mau': '',
+      'tin-tuc': ''
     }
   };
 
@@ -131,7 +155,13 @@
             { id: 'ptnattt', label: 'PTN An toàn thông tin', url: 'ptnattt.html' }
           ]
         },
-        { id: 'sv', label: 'Sinh viên', url: 'sv.html' },
+        {
+          id: 'sinh-vien', label: 'Sinh viên', url: 'sv.html',
+          children: [
+            { id: 'sv', label: 'Dành cho sinh viên', url: 'sv.html' },
+            { id: 'tintuc', label: 'Tin tức & hình ảnh', url: 'tintuc.html' }
+          ]
+        },
         { id: 'gv', label: 'Nhân sự', url: 'gv.html' },
         { id: 'ts', label: 'Tuyển sinh', url: 'ts.html' }
       ],
@@ -141,7 +171,8 @@
         { label: 'Tuyển sinh', url: 'ts.html' },
         { label: 'Chuẩn đầu ra', url: 'cdr.html' },
         { label: 'Kết quả đào tạo', url: 'ketqua.html' },
-        { label: 'Dành cho sinh viên', url: 'sv.html' }
+        { label: 'Dành cho sinh viên', url: 'sv.html' },
+        { label: 'Tin tức sinh viên', url: 'tintuc.html' }
       ],
 
       searchPlaceholder: 'Nhập từ khoá cần tìm…',
@@ -190,7 +221,7 @@
 
       pages: ['mmt.html', 'ctdt.html', 'ctdtmmt.html', 'ctdtmmtclc.html', 'ctdtattt.html',
               'cdr.html', 'dayhoc.html', 'ketqua.html', 'ts.html', 'nckh.html',
-              'ptn.html', 'ptnmmt.html', 'ptnattt.html', 'sv.html', 'gv.html', 'gt.html', 'dbcl.html']
+              'ptn.html', 'ptnmmt.html', 'ptnattt.html', 'sv.html', 'tintuc.html', 'gv.html', 'gt.html', 'dbcl.html']
     },
 
     /* ------------------------------ ENGLISH ------------------------------ */
@@ -243,7 +274,13 @@
             { id: 'ptnattt', label: 'Information Security Lab', url: 'enptnattt.html' }
           ]
         },
-        { id: 'sv', label: 'Students', url: 'ensv.html' },
+        {
+          id: 'sinh-vien', label: 'Students', url: 'ensv.html',
+          children: [
+            { id: 'sv', label: 'Student support', url: 'ensv.html' },
+            { id: 'tintuc', label: 'News & photos', url: 'entintuc.html' }
+          ]
+        },
         { id: 'gv', label: 'People', url: 'engv.html' },
         { id: 'ts', label: 'Admissions', url: 'ents.html' }
       ],
@@ -253,7 +290,8 @@
         { label: 'Admissions', url: 'ents.html' },
         { label: 'Learning outcomes', url: 'encdr.html' },
         { label: 'Programme outcomes', url: 'enketqua.html' },
-        { label: 'For students', url: 'ensv.html' }
+        { label: 'For students', url: 'ensv.html' },
+        { label: 'Student news', url: 'entintuc.html' }
       ],
 
       searchPlaceholder: 'Enter a keyword…',
@@ -302,7 +340,7 @@
 
       pages: ['enmmt.html', 'enctdt.html', 'enctdtmmt.html', 'enctdtmmtclc.html', 'enctdtattt.html',
               'encdr.html', 'endayhoc.html', 'enketqua.html', 'ents.html', 'ennckh.html',
-              'enptn.html', 'enptnmmt.html', 'enptnattt.html', 'ensv.html', 'engv.html', 'engt.html', 'endbcl.html']
+              'enptn.html', 'enptnmmt.html', 'enptnattt.html', 'ensv.html', 'entintuc.html', 'engv.html', 'engt.html', 'endbcl.html']
     }
   };
 
@@ -724,14 +762,39 @@
     return rows.filter(function (r) { return r.some(function (x) { return x.trim() !== ''; }); });
   }
 
+  /* Địa chỉ CSV của một bộ số liệu trên Google Sheets (mỗi bộ một tệp, xem COMMON.sheetFiles) */
+  function sheetUrl(name) {
+    var pub = (COMMON.sheetPub || {})[name], id = (COMMON.sheetFiles || {})[name];
+    if (pub) {                                                   /* Cách B: tệp đã Xuất bản lên web */
+      return 'https://docs.google.com/spreadsheets/d/e/' + encodeURIComponent(pub) + '/pub?output=csv';
+    }
+    if (id) {                                                    /* Cách A: tệp chia sẻ bằng liên kết */
+      return 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(id) + '/gviz/tq?tqx=out:csv&headers=0';
+    }
+    return '';
+  }
+
+  /* Khung nhúng Google Sheets / biểu đồ đã xuất bản: <div class="embed-frame" data-embed="URL" data-title="..."></div> */
+  function renderEmbeds() {
+    document.querySelectorAll('[data-embed]').forEach(function (host) {
+      var url = host.getAttribute('data-embed');
+      if (!/^https:\/\/docs\.google\.com\//.test(url)) return;
+      host.innerHTML = '<iframe src="' + esc(url) + '" title="' + esc(host.getAttribute('data-title') || 'Google Sheets') +
+        '" loading="lazy" referrerpolicy="no-referrer"></iframe>';
+    });
+  }
+
   function loadData(name) {
     if (dataCache[name]) return dataCache[name];
     var local = BASE + 'data/' + name + '.csv';
-    var remote = (COMMON.dataSources || {})[name];
+    var remote = (COMMON.dataSources || {})[name] || sheetUrl(name);
     var get = function (url) {
       return fetch(url, { cache: 'no-cache' }).then(function (r) {
         if (!r.ok) throw new Error(r.status);
         return r.text();
+      }).then(function (t) {
+        if (/^\s*</.test(t)) throw new Error('not csv');   /* trang đăng nhập Google = chưa chia sẻ công khai */
+        return t;
       });
     };
     dataCache[name] = (remote ? get(remote).catch(function () { return get(local); }) : get(local)).then(parseCSV);
@@ -872,6 +935,214 @@
       (host.getAttribute('data-note') ? '<p class="chart__note">' + esc(host.getAttribute('data-note')) + '</p>' : '');
   }
 
+  /* =====================================================================
+     10. Biểu đồ cột từ dữ liệu bảng (CSV / Google Sheets)
+     ---------------------------------------------------------------------
+     <figure class="vchart" data-bars="ten" data-x="0" data-y="2,3,4" data-type="stack"></figure>
+       data-bars       tên nguồn dữ liệu (giống data-table)
+       data-x          cột nhãn trục ngang; nhiều cột nối bằng dấu phẩy ("0,1")
+       data-y          các cột số liệu (mỗi cột một chuỗi màu)
+       data-type       "stack" (cột chồng) hoặc "group" (cột cạnh nhau, mặc định)
+       data-transpose  mỗi DÒNG là một chuỗi, các cột từ data-y là trục ngang
+       data-unit       đơn vị hiển thị ("%"); data-max: giá trị lớn nhất trục dọc
+       data-total      cột ghi tổng phía trên cột chồng
+       data-label      ghi chú dưới biểu đồ
+     Bảng số liệu gốc luôn đặt ngay dưới biểu đồ (phương án thay thế cho
+     người dùng trình đọc màn hình và khi in).
+     ===================================================================== */
+  var SERIES = ['#1f5ca9', '#00afef', '#e8833a', '#7a4fb5'];
+
+  function num(v) {
+    v = String(v || '').replace('%', '').replace(',', '.').trim();
+    return v === '' || isNaN(+v) ? null : +v;
+  }
+  function fmtVal(v, unit) {
+    var s = (Math.round(v * 100) / 100).toString();
+    if (LANG === 'vi') s = s.replace('.', ',');
+    return s + (unit || '');
+  }
+
+  function renderBars(host, rows) {
+    rows = rows.filter(function (r) { return !/^#/.test(r[0].trim()) && r[0].trim().indexOf('=') !== 0; });
+    var head = rows.shift();
+    var xs = (host.getAttribute('data-x') || '0').split(',').map(Number);
+    var ys = (host.getAttribute('data-y') || '1').split(',').map(Number);
+    var stack = host.getAttribute('data-type') === 'stack';
+    var unit = host.getAttribute('data-unit') || '';
+    var totalCol = host.hasAttribute('data-total') ? +host.getAttribute('data-total') : -1;
+    var cats, series;
+    if (host.hasAttribute('data-transpose')) {
+      cats = ys.map(function (c) { return pick(head[c]); });
+      series = rows.map(function (r) {
+        return { name: pick(r[0]), vals: ys.map(function (c) { return num(r[c]); }) };
+      });
+    } else {
+      cats = rows.map(function (r) { return xs.map(function (c) { return pick(r[c]); }).join(' · '); });
+      series = ys.map(function (c) {
+        return { name: pick(head[c]), vals: rows.map(function (r) { return num(r[c]); }) };
+      });
+    }
+    var totals = cats.map(function (_, i) {
+      if (totalCol >= 0 && !host.hasAttribute('data-transpose')) return num(rows[i][totalCol]);
+      return series.reduce(function (s, se) { return s + (se.vals[i] || 0); }, 0);
+    });
+    var peak = stack ? Math.max.apply(null, totals)
+      : Math.max.apply(null, series.map(function (s) { return Math.max.apply(null, s.vals.map(function (v) { return v || 0; })); }));
+    var step = niceStep((+host.getAttribute('data-max') || peak) / 4);
+    var max = +host.getAttribute('data-max') || Math.max(step, Math.ceil(peak / step) * step);
+    var ticks = Math.round(max / step);
+
+    /* Vẽ theo bề rộng thật của khung để chữ không bị thu nhỏ trên điện thoại */
+    var L = 44, R = 8, T = 22;
+    /* mỗi nhóm cột rộng tối thiểu ~78px; hẹp hơn thì khung cho vuốt ngang */
+    var W = Math.max(300, (host.clientWidth || 720) - 34, L + R + cats.length * 78);
+    var band = (W - L - R) / cats.length;
+    var perLine = Math.max(6, Math.floor(band / 6.6));
+    var wrap = function (t) {                       /* xuống dòng nhãn trục ngang, tối đa 3 dòng */
+      var out = [''], words = t.split(' ');
+      words.forEach(function (w) {
+        var cur = out[out.length - 1];
+        if (cur && (cur + ' ' + w).length > perLine && out.length < 3) out.push(w);
+        else out[out.length - 1] = cur ? cur + ' ' + w : w;
+      });
+      return out;
+    };
+    var labels = cats.map(wrap);
+    var lines = Math.max.apply(null, labels.map(function (l) { return l.length; }));
+    var B = 24 + lines * 14, H = (W < 500 ? 230 : 260) + (lines - 1) * 14;
+    var pw = W - L - R, ph = H - T - B;
+    var n = series.length, gap = 2;
+    var barW = stack ? Math.min(56, band * 0.56) : Math.min(28, (band * 0.74 - gap * (n - 1)) / n);
+    var y = function (v) { return T + ph - (v / max) * ph; };
+    var svg = [];
+    for (var t = 0; t <= ticks; t++) {                  /* lưới ngang mờ */
+      var tv = step * t, ty = y(tv);
+      svg.push('<line x1="' + L + '" x2="' + (W - R) + '" y1="' + ty + '" y2="' + ty + '" class="vchart__grid"/>' +
+        '<text x="' + (L - 6) + '" y="' + (ty + 4) + '" class="vchart__tick" text-anchor="end">' + fmtVal(tv, unit) + '</text>');
+    }
+    cats.forEach(function (cat, i) {
+      var cx = L + band * i + band / 2;
+      var acc = 0;
+      series.forEach(function (se, k) {
+        var v = se.vals[i];
+        if (v === null) return;
+        var x = stack ? cx - barW / 2 : cx - (n * barW + (n - 1) * gap) / 2 + k * (barW + gap);
+        var y0 = stack ? y(acc + v) : y(v), hgt = (v / max) * ph;
+        if (stack && k < n - 1 && hgt > gap) hgt -= gap;          /* khe 2px giữa các đoạn chồng */
+        svg.push('<rect class="vchart__bar" x="' + x.toFixed(1) + '" y="' + y0.toFixed(1) + '" width="' + barW.toFixed(1) +
+          '" height="' + Math.max(hgt, 0).toFixed(1) + '" rx="3" fill="' + SERIES[k % SERIES.length] + '" tabindex="0" ' +
+          'data-tip="' + esc(cat + ' — ' + se.name + ': ' + fmtVal(v, unit)) + '"/>');
+        if (!stack && cats.length * n <= 12 && barW >= 22) {
+          svg.push('<text x="' + (x + barW / 2).toFixed(1) + '" y="' + (y0 - 5).toFixed(1) + '" class="vchart__val" text-anchor="middle">' + fmtVal(v, unit) + '</text>');
+        }
+        acc += v;
+      });
+      if (stack && totals[i] !== null) {
+        svg.push('<text x="' + cx + '" y="' + (y(acc) - 6) + '" class="vchart__val" text-anchor="middle">' + fmtVal(totals[i], unit) + '</text>');
+      }
+      svg.push('<text x="' + cx + '" y="' + (H - B + 17) + '" class="vchart__cat" text-anchor="middle">' +
+        labels[i].map(function (l, j) { return j ? '<tspan x="' + cx + '" dy="14">' + esc(l) + '</tspan>' : esc(l); }).join('') + '</text>');
+    });
+    svg.push('<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(0) + '" y2="' + y(0) + '" class="vchart__axis"/>');
+
+    var legend = series.length > 1 ? '<ul class="vchart__legend">' + series.map(function (se, k) {
+      return '<li><i style="background:' + SERIES[k % SERIES.length] + '"></i>' + esc(se.name) + '</li>';
+    }).join('') + '</ul>' : '';
+    var label = host.getAttribute('aria-label') || '';
+    host.innerHTML = legend +
+      '<div class="vchart__plot"><svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" role="img" aria-label="' + esc(label) + '">' + svg.join('') + '</svg>' +
+      '<div class="vchart__tip" hidden></div></div>' +
+      (host.getAttribute('data-label') ? '<figcaption>' + esc(host.getAttribute('data-label')) + '</figcaption>' : '');
+
+    var tip = host.querySelector('.vchart__tip'), plot = host.querySelector('.vchart__plot');
+    var show = function (el) {
+      tip.textContent = el.getAttribute('data-tip'); tip.hidden = false;
+      var pr = plot.getBoundingClientRect(), br = el.getBoundingClientRect();
+      tip.style.left = Math.min(Math.max(br.left - pr.left + br.width / 2, 70), pr.width - 70) + 'px';
+      tip.style.top = (br.top - pr.top - 8) + 'px';
+    };
+    host.querySelectorAll('.vchart__bar').forEach(function (b) {
+      b.addEventListener('mouseenter', function () { show(b); });
+      b.addEventListener('focus', function () { show(b); });
+      b.addEventListener('mouseleave', function () { tip.hidden = true; });
+      b.addEventListener('blur', function () { tip.hidden = true; });
+    });
+  }
+  function niceStep(v) {
+    if (!v) return 1;
+    var p = Math.pow(10, Math.floor(Math.log10(v))), m = v / p;
+    return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p;
+  }
+
+  /* =====================================================================
+     11. Tin tức & hình ảnh sinh viên (data-news="tin-tuc")
+     Cột: ngay, nhom (dau-vao | hoat-dong | dau-ra), tieu_de, tom_tat, anh, lien_ket
+       data-limit="3"  chỉ hiện N tin mới nhất, không có nút lọc (dùng ở trang chủ)
+     ===================================================================== */
+  var NEWS_GROUPS = {
+    vi: { all: 'Tất cả', 'dau-vao': 'Chào đón tân sinh viên', 'hoat-dong': 'Hoạt động sinh viên', 'dau-ra': 'Sinh viên tốt nghiệp',
+          more: 'Xem chi tiết', empty: 'Đang cập nhật tin và hình ảnh cho mục này.', photos: 'ảnh' },
+    en: { all: 'All', 'dau-vao': 'Welcoming new students', 'hoat-dong': 'Student activities', 'dau-ra': 'Graduates',
+          more: 'Read more', empty: 'News and photos for this section are being updated.', photos: 'photos' }
+  };
+  function assetUrl(u) {
+    u = (u || '').trim();
+    return /^(https?:|\/)/.test(u) ? u : BASE + u;
+  }
+  function renderNews(host, rows) {
+    var G = NEWS_GROUPS[LANG];
+    rows = rows.filter(function (r) { return !/^#/.test(r[0].trim()); });
+    var head = rows.shift().map(function (h) { return h.trim(); });
+    var col = function (r, k) { var i = head.indexOf(k); return i < 0 ? '' : (r[i] || '').trim(); };
+    var items = rows.filter(function (r) { return col(r, 'tieu_de'); });
+    var limit = +host.getAttribute('data-limit') || 0;
+    if (limit) items = items.slice(0, limit);
+
+    var card = function (r) {
+      var grp = col(r, 'nhom'), imgs = col(r, 'anh').split(';').map(function (s) { return s.trim(); }).filter(Boolean);
+      var link = col(r, 'lien_ket'), title = pick(col(r, 'tieu_de'));
+      var href = link ? assetUrl(link) : (imgs[0] ? assetUrl(imgs[0]) : '');
+      var cover = imgs[0] ? '<a class="news__cover" href="' + esc(href) + '"' + (link ? ext(href) : ' target="_blank" rel="noopener"') + '>' +
+        '<img src="' + esc(assetUrl(imgs[0])) + '" alt="' + esc(title) + '" loading="lazy">' +
+        (imgs.length > 1 ? '<span class="news__count">' + imgs.length + ' ' + G.photos + '</span>' : '') + '</a>' : '';
+      var thumbs = imgs.length > 1 ? '<div class="news__thumbs">' + imgs.slice(1, 5).map(function (u) {
+        return '<a href="' + esc(assetUrl(u)) + '" target="_blank" rel="noopener"><img src="' + esc(assetUrl(u)) + '" alt="" loading="lazy"></a>';
+      }).join('') + '</div>' : '';
+      return '<article class="news__item" data-group="' + esc(grp) + '">' + cover +
+        '<div class="news__body"><p class="news__meta"><span class="badge news__badge news__badge--' + esc(grp) + '">' + esc(G[grp] || grp) + '</span>' +
+        (col(r, 'ngay') ? '<time>' + esc(col(r, 'ngay')) + '</time>' : '') + '</p>' +
+        '<h3>' + esc(title) + '</h3>' +
+        (col(r, 'tom_tat') ? '<p>' + esc(pick(col(r, 'tom_tat'))) + '</p>' : '') + thumbs +
+        (link ? '<a class="link-arrow" href="' + esc(assetUrl(link)) + '"' + ext(assetUrl(link)) + '>' + G.more + '</a>' : '') +
+        '</div></article>';
+    };
+
+    var tabs = limit ? '' : '<div class="news__tabs" role="tablist">' + ['all', 'dau-vao', 'hoat-dong', 'dau-ra'].map(function (g) {
+      return '<button type="button" role="tab" data-filter="' + g + '" aria-selected="false">' + G[g] + '</button>';
+    }).join('') + '</div>';
+    host.innerHTML = tabs + '<div class="news__grid">' + items.map(card).join('') + '</div>' +
+      '<p class="news__empty text-muted" hidden>' + G.empty + '</p>';
+    if (limit) return;
+
+    var apply = function (g) {
+      var shown = 0;
+      host.querySelectorAll('.news__item').forEach(function (a) {
+        var on = g === 'all' || a.getAttribute('data-group') === g;
+        a.hidden = !on; if (on) shown++;
+      });
+      host.querySelectorAll('[data-filter]').forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-filter') === g ? 'true' : 'false'); });
+      host.querySelector('.news__empty').hidden = shown > 0;
+    };
+    host.querySelectorAll('[data-filter]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        apply(b.getAttribute('data-filter'));
+        if (history.replaceState) history.replaceState(null, '', b.getAttribute('data-filter') === 'all' ? location.pathname : '#' + b.getAttribute('data-filter'));
+      });
+    });
+    var h = location.hash.slice(1);
+    apply(G[h] && h !== 'more' && h !== 'empty' && h !== 'photos' ? h : 'all');
+  }
+
   function renderData() {
     document.querySelectorAll('[data-chart]').forEach(function (host) {
       loadData(host.getAttribute('data-chart')).then(function (rows) { renderChart(host, rows); }).catch(function () {});
@@ -890,6 +1161,21 @@
       var name = host.getAttribute('data-people');
       loadData(name).then(function (rows) { renderPeople(host, rows); }).catch(fail(host, name));
     });
+    document.querySelectorAll('[data-bars]').forEach(function (host) {
+      loadData(host.getAttribute('data-bars')).then(function (rows) {
+        var draw = function () { renderBars(host, rows.map(function (r) { return r.slice(); })); };
+        draw();
+        var w = host.clientWidth, timer;
+        window.addEventListener('resize', function () {
+          clearTimeout(timer);
+          timer = setTimeout(function () { if (Math.abs(host.clientWidth - w) > 40) { w = host.clientWidth; draw(); } }, 200);
+        });
+      }).catch(function () { host.hidden = true; });
+    });
+    document.querySelectorAll('[data-news]').forEach(function (host) {
+      var name = host.getAttribute('data-news');
+      loadData(name).then(function (rows) { renderNews(host, rows); }).catch(fail(host, name));
+    });
   }
 
   function init() {
@@ -897,6 +1183,7 @@
     buildHeader();
     buildFooter();
     renderData();
+    renderEmbeds();
     wireAccordions();
     wireReveal();
     loadAnalytics();
