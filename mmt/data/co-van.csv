@@ -1,5 +1,29 @@
-﻿"# Danh sách cố vấn học tập theo lớp. Thêm mỗi lớp một dòng dưới dòng tiêu đề, ví dụ:"
-"# K51,DI25V7A1,MMT & TTDL | CN & DC,ThS. Nguyễn Văn A | MSc. Nguyen Van A,nva@cit.ctu.edu.vn"
+﻿"# Danh sách cố vấn học tập theo lớp. Mã lớp: T9A = MMT & TTDL, T9F = MMT & TTDL chất lượng cao, D2A = An toàn thông tin."
+"# Mỗi lớp một dòng: Khóa, Lớp, Ngành, Cố vấn (""Tiếng Việt | English""), Email."
 "# Ô song ngữ: ""Tiếng Việt | English"". Số thập phân dùng dấu chấm (70.71%)."
 # Dòng bắt đầu bằng ## là dòng nhóm; dòng bắt đầu bằng = là dòng tổng; dòng bắt đầu bằng # là ghi chú.
 Khóa | Cohort,Lớp | Class,Ngành | Programme,Cố vấn học tập | Academic advisor,Email
+K43 (2017),DI17Y9A1,,Đang cập nhật | Being updated,
+K44 (2018),DI18T9A1,MMT & TTDL | CN & DC,ThS. Nguyễn Công Huy | MSc. Nguyen Cong Huy,nchuy@cit.ctu.edu.vn
+K44 (2018),DI18T9A2,MMT & TTDL | CN & DC,PGS. TS. Đỗ Thanh Nghị | Assoc. Prof. Dr. Do Thanh Nghi,dtnghi@cit.ctu.edu.vn
+K45 (2019),DI19T9A1,MMT & TTDL | CN & DC,ThS. Phạm Hữu Tài | MSc. Pham Huu Tai,phtai@cit.ctu.edu.vn
+K45 (2019),DI19T9A2,MMT & TTDL | CN & DC,ThS. Phạm Hữu Tài | MSc. Pham Huu Tai,phtai@cit.ctu.edu.vn
+K46 (2020),DI20T9A1,MMT & TTDL | CN & DC,PGS. TS. Phan Thượng Cang | Assoc. Prof. Dr. Phan Thuong Cang,ptcang@cit.ctu.edu.vn
+K46 (2020),DI20T9A2,MMT & TTDL | CN & DC,PGS. TS. Đỗ Thanh Nghị | Assoc. Prof. Dr. Do Thanh Nghi,dtnghi@cit.ctu.edu.vn
+K47 (2021),DI21T9A1,MMT & TTDL | CN & DC,PGS. TS. Phan Thượng Cang | Assoc. Prof. Dr. Phan Thuong Cang,ptcang@cit.ctu.edu.vn
+K47 (2021),DI21T9A2,MMT & TTDL | CN & DC,PGS. TS. Phan Thượng Cang | Assoc. Prof. Dr. Phan Thuong Cang,ptcang@cit.ctu.edu.vn
+K48 (2022),DI22T9A1,MMT & TTDL | CN & DC,TS. Trần Thị Tố Quyên | Dr. Tran Thi To Quyen,tttquyen@ctu.edu.vn
+K48 (2022),DI22D2A1,ATTT | IS,TS. Ngô Bá Hùng | Dr. Ngo Ba Hung,nbhung@cit.ctu.edu.vn
+K49 (2023),DI23T9A1,MMT & TTDL | CN & DC,ThS. Nguyễn Công Huy | MSc. Nguyen Cong Huy,nchuy@cit.ctu.edu.vn
+K49 (2023),DI23D2A1,ATTT | IS,ThS. Phạm Hữu Tài | MSc. Pham Huu Tai,phtai@cit.ctu.edu.vn
+K50 (2024),DI24T9A1,MMT & TTDL | CN & DC,TS. Hà Duy An | Dr. Ha Duy An,hdan@cit.ctu.edu.vn
+K50 (2024),DI24T9A2,MMT & TTDL | CN & DC,TS. Hà Duy An | Dr. Ha Duy An,hdan@cit.ctu.edu.vn
+K50 (2024),DI24D2A1,ATTT | IS,TS. Lâm Chí Nguyện | Dr. Lam Chi Nguyen,lcnguyen@cit.ctu.edu.vn
+K51 (2025),DI25D2A1,ATTT | IS,PGS. TS. Đỗ Thanh Nghị | Assoc. Prof. Dr. Do Thanh Nghi,dtnghi@cit.ctu.edu.vn
+K51 (2025),DI25T9A1,MMT & TTDL | CN & DC,TS. Triệu Thanh Ngoan | Dr. Trieu Thanh Ngoan,ttngoan@cit.ctu.edu.vn
+K51 (2025),DI25T9A2,MMT & TTDL | CN & DC,TS. Nguyễn Hữu Vân Long | Dr. Nguyen Huu Van Long,nhvlong@cit.ctu.edu.vn
+K51 (2025),DI25T9F1,MMT & TTDL — CLC | CN & DC — High-quality,TS. Ngô Bá Hùng | Dr. Ngo Ba Hung,nbhung@cit.ctu.edu.vn
+K52 (2026),DI26D2A1,ATTT | IS,TS. Triệu Thanh Ngoan | Dr. Trieu Thanh Ngoan,ttngoan@cit.ctu.edu.vn
+K52 (2026),DI26T9A1,MMT & TTDL | CN & DC,TS. Trần Thị Tố Quyên | Dr. Tran Thi To Quyen,tttquyen@ctu.edu.vn
+K52 (2026),DI26T9A2,MMT & TTDL | CN & DC,TS. Trần Thị Tố Quyên | Dr. Tran Thi To Quyen,tttquyen@ctu.edu.vn
+K52 (2026),DI26T9F1,MMT & TTDL — CLC | CN & DC — High-quality,PGS. TS. Phan Thượng Cang | Assoc. Prof. Dr. Phan Thuong Cang,ptcang@cit.ctu.edu.vn
