@@ -183,8 +183,8 @@
       ],
 
       leaders: [
-        { role: 'Trưởng khoa', name: 'PGS. TS. GVCC. Phan Thượng Cang', email: 'ptcang@ctu.edu.vn' },
-        { role: 'Phó trưởng khoa', name: 'TS. GVC. Trần Thị Tố Quyên', email: 'tttquyen@ctu.edu.vn' },
+        { role: 'Trưởng khoa', name: 'PGS. TS. Phan Thượng Cang', email: 'ptcang@ctu.edu.vn' },
+        { role: 'Phó trưởng khoa', name: 'TS. Trần Thị Tố Quyên', email: 'tttquyen@ctu.edu.vn' },
         { role: 'Phó trưởng khoa', name: 'TS. Triệu Thanh Ngoan', email: 'ttngoan@cit.ctu.edu.vn' }
       ],
 
