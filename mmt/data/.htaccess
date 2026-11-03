@@ -1,0 +1,23 @@
+# ---------------------------------------------------------------
+# Cho phép đọc các tệp CSV từ trang khác (CORS)
+# ---------------------------------------------------------------
+# Zalo Mini App của Khoa (repo tttquyen/mmt-ctu-zalo) chạy trên tên miền của
+# Zalo nên trình duyệt chỉ cho đọc CSV ở đây khi máy chủ trả về tiêu đề
+# Access-Control-Allow-Origin. Chỉ áp dụng cho tệp .csv — dữ liệu này vốn đã
+# công khai trên website. Ảnh và PDF không cần CORS.
+#
+# Bản Joomla: build.sh chép nguyên thư mục mmt/data (kể cả tệp này) sang
+# images/mmt/data/, nên không cần làm gì thêm.
+# Máy chủ cần bật mod_headers; nếu chưa bật, tệp này không gây lỗi.
+# ---------------------------------------------------------------
+
+<IfModule mod_mime.c>
+  AddType "text/csv; charset=utf-8" .csv
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.csv$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+  </FilesMatch>
+</IfModule>

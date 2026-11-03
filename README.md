@@ -44,6 +44,18 @@ Chép **nội dung bên trong** `mmt/` lên thư mục `mmt` của máy chủ, v
 thư mục `enmmt`. Không cần chép `index.html`, `.nojekyll`, `.gitignore` và
 `README.md` ở thư mục gốc — đó là tệp phục vụ kho mã và bản thử nghiệm.
 
+**Nhớ chép cả tệp ẩn `mmt/data/.htaccess`** (nhiều trình FTP và Windows Explorer mặc định
+không hiện tệp bắt đầu bằng dấu chấm). Tệp này bật CORS cho các tệp CSV để
+[Zalo Mini App của Khoa](https://github.com/tttquyen/mmt-ctu-zalo) đọc được dữ liệu nhân sự,
+cố vấn học tập, biểu mẫu… Máy chủ Apache cần bật `mod_headers`. Kiểm tra sau khi chép:
+
+```bash
+curl -sI https://cit.ctu.edu.vn/mmt/data/nhan-su.csv | grep -i access-control
+```
+
+Kết quả phải có dòng `Access-Control-Allow-Origin: *`. Nếu máy chủ không dùng Apache
+(vd. Nginx) thì nhờ quản trị máy chủ thêm tiêu đề tương đương cho `/mmt/data/*.csv`.
+
 Có thể chép thêm `404.html` và khai báo `ErrorDocument 404` trên máy chủ để dùng trang báo lỗi.
 Tệp Excel (`*.xlsx`) không được đưa lên kho: dữ liệu nội bộ có mã số sinh viên.
 
