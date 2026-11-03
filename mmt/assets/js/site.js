@@ -69,7 +69,7 @@
       'nhan-su-thong-ke': '1aCWBf0T_ZvwjbQDEqqLPPNQ6CGePXaCc05OO-SK2BPA',
       'cong-bo': '1zLGDwNSWtUQ_OYC-kFXfvlmP1ZInQYBc0TOixufCHdE',
       'tuyen-sinh': '1ngIspvsTq64SFJeubZoW-YxX4-NqvHAzHcRhnQegnyg',
-      'tin-tuc': '12u360TwBJa119BBA9FHRGqO2TVImOvLte3-MZVpSdAw'
+      'tin-tuc': '1ipiMjzYIHjtwPSVEyk_1My0t8jsAmPFPRzg25VIgwTo'
     },
     sheetPub: {},
 
