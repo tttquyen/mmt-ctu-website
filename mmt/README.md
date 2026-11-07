@@ -138,6 +138,11 @@ Cả hai tải từ Google Fonts và đều có bộ ký tự tiếng Việt.
 - **Khoảng cách an toàn quanh logo = 1/4 kích thước logo**, cài bằng biến
   `--logo-clear` trong `main.css` nên luôn đúng tỉ lệ ở mọi cỡ màn hình.
 - Giữ tỉ lệ 1:1, không thêm viền, không đổi màu, không đặt logo bên phải chữ.
+- Logo Khoa (`imgs/logo-khoa.png`) đặt ngay sau logo ĐHCT, cùng kích thước, dạng tròn nền trắng.
+  Logo Trường CNTT&TT (`imgs/logo-cict.png`) đặt ở chân trang, cạnh tên Trường; logo Khoa cũng
+  lặp lại ở chân trang. Hai tệp này cắt tròn từ bản gốc 2048px (nền ngoài vòng tròn trong suốt).
+- `imgs/favicon.ico` và `imgs/apple-touch-icon.png` lấy phần chữ M + mạng lưới của logo Khoa
+  (bỏ vòng chữ để còn đọc được ở cỡ 16–32px).
 
 Khẩu hiệu "Cộng đồng · Toàn diện · Ưu việt" (EN: Community · Totality ·
 Uniqueness) đặt ở chân trang, sửa tại `site.js` → `CONFIG.<lang>.slogan`.
@@ -446,7 +451,7 @@ Bản Joomla không cần bước này (Joomla tự gắn mã phiên bản khi c
   Thư mục `mmt/imgs/` giảm từ ~240 MB xuống ~42 MB.
 - Khi thêm ảnh mới: xuất ở chiều rộng ≤ 1800 px, JPEG chất lượng ~82.
 - Luôn thêm `loading="lazy"` và `alt="..."` cho ảnh trong nội dung.
-- `imgs/logo-cict.png` là logo CICT nền trong suốt, dùng cho masthead.
+- `imgs/logo-cict.png` là logo CICT (bản 2026, cắt tròn), dùng ở chân trang.
 
 ## Kiểm tra tại chỗ
 

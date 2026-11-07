@@ -111,6 +111,8 @@
       /* Dòng dưới tên đơn vị — quy cách logo đơn vị thành viên của Sổ tay
          thương hiệu ĐHCT: tên tiếng Việt ở trên, tiếng Anh ở dưới. */
       deptTitleAlt: 'Faculty of Computer Networks and Communications',
+      logoAlt: ['Logo Đại học Cần Thơ', 'Logo Trường Công nghệ Thông tin và Truyền thông',
+        'Logo Khoa Mạng máy tính và Truyền thông'],
       slogan: 'Cộng đồng · Toàn diện · Ưu việt',
       parentLine: 'Trường Công nghệ Thông tin và Truyền thông — Đại học Cần Thơ',
       parentShort: 'Trường Công nghệ Thông tin và Truyền thông',
@@ -204,6 +206,7 @@
       usefulLinks: [
         { label: 'Cổng tuyển sinh ĐHCT', url: 'https://tuyensinh.ctu.edu.vn/' },
         { label: 'Chương trình đào tạo ĐHCT', url: 'https://www.ctu.edu.vn/dao-tao/ctdt-dai-hoc.html' },
+        { label: 'Cổng thông tin sinh viên CICT', url: 'https://cit.ctu.edu.vn/cong-thong-tin-sinh-vien/' },
         { label: 'Đám mây CIT', url: 'https://cloud.cit.ctu.edu.vn/horizon' },
         { label: 'Trung tâm Học liệu', url: 'https://lrc.ctu.edu.vn/' }
       ],
@@ -225,6 +228,8 @@
       deptName: 'Faculty of Computer Networks and Communications',
       deptTitle: 'Faculty of Computer Networks &amp; Communications',
       deptTitleAlt: 'Khoa Mạng máy tính và Truyền thông',
+      logoAlt: ['Can Tho University logo', 'College of Information and Communication Technology logo',
+        'Faculty of Computer Networks and Communications logo'],
       slogan: 'Community · Totality · Uniqueness',
       parentLine: 'College of Information and Communication Technology — Can Tho University',
       parentShort: 'College of Information &amp; Communication Technology',
@@ -318,6 +323,7 @@
       usefulLinks: [
         { label: 'CTU Admissions portal', url: 'https://tuyensinh.ctu.edu.vn/' },
         { label: 'CTU curricula', url: 'https://www.ctu.edu.vn/dao-tao/ctdt-dai-hoc.html' },
+        { label: 'CICT student portal', url: 'https://cit.ctu.edu.vn/cong-thong-tin-sinh-vien/' },
         { label: 'CIT private cloud', url: 'https://cloud.cit.ctu.edu.vn/horizon' },
         { label: 'Learning Resource Center', url: 'https://lrc.ctu.edu.vn/' }
       ],
@@ -502,8 +508,12 @@
 
       '<div class="masthead" id="masthead"><div class="container masthead__inner">' +
         '<a class="masthead__brand" href="' + esc(T.home) + '">' +
-          '<img class="masthead__logo" src="' + BASE + 'imgs/ctu-logo.png" width="320" height="320" ' +
-            'alt="Logo Đại học Cần Thơ">' +
+          '<span class="masthead__logos">' +
+            '<img class="masthead__logo" src="' + BASE + 'imgs/ctu-logo.png" width="320" height="320" ' +
+              'alt="' + esc(T.logoAlt[0]) + '">' +
+            '<img class="masthead__logo masthead__logo--disc" src="' + BASE + 'imgs/logo-khoa.png" width="320" height="320" ' +
+              'alt="' + esc(T.logoAlt[2]) + '">' +
+          '</span>' +
           '<span><span class="masthead__title">' + T.deptTitle + '</span>' +
           '<small class="masthead__sub">' + T.deptTitleAlt + '</small></span>' +
         '</a>' +
@@ -718,9 +728,11 @@
       '<footer class="footer"><div class="container">' +
         '<div class="footer__grid">' +
           '<div>' +
-            '<div class="footer__brand">' + T.deptName + '</div>' +
+            '<div class="footer__brand"><img class="footer__logo" src="' + BASE + 'imgs/logo-khoa.png" width="320" ' +
+              'height="320" alt="" loading="lazy">' + T.deptName + '</div>' +
             '<p class="footer__slogan">' + T.slogan + '</p>' +
-            '<p>' + T.parentLine + '</p>' +
+            '<p class="footer__parent"><img class="footer__logo footer__logo--sm" src="' + BASE + 'imgs/logo-cict.png" ' +
+              'width="320" height="320" alt="' + esc(T.logoAlt[1]) + '" loading="lazy"><span>' + T.parentLine + '</span></p>' +
             '<ul class="footer__contact">' +
               '<li><span>' + T.footAddress + '</span><span>' + T.address + '</span></li>' +
               '<li><span>' + T.footPhone + '</span><a href="' + COMMON.phoneHref + '">' + COMMON.phone + '</a></li>' +
