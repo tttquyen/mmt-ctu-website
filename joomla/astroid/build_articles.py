@@ -67,6 +67,8 @@ def main():
             if not name.endswith('.html') or name == 'index.html':
                 continue
             alias = name[:-5]
+            if 'http-equiv="refresh"' in open(os.path.join(REPO, folder, name), encoding='utf-8').read():
+                continue                                                    # trang chuyển hướng (địa chỉ cũ), không cần bài viết
             pid, lang, title, content = page(os.path.join(REPO, folder, name))
             open(os.path.join(OUT, alias + '.html'), 'w', encoding='utf-8', newline='\n').write(content)
             home = alias == 'mmt'

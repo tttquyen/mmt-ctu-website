@@ -156,34 +156,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cit.ctu.edu.vn/mmt/ptnmmt.html</loc>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://cit.ctu.edu.vn/mmt/ptnmmt.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cit.ctu.edu.vn/enmmt/enptnmmt.html"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cit.ctu.edu.vn/enmmt/enptnmmt.html</loc>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://cit.ctu.edu.vn/mmt/ptnmmt.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cit.ctu.edu.vn/enmmt/enptnmmt.html"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cit.ctu.edu.vn/mmt/ptnattt.html</loc>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://cit.ctu.edu.vn/mmt/ptnattt.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cit.ctu.edu.vn/enmmt/enptnattt.html"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cit.ctu.edu.vn/enmmt/enptnattt.html</loc>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://cit.ctu.edu.vn/mmt/ptnattt.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cit.ctu.edu.vn/enmmt/enptnattt.html"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://cit.ctu.edu.vn/mmt/sv.html</loc>
     <xhtml:link rel="alternate" hreflang="vi" href="https://cit.ctu.edu.vn/mmt/sv.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cit.ctu.edu.vn/enmmt/ensv.html"/>

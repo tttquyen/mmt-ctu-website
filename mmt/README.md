@@ -23,9 +23,8 @@ site_cnc/
 │  │  └─ ketqua.html        → Kết quả đào tạo                ★ AUN-QA TC8
 │  ├─ ts.html               → Tuyển sinh
 │  ├─ nckh.html             → Nghiên cứu khoa học
-│  ├─ ptn.html              → Phòng thí nghiệm (tổng quan)
-│  │  ├─ ptnmmt.html        → PTN MMT, TTDĐ & Dữ liệu lớn
-│  │  └─ ptnattt.html       → PTN An toàn thông tin
+│  ├─ ptn.html              → PTN Tính toán thông minh, Dữ liệu lớn, Điện toán đám mây và An toàn thông tin
+│  │                          (ptnmmt.html, ptnattt.html chỉ còn chuyển hướng về đây — 11/2026 hai PTN hợp nhất)
 │  ├─ sv.html               → Dành cho sinh viên             ★ AUN-QA TC6
 │  ├─ gv.html               → Nhân sự
 │  ├─ docs/                 → CTĐT chính thức (PDF) của 3 ngành
@@ -49,9 +48,8 @@ site_cnc/
    │  └─ enketqua.html      → Programme outcomes
    ├─ ents.html             → Admissions
    ├─ ennckh.html           → Research
-   ├─ enptn.html            → Laboratories
-   │  ├─ enptnmmt.html      → Networks, Mobile Comm. & Big Data Lab
-   │  └─ enptnattt.html     → Information Security Lab
+   ├─ enptn.html            → Intelligent Computing, Big Data, Cloud Computing and Information Security Laboratory
+   │                          (enptnmmt.html, enptnattt.html chỉ còn chuyển hướng)
    ├─ ensv.html             → For Students
    ├─ engv.html             → People
    └─ imgs/                 → (không còn dùng, không đưa lên kho, có thể xoá)
@@ -268,7 +266,7 @@ Báo cáo tự đánh giá AUN-QA chu kỳ II (2026) của ngành Mạng máy t�
 | `dayhoc.html` | 3 — Teaching and Learning · 4 — Student Assessment | ✅ |
 | `gv.html` | 5 — Academic Staff | ✅ Còn thiếu thông tin ThS. Nguyễn Đình Quý, KS. Vũ Xuân Lộc |
 | `sv.html` | 6 — Student Support Services | ✅ Cố vấn học tập K43–K52 (`co-van.csv`); sổ tay sinh viên K52 (`docs/so-tay-sinh-vien-k52.pdf`); biểu mẫu niên luận, luận văn, thực tập còn trống (`bieu-mau.csv`) |
-| `ptn.html`, `ptnmmt.html` | 7 — Facilities and Infrastructure | ✅ Còn thiếu thiết bị PTN An toàn thông tin |
+| `ptn.html` | 7 — Facilities and Infrastructure | ✅ Số liệu cơ sở vật chất theo SAR 11/2026 |
 | `ketqua.html` | 8 — Output and Outcomes | ✅ |
 
 Các khối còn thiếu được gắn thuộc tính `data-pending` và đang **ẩn** (`COMMON.hidePending = true`).
@@ -306,8 +304,7 @@ cập nhật PEO/PLO và bảng tín chỉ trong `cdr.html`, `encdr.html` và 6 
 
 Tiêu chí còn lại cần bổ sung:
 
-- **Tiêu chí 7** — bổ sung danh mục thiết bị, sức chứa, phần mềm vào
-  `ptnmmt.html` và `ptnattt.html`.
+- **Tiêu chí 7** — bổ sung danh mục thiết bị, sức chứa, phần mềm của phòng thí nghiệm vào `ptn.html`.
 
 ## Tối ưu tìm kiếm (SEO)
 
@@ -463,8 +460,6 @@ Mở `http://localhost:8123/mmt/mmt.html` và `http://localhost:8123/enmmt/enmmt
 
 ## Việc còn lại
 
-- `ptnattt.html` / `enptnattt.html`: trang gốc chưa có nội dung mô tả — xem ghi
-  chú trong tệp.
 - Xác nhận email của TS. Nguyễn Hữu Vân Long (bản cũ ghi lệch giữa `nhvlong@` và
   `nhvlongn@`; hiện đang dùng `nhvlong@cit.ctu.edu.vn`).
 - Có thể xoá `mmt/legacy/`, `enmmt/legacy/` và `enmmt/imgs/` khi website mới đã

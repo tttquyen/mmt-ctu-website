@@ -152,9 +152,7 @@
           id: 'nghien-cuu', label: 'Nghiên cứu', url: 'nckh.html',
           children: [
             { id: 'nckh', label: 'Hoạt động nghiên cứu khoa học', url: 'nckh.html' },
-            { id: 'ptn-tongquan', label: 'Phòng thí nghiệm', url: 'ptn.html' },
-            { id: 'ptnmmt', label: 'PTN MMT, TTDĐ & Dữ liệu lớn', url: 'ptnmmt.html' },
-            { id: 'ptnattt', label: 'PTN An toàn thông tin', url: 'ptnattt.html' }
+            { id: 'ptn-tongquan', label: 'Phòng thí nghiệm', url: 'ptn.html' }
           ]
         },
         { id: 'sv', label: 'Sinh viên', url: 'sv.html' },
@@ -219,7 +217,7 @@
 
       pages: ['mmt.html', 'ctdt.html', 'ctdtmmt.html', 'ctdtmmtclc.html', 'ctdtattt.html',
               'cdr.html', 'dayhoc.html', 'ketqua.html', 'ts.html', 'nckh.html',
-              'ptn.html', 'ptnmmt.html', 'ptnattt.html', 'sv.html', 'tintuc.html', 'gv.html', 'gt.html', 'dbcl.html']
+              'ptn.html', 'sv.html', 'tintuc.html', 'gv.html', 'gt.html', 'dbcl.html']
     },
 
     /* ------------------------------ ENGLISH ------------------------------ */
@@ -269,9 +267,7 @@
           id: 'nghien-cuu', label: 'Research', url: 'ennckh.html',
           children: [
             { id: 'nckh', label: 'Research activities', url: 'ennckh.html' },
-            { id: 'ptn-tongquan', label: 'Laboratories', url: 'enptn.html' },
-            { id: 'ptnmmt', label: 'Networks, Mobile Comm. & Big Data Lab', url: 'enptnmmt.html' },
-            { id: 'ptnattt', label: 'Information Security Lab', url: 'enptnattt.html' }
+            { id: 'ptn-tongquan', label: 'Laboratory', url: 'enptn.html' }
           ]
         },
         { id: 'sv', label: 'Students', url: 'ensv.html' },
@@ -336,7 +332,7 @@
 
       pages: ['enmmt.html', 'enctdt.html', 'enctdtmmt.html', 'enctdtmmtclc.html', 'enctdtattt.html',
               'encdr.html', 'endayhoc.html', 'enketqua.html', 'ents.html', 'ennckh.html',
-              'enptn.html', 'enptnmmt.html', 'enptnattt.html', 'ensv.html', 'entintuc.html', 'engv.html', 'engt.html', 'endbcl.html']
+              'enptn.html', 'ensv.html', 'entintuc.html', 'engv.html', 'engt.html', 'endbcl.html']
     }
   };
 

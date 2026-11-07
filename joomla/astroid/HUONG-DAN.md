@@ -11,7 +11,7 @@ Các tệp trong thư mục này:
 |---|---|
 | `custom-code-head.html` | Dán vào Astroid › Custom Code › **Before `</head>`** |
 | `custom-code-body.html` | Dán vào Astroid › Custom Code › **Before `</body>`** |
-| `bai-viet/<bí danh>.html` | Nội dung từng bài viết (36 trang: 18 tiếng Việt, 18 tiếng Anh) |
+| `bai-viet/<bí danh>.html` | Nội dung từng bài viết (32 trang: 16 tiếng Việt, 16 tiếng Anh) |
 | `danh-sach-trang.csv` | Tiêu đề, bí danh của bài viết và mục menu cần tạo |
 | `build_articles.py` | Sinh lại các tệp trên sau khi sửa bản tĩnh: `python joomla/astroid/build_articles.py` |
 
