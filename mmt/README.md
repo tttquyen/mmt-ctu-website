@@ -139,6 +139,8 @@ Cả hai tải từ Google Fonts và đều có bộ ký tự tiếng Việt.
 - Logo Khoa (`imgs/logo-khoa.png`) đặt ngay sau logo ĐHCT, cùng kích thước, dạng tròn nền trắng.
   Logo Trường CNTT&TT (`imgs/logo-cict.png`) đặt ở chân trang, cạnh tên Trường; logo Khoa cũng
   lặp lại ở chân trang. Hai tệp này cắt tròn từ bản gốc 2048px (nền ngoài vòng tròn trong suốt).
+  Bản gốc lưu ở `imgs/logo-khoa-goc.jpg` và `imgs/logo-cict-goc.jpg`; website không dùng trực tiếp,
+  giữ để cắt lại khi cần cỡ lớn hơn.
 - `imgs/favicon.ico` và `imgs/apple-touch-icon.png` lấy phần chữ M + mạng lưới của logo Khoa
   (bỏ vòng chữ để còn đọc được ở cỡ 16–32px).
 
