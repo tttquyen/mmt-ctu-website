@@ -338,6 +338,97 @@
      2. Tiện ích
      ===================================================================== */
   var body = document.body;
+
+  /* ---------------------------------------------------------------------
+     Chế độ nhúng: chạy bên trong một website Joomla dùng template khác
+     (vd. Astroid trên host cnc.ctu.edu.vn). Bật khi trang khai báo:
+       window.MMT_EMBED = {
+         base:   'https://.../mmt/',  // thư mục bản tĩnh chứa assets/, imgs/, data/, docs/
+         prefix: '/index.php/',       // địa chỉ trang Joomla = prefix + tên tệp bỏ ".html"
+         home:   '/'                  // địa chỉ trang chủ tiếng Việt (mmt.html)
+       };
+     Mỗi bài viết Joomla bọc nội dung trong
+       <div id="mmt-content" data-page="..." data-lang="vi|en"> ... </div>
+     Khung của template Joomla được ẩn (CSS: .mmt-embed), site.js dựng lại
+     đầu trang, menu, chân trang của Khoa; liên kết "x.html" đổi sang địa chỉ
+     Joomla, ảnh và tệp tương đối trỏ về bản tĩnh.
+     --------------------------------------------------------------------- */
+  var EMBED = window.MMT_EMBED || null;
+  var EMBED_SRC = '';   /* thư mục gốc của trang tĩnh tương ứng (mmt/ hoặc enmmt/) */
+
+  function embedRoute(href) {
+    var m = /^(?:\.\.\/)?(?:(?:mmt|enmmt)\/)?([a-z0-9-]+)\.html((?:[?#].*)?)$/i.exec(href || '');
+    if (!EMBED || !m) return href;
+    var name = m[1].toLowerCase();
+    return (name === 'mmt' || name === 'index' ? EMBED.home : EMBED.prefix + name) + m[2];
+  }
+  function embedAsset(href) {
+    if (!href || /^(#|[a-z][a-z0-9+.-]*:|\/)/i.test(href)) return href;
+    try { return new URL(href, EMBED_SRC).href; } catch (e) { return href; }
+  }
+  function embedFix(root) {
+    if (!root.querySelectorAll) return;
+    var nodes = [root].concat([].slice.call(root.querySelectorAll('[href],[src],[srcset]')));
+    nodes.forEach(function (el) {
+      if (!el.getAttribute) return;
+      var h = el.getAttribute('href');
+      if (h !== null) {
+        var r = embedRoute(h);
+        el.setAttribute('href', r !== h ? r : embedAsset(h));
+      }
+      var s = el.getAttribute('src');
+      if (s !== null) el.setAttribute('src', embedAsset(s));
+      var ss = el.getAttribute('srcset');
+      if (ss) el.setAttribute('srcset', ss.split(',').map(function (p) {
+        p = p.trim().split(/\s+/); p[0] = embedAsset(p[0]); return p.join(' ');
+      }).join(', '));
+    });
+  }
+  function setupEmbed() {
+    document.documentElement.classList.add('js', 'mmt-embed');
+    var content = document.getElementById('mmt-content');
+    var lang = content && content.getAttribute('data-lang') === 'en' ? 'en' : 'vi';
+    body.setAttribute('data-lang', lang);
+    body.setAttribute('data-page', content ? content.getAttribute('data-page') || '' : '');
+    body.setAttribute('data-base', EMBED.base);
+    EMBED_SRC = EMBED.base.replace(/mmt\/?$/, '') + (lang === 'en' ? 'enmmt/' : 'mmt/');
+
+    var header = document.createElement('div'); header.id = 'site-header';
+    var main = document.createElement('main'); main.id = 'main';
+    var footer = document.createElement('div'); footer.id = 'site-footer';
+    if (content) {
+      while (content.firstChild) main.appendChild(content.firstChild);
+      content.parentNode.removeChild(content);
+    } else {
+      /* Trang Joomla khác (đăng nhập, tìm kiếm, lỗi...): giữ phần nội dung của template */
+      var area = document.querySelector('.astroid-component-area, main, #content');
+      var box = document.createElement('section'); box.className = 'section';
+      var wrap = document.createElement('div'); wrap.className = 'container';
+      if (area) wrap.appendChild(area);
+      box.appendChild(wrap); main.appendChild(box);
+    }
+    body.insertBefore(footer, body.firstChild);
+    body.insertBefore(main, footer);
+    body.insertBefore(header, main);
+
+    /* Khung nhúng (YouTube, Google Sheets) được lưu dạng <div data-mmt-iframe="{...}">
+       vì bộ lọc nội dung của Joomla có thể xoá thẻ <iframe> */
+    main.querySelectorAll('[data-mmt-iframe]').forEach(function (ph) {
+      var f = document.createElement('iframe'), a = {};
+      try { a = JSON.parse(ph.getAttribute('data-mmt-iframe')); } catch (e) { /* bỏ qua */ }
+      Object.keys(a).forEach(function (k) { f.setAttribute(k, a[k]); });
+      ph.parentNode.replaceChild(f, ph);
+    });
+    embedFix(main);
+    /* Bảng, tin tức, kết quả tìm kiếm dựng sau: sửa liên kết khi phần tử mới xuất hiện */
+    if ('MutationObserver' in window) {
+      new MutationObserver(function (list) {
+        list.forEach(function (m) { m.addedNodes.forEach(function (n) { if (n.nodeType === 1) embedFix(n); }); });
+      }).observe(body, { childList: true, subtree: true });
+    }
+  }
+  if (EMBED) setupEmbed();
+
   var LANG = body.getAttribute('data-lang') === 'en' ? 'en' : 'vi';
   var T = CONFIG[LANG];
   var BASE = body.getAttribute('data-base') || '';
@@ -501,7 +592,8 @@
   function buildIndex() {
     if (index) return Promise.resolve(index);
     return Promise.all(T.pages.map(function (url) {
-      return fetch(url).then(function (r) { return r.ok ? r.text() : ''; })
+      /* Chế độ nhúng: đọc nội dung từ bản tĩnh, kết quả vẫn trỏ về trang Joomla */
+      return fetch(EMBED ? embedAsset(url) : url).then(function (r) { return r.ok ? r.text() : ''; })
         .then(function (html) {
           if (!html) return null;
           var doc = new DOMParser().parseFromString(html, 'text/html');

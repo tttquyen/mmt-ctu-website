@@ -957,6 +957,26 @@ details.data-more > summary { cursor: pointer; font-weight: 600; color: var(--br
 .orgchart__box ul { padding-left: 18px; margin: 4px 0 0; }
 .orgchart__line { width: 2px; height: 18px; background: var(--brand-300, #9bb8de); }
 
+/* ---------- 12e. Chế độ nhúng vào Joomla (template Astroid trên host cnc.ctu.edu.vn) ----------
+   site.js thêm lớp .mmt-embed vào <html> rồi tự dựng đầu trang, nội dung, chân trang;
+   khung của template Joomla được ẩn hoàn toàn. */
+.mmt-embed .astroid-container,
+.mmt-embed #astroid-mobilemenu-wrap,
+.mmt-embed #astroid-backtotop,
+.mmt-embed #astroid-preloader,
+.mmt-embed #mmt-content { display: none !important; }
+.mmt-embed body { margin: 0; padding: 0; overflow-x: hidden; }
+/* Template Joomla nạp sẵn Bootstrap 5: trả các lớp trùng tên về đúng như bản tĩnh */
+.mmt-embed .text-muted { color: var(--ink-muted) !important; }
+.mmt-embed .mt-5 { margin-top: var(--sp-5) !important; }
+.mmt-embed .figure, .mmt-embed .breadcrumb { display: block; }
+.mmt-embed .card, .mmt-embed caption { color: inherit; }
+.mmt-embed caption { text-align: center; }
+.mmt-embed .badge { line-height: inherit; text-align: start; }
+.mmt-embed .lead { font-weight: inherit; }
+.mmt-embed img, .mmt-embed .btn { vertical-align: baseline; }
+.mmt-embed hr { color: inherit; opacity: 1; }
+
 @media print {
   .topbar, .nav, .to-top, .hero__actions, .cta-band, .footer__social, .skip-link { display: none !important; }
   body { font-size: 11pt; color: #000; }
